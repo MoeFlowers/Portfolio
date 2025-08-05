@@ -16,7 +16,7 @@ export const projects: Project[] = [
     title: "AI-Powered Book Recommendation",
     description: "Developed a collaborative filtering model (Scikitlearn) processing 10,000+ books. Integrated REST API (Flask/FastAPI) for real-time recommendations → 85% user-rated accuracy.",
     technologies: ["Python", "Scikit-learn", "FastAPI", "Flask"],
-    githubLink: "https://github.com/tu-usuario/libros-ia",
+    githubLink: "https://github.com/MoeFlowers/Portfolio/tree/book",
     demoLink: "#",
     duration: "2 months", 
   },
