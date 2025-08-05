@@ -1,0 +1,130 @@
+/* Estilo básico para index.html y recommendations.html */
+
+body {
+    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    
+    margin: 0;
+    padding: 0;
+    background-image: url('/static/books.jpg');
+    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-attachment: fixed; /* La imagen de fondo se queda fija al hacer scroll */
+    background-position: center; /* Centra la imagen de fondo */
+}
+
+header {
+    background-color: #4d0004;
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+    position: relative;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.book-list, .recommendations-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.book-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    text-align: center;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Asegura que los botones se alineen uniformemente */
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
+.book-cover {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    align-self: center; /* Centra la imagen horizontalmente */
+}
+
+.book-cover-large {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    align-self: center; /* Centra la imagen horizontalmente */
+}
+
+.recommend-button {
+    display: inline-block;
+    background: #737373;
+    color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 0px;
+}
+
+.recommend-button:hover {
+    background: #45a049;
+}
+
+
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header-title,
+.header-subtitle {
+    margin: 0;
+    text-align: left;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.header-button {
+    display: inline-block;
+    padding: 10px 15px; /* Aumentar padding para agrandar el botón */
+    font-size: 22px; /* Aumentar tamaño de la fuente */
+    background-color: #737373;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.header-button:hover {
+    background-color: #0D0D0D;
+}
+
+.book-details h2,
+.book-details p {
+    color: white; /* Asegurar que los encabezados y párrafos también sean blancos */
+}
+
+.recommended-title {
+    text-align: center; 
+    color: white;
+}
