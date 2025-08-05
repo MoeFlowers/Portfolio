@@ -1,0 +1,10 @@
+# Dependencias principales (versiones probadas)
+opencv-python==4.9.0.80
+numpy==1.26.4
+pytesseract==0.3.10
+pyautogui==0.9.54
+python-telegram-bot==20.3
+python-dotenv==1.0.1
+
+# Herramientas de desarrollo
+pytest==7.4.0

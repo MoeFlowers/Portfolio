@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendador de Libros</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+       <header>
+                <h1>Recomendador de Peliculas</h1>
+                <p>Selecciona para obtener recomendaciones basadas en el género.</p>
+                <div class="header-buttons">
+                    <a href="https://www.google.com/search?q=peliculas" class="header-button" target="_blank">
+                      <!-- Ícono de Google -->
+                      <i class="fab fa-google" style="margin-right: 8px; font-size: 20px; color: white;"></i>
+                      <!-- Texto "Buscar" -->
+                      Buscar
+                      <!-- Ícono de lupa -->
+                      <i class="fas fa-search" style="margin-left: 8px; font-size: 16px;"></i>
+                    </a>
+                  </div>
+         </header>
+    <main>
+        <div class="book-list">
+            {% for book in books.itertuples() %}
+            <div class="book-item">
+                <img src="{{ url_for('static', filename=book.image_url) }}" alt="{{ book.titulo }}" class="book-cover">
+                <h2>{{ book.titulo }}</h2>
+                <p>{{ book.autor }}</p>
+                <a href="{{ url_for('recommend', id_libro=book.id_libro) }}" class="recommend-button">Obtener Recomendaciones</a>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

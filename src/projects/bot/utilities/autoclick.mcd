@@ -1,0 +1,1693 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfMouseEvents xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/MouseController">
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_NONE</MouseMsg>
+    <Tag>start</Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1347</d3p1:x>
+      <d3p1:y>169</d3p1:y>
+    </pos>
+    <tOffset>0</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_LBUTTONDOWN</MouseMsg>
+    <Tag>1</Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1347</d3p1:x>
+      <d3p1:y>169</d3p1:y>
+    </pos>
+    <tOffset>828127</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_LBUTTONUP</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1347</d3p1:x>
+      <d3p1:y>169</d3p1:y>
+    </pos>
+    <tOffset>109375</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1346</d3p1:x>
+      <d3p1:y>170</d3p1:y>
+    </pos>
+    <tOffset>1968765</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1343</d3p1:x>
+      <d3p1:y>173</d3p1:y>
+    </pos>
+    <tOffset>15606</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1341</d3p1:x>
+      <d3p1:y>176</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1335</d3p1:x>
+      <d3p1:y>180</d3p1:y>
+    </pos>
+    <tOffset>15628</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1328</d3p1:x>
+      <d3p1:y>184</d3p1:y>
+    </pos>
+    <tOffset>15620</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1323</d3p1:x>
+      <d3p1:y>187</d3p1:y>
+    </pos>
+    <tOffset>15642</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1321</d3p1:x>
+      <d3p1:y>189</d3p1:y>
+    </pos>
+    <tOffset>15608</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1319</d3p1:x>
+      <d3p1:y>191</d3p1:y>
+    </pos>
+    <tOffset>31257</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1317</d3p1:x>
+      <d3p1:y>193</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1314</d3p1:x>
+      <d3p1:y>195</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1310</d3p1:x>
+      <d3p1:y>196</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1306</d3p1:x>
+      <d3p1:y>198</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1304</d3p1:x>
+      <d3p1:y>201</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1301</d3p1:x>
+      <d3p1:y>203</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1297</d3p1:x>
+      <d3p1:y>204</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1293</d3p1:x>
+      <d3p1:y>206</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1291</d3p1:x>
+      <d3p1:y>207</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1284</d3p1:x>
+      <d3p1:y>209</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1278</d3p1:x>
+      <d3p1:y>212</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1271</d3p1:x>
+      <d3p1:y>214</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1265</d3p1:x>
+      <d3p1:y>217</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1259</d3p1:x>
+      <d3p1:y>219</d3p1:y>
+    </pos>
+    <tOffset>15621</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1253</d3p1:x>
+      <d3p1:y>220</d3p1:y>
+    </pos>
+    <tOffset>15627</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1252</d3p1:x>
+      <d3p1:y>220</d3p1:y>
+    </pos>
+    <tOffset>15626</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1247</d3p1:x>
+      <d3p1:y>221</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1244</d3p1:x>
+      <d3p1:y>223</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1240</d3p1:x>
+      <d3p1:y>225</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1238</d3p1:x>
+      <d3p1:y>225</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1235</d3p1:x>
+      <d3p1:y>226</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1231</d3p1:x>
+      <d3p1:y>228</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1226</d3p1:x>
+      <d3p1:y>230</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1223</d3p1:x>
+      <d3p1:y>231</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1220</d3p1:x>
+      <d3p1:y>233</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1217</d3p1:x>
+      <d3p1:y>234</d3p1:y>
+    </pos>
+    <tOffset>15616</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1215</d3p1:x>
+      <d3p1:y>235</d3p1:y>
+    </pos>
+    <tOffset>15633</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1211</d3p1:x>
+      <d3p1:y>237</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1207</d3p1:x>
+      <d3p1:y>239</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1203</d3p1:x>
+      <d3p1:y>240</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1201</d3p1:x>
+      <d3p1:y>241</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1200</d3p1:x>
+      <d3p1:y>242</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1198</d3p1:x>
+      <d3p1:y>244</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1196</d3p1:x>
+      <d3p1:y>245</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1192</d3p1:x>
+      <d3p1:y>247</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1190</d3p1:x>
+      <d3p1:y>249</d3p1:y>
+    </pos>
+    <tOffset>15619</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1189</d3p1:x>
+      <d3p1:y>249</d3p1:y>
+    </pos>
+    <tOffset>31256</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1188</d3p1:x>
+      <d3p1:y>250</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1186</d3p1:x>
+      <d3p1:y>251</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1182</d3p1:x>
+      <d3p1:y>253</d3p1:y>
+    </pos>
+    <tOffset>15615</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1179</d3p1:x>
+      <d3p1:y>255</d3p1:y>
+    </pos>
+    <tOffset>15627</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1175</d3p1:x>
+      <d3p1:y>257</d3p1:y>
+    </pos>
+    <tOffset>15631</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1171</d3p1:x>
+      <d3p1:y>259</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1167</d3p1:x>
+      <d3p1:y>260</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1162</d3p1:x>
+      <d3p1:y>262</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1158</d3p1:x>
+      <d3p1:y>264</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1154</d3p1:x>
+      <d3p1:y>265</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1150</d3p1:x>
+      <d3p1:y>267</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1146</d3p1:x>
+      <d3p1:y>269</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1140</d3p1:x>
+      <d3p1:y>273</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1136</d3p1:x>
+      <d3p1:y>275</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1131</d3p1:x>
+      <d3p1:y>277</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1128</d3p1:x>
+      <d3p1:y>278</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1126</d3p1:x>
+      <d3p1:y>279</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1125</d3p1:x>
+      <d3p1:y>280</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1123</d3p1:x>
+      <d3p1:y>281</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1122</d3p1:x>
+      <d3p1:y>282</d3p1:y>
+    </pos>
+    <tOffset>15618</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1120</d3p1:x>
+      <d3p1:y>284</d3p1:y>
+    </pos>
+    <tOffset>15632</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1117</d3p1:x>
+      <d3p1:y>285</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1111</d3p1:x>
+      <d3p1:y>287</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1107</d3p1:x>
+      <d3p1:y>289</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1104</d3p1:x>
+      <d3p1:y>290</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1102</d3p1:x>
+      <d3p1:y>291</d3p1:y>
+    </pos>
+    <tOffset>15615</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1099</d3p1:x>
+      <d3p1:y>293</d3p1:y>
+    </pos>
+    <tOffset>15635</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1095</d3p1:x>
+      <d3p1:y>295</d3p1:y>
+    </pos>
+    <tOffset>15615</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1092</d3p1:x>
+      <d3p1:y>297</d3p1:y>
+    </pos>
+    <tOffset>15634</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1089</d3p1:x>
+      <d3p1:y>299</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1085</d3p1:x>
+      <d3p1:y>303</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1082</d3p1:x>
+      <d3p1:y>305</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1078</d3p1:x>
+      <d3p1:y>307</d3p1:y>
+    </pos>
+    <tOffset>15623</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1073</d3p1:x>
+      <d3p1:y>309</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1069</d3p1:x>
+      <d3p1:y>312</d3p1:y>
+    </pos>
+    <tOffset>15617</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1065</d3p1:x>
+      <d3p1:y>314</d3p1:y>
+    </pos>
+    <tOffset>15632</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1061</d3p1:x>
+      <d3p1:y>317</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1057</d3p1:x>
+      <d3p1:y>319</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1055</d3p1:x>
+      <d3p1:y>321</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1052</d3p1:x>
+      <d3p1:y>323</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1048</d3p1:x>
+      <d3p1:y>327</d3p1:y>
+    </pos>
+    <tOffset>15621</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1046</d3p1:x>
+      <d3p1:y>328</d3p1:y>
+    </pos>
+    <tOffset>15628</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1041</d3p1:x>
+      <d3p1:y>332</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1037</d3p1:x>
+      <d3p1:y>334</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1034</d3p1:x>
+      <d3p1:y>336</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1030</d3p1:x>
+      <d3p1:y>338</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1027</d3p1:x>
+      <d3p1:y>341</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1024</d3p1:x>
+      <d3p1:y>343</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1020</d3p1:x>
+      <d3p1:y>347</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1017</d3p1:x>
+      <d3p1:y>351</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1012</d3p1:x>
+      <d3p1:y>355</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1008</d3p1:x>
+      <d3p1:y>358</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>1003</d3p1:x>
+      <d3p1:y>362</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>998</d3p1:x>
+      <d3p1:y>366</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>994</d3p1:x>
+      <d3p1:y>370</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>990</d3p1:x>
+      <d3p1:y>375</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>984</d3p1:x>
+      <d3p1:y>381</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>978</d3p1:x>
+      <d3p1:y>387</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>971</d3p1:x>
+      <d3p1:y>393</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>965</d3p1:x>
+      <d3p1:y>398</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>960</d3p1:x>
+      <d3p1:y>403</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>954</d3p1:x>
+      <d3p1:y>410</d3p1:y>
+    </pos>
+    <tOffset>15619</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>951</d3p1:x>
+      <d3p1:y>414</d3p1:y>
+    </pos>
+    <tOffset>15629</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>945</d3p1:x>
+      <d3p1:y>421</d3p1:y>
+    </pos>
+    <tOffset>15626</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>939</d3p1:x>
+      <d3p1:y>429</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>933</d3p1:x>
+      <d3p1:y>436</d3p1:y>
+    </pos>
+    <tOffset>15618</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>930</d3p1:x>
+      <d3p1:y>442</d3p1:y>
+    </pos>
+    <tOffset>15632</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>926</d3p1:x>
+      <d3p1:y>448</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>922</d3p1:x>
+      <d3p1:y>452</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>919</d3p1:x>
+      <d3p1:y>457</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>916</d3p1:x>
+      <d3p1:y>460</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>914</d3p1:x>
+      <d3p1:y>464</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>910</d3p1:x>
+      <d3p1:y>468</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>907</d3p1:x>
+      <d3p1:y>473</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>904</d3p1:x>
+      <d3p1:y>477</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>900</d3p1:x>
+      <d3p1:y>482</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>897</d3p1:x>
+      <d3p1:y>485</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>894</d3p1:x>
+      <d3p1:y>489</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>890</d3p1:x>
+      <d3p1:y>493</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>885</d3p1:x>
+      <d3p1:y>497</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>880</d3p1:x>
+      <d3p1:y>501</d3p1:y>
+    </pos>
+    <tOffset>15623</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>875</d3p1:x>
+      <d3p1:y>505</d3p1:y>
+    </pos>
+    <tOffset>15627</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>870</d3p1:x>
+      <d3p1:y>510</d3p1:y>
+    </pos>
+    <tOffset>15619</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>867</d3p1:x>
+      <d3p1:y>513</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>861</d3p1:x>
+      <d3p1:y>519</d3p1:y>
+    </pos>
+    <tOffset>15631</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>855</d3p1:x>
+      <d3p1:y>526</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>850</d3p1:x>
+      <d3p1:y>532</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>845</d3p1:x>
+      <d3p1:y>538</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>840</d3p1:x>
+      <d3p1:y>543</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>835</d3p1:x>
+      <d3p1:y>548</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>830</d3p1:x>
+      <d3p1:y>554</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>826</d3p1:x>
+      <d3p1:y>561</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>821</d3p1:x>
+      <d3p1:y>569</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>816</d3p1:x>
+      <d3p1:y>575</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>810</d3p1:x>
+      <d3p1:y>582</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>806</d3p1:x>
+      <d3p1:y>589</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>801</d3p1:x>
+      <d3p1:y>595</d3p1:y>
+    </pos>
+    <tOffset>15620</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>796</d3p1:x>
+      <d3p1:y>600</d3p1:y>
+    </pos>
+    <tOffset>15629</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>792</d3p1:x>
+      <d3p1:y>606</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>789</d3p1:x>
+      <d3p1:y>611</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>785</d3p1:x>
+      <d3p1:y>618</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>780</d3p1:x>
+      <d3p1:y>625</d3p1:y>
+    </pos>
+    <tOffset>15623</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>775</d3p1:x>
+      <d3p1:y>632</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>770</d3p1:x>
+      <d3p1:y>637</d3p1:y>
+    </pos>
+    <tOffset>15630</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>766</d3p1:x>
+      <d3p1:y>642</d3p1:y>
+    </pos>
+    <tOffset>15621</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>763</d3p1:x>
+      <d3p1:y>645</d3p1:y>
+    </pos>
+    <tOffset>15623</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>758</d3p1:x>
+      <d3p1:y>649</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>754</d3p1:x>
+      <d3p1:y>653</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>751</d3p1:x>
+      <d3p1:y>658</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>749</d3p1:x>
+      <d3p1:y>662</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>747</d3p1:x>
+      <d3p1:y>666</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>745</d3p1:x>
+      <d3p1:y>669</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>743</d3p1:x>
+      <d3p1:y>673</d3p1:y>
+    </pos>
+    <tOffset>15618</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>740</d3p1:x>
+      <d3p1:y>677</d3p1:y>
+    </pos>
+    <tOffset>15631</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>737</d3p1:x>
+      <d3p1:y>683</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>735</d3p1:x>
+      <d3p1:y>688</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>733</d3p1:x>
+      <d3p1:y>691</d3p1:y>
+    </pos>
+    <tOffset>15625</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_MOUSEMOVE</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>732</d3p1:x>
+      <d3p1:y>692</d3p1:y>
+    </pos>
+    <tOffset>15624</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_LBUTTONDOWN</MouseMsg>
+    <Tag>2</Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>731</d3p1:x>
+      <d3p1:y>693</d3p1:y>
+    </pos>
+    <tOffset>328126</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_LBUTTONUP</MouseMsg>
+    <Tag></Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>731</d3p1:x>
+      <d3p1:y>693</d3p1:y>
+    </pos>
+    <tOffset>109375</tOffset>
+  </MouseEvents>
+  <MouseEvents>
+    <Delta>0</Delta>
+    <MouseMsg>WM_NONE</MouseMsg>
+    <Tag>stop</Tag>
+    <pos xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Drawing">
+      <d3p1:x>731</d3p1:x>
+      <d3p1:y>693</d3p1:y>
+    </pos>
+    <tOffset>3968760</tOffset>
+  </MouseEvents>
+</ArrayOfMouseEvents>
