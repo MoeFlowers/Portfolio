@@ -1,8 +1,8 @@
 "use client";
-import { Project } from "@/data/projects";
+import { Project } from "../data/projects";
 import Link from "next/link";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-import { techIcons } from "@/data/techIcons";
+import { techIcons } from "../data/techIcons";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
