@@ -1,8 +1,8 @@
-import { projects } from "@/data/projects";
-import ProjectCard from "@/components/ProjectCard";
-import ContactForm from "@/components/ContactForm";
-import AboutSection from "@/components/AboutSection";
-import Navbar from "@/components/Navbar";
+import { projects } from "../data/projects";
+import ProjectCard from "../components/ProjectCard";
+import ContactForm from "../components/ContactForm";
+import AboutSection from "../components/AboutSection";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
