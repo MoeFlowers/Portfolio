@@ -28,7 +28,7 @@ export const projects: Project[] = [
       "Digitized 100% of patient records and automated billing, saving 6h/week in admin work. Built an appointment module with automated email reminders.",
     technologies: ["PHP", "JavaScript", "MySQL", "Tailwind CSS"],
     githubLink: "https://github.com/MoeFlowers/Portfolio/tree/clinica",
-    demoLink: "#",
+    demoLink: "/projects/clinic/public/index.php",
     duration: "6 months",
   },
   {
