@@ -1,23 +1,46 @@
 // src/app/projects/clinic/dashboard/page.tsx
 'use client';
-import Sidebar from '../components_clinic/dashboard/Sidebar';
 import WelcomeBanner from '../components_clinic/dashboard/WelcomeBanner';
-import StatsCards from '../components_clinic/dashboard//StatsCards';
+import StatsCards from '../components_clinic/dashboard/StatsCards';
+import UpcomingAppointments from '../components_clinic/dashboard/UpcomingAppointments';
+import RecentPatients from '../components_clinic/dashboard/RecentPatients';
+import MonthlyAppointmentsChart from '../components_clinic/dashboard/MonthlyAppointmentsChart';
+import CommonProcedures from '../components_clinic/dashboard/CommonProcedures';
 import { mockData } from './mockData';
 
-export default function ClinicDashboard() {
+
+export default function DashboardPage() {
   return (
-    <div className="flex h-screen bg-gray-100">
-      <Sidebar user={mockData.user} />
-      
-      <div className="flex-1 overflow-auto">
-        <div className="p-6">
-          <div className="max-w-7xl mx-auto">
-            <WelcomeBanner user={mockData.user} />
-            <StatsCards stats={mockData.stats} />
+    <main className="p-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Welcome Banner */}
+        <WelcomeBanner user={mockData.user} />
+        {/* Stats Cards */}
+        <StatsCards stats={mockData.stats} />
+        
+        {/* Two Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
+          {/* Upcoming Appointments - Takes 2 columns */}
+          <div className="lg:col-span-2">
+            <UpcomingAppointments appointments={mockData.upcomingAppointments} />
+          </div>
+          
+          {/* Recent Patients */}
+          <div>
+            <RecentPatients patients={mockData.recentPatients} />
+          </div>
+          
+          {/* Monthly Appointments Chart */}
+          <div className="lg:col-span-2">
+            <MonthlyAppointmentsChart data={mockData.monthlyAppointments} />
+          </div>
+          
+          {/* Common Procedures */}
+          <div>
+            <CommonProcedures procedures={mockData.commonProcedures} />
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
