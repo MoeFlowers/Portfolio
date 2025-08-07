@@ -12,7 +12,7 @@
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
-![HTML]
+![Bower Version](https://img.shields.io/bower/v/:packageName)
 
 ## 📈 Impact Metrics
 - Served 2,000+ community members
