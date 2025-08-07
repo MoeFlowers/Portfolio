@@ -1,19 +1,17 @@
 // src/app/projects/clinic/dashboard/components/StatsCards.tsx
 import {
     UserGroupIcon,
-    UsersIcon,
     CalendarIcon,
-    DocumentTextIcon,
+    DocumentTextIcon, // Using DocumentTextIcon instead of DocumentCheckIcon
     CurrencyDollarIcon
 } from '@heroicons/react/24/outline';
 
 type StatsCardsProps = {
     stats: {
         totalPatients: number;
-        totalEmployees: number;
-        todayAppointments: number;
-        clinicalRecords: number;
-        monthlyRevenue?: number; // Opcional si quieres mantenerlo
+        upcomingAppointments: number;
+        completedProcedures: number;
+        monthlyRevenue: number;
     };
 };
 
@@ -26,30 +24,23 @@ export default function StatsCards({ stats }: StatsCardsProps) {
             color: "blue"
         },
         {
-            title: "Total Staff",
-            value: stats.totalEmployees,
-            icon: UsersIcon,
-            color: "green"
-        },
-        {
-            title: "Today's Appointments",
-            value: stats.todayAppointments,
+            title: "Upcoming Appointments",
+            value: stats.upcomingAppointments,
             icon: CalendarIcon,
             color: "purple"
         },
         {
-            title: "Clinical Records",
-            value: stats.clinicalRecords,
-            icon: DocumentTextIcon,
-            color: "yellow"
+            title: "Completed Procedures",
+            value: stats.completedProcedures,
+            icon: DocumentTextIcon, // Changed to DocumentTextIcon
+            color: "green"
         },
-        // Opcional: agregar tarjeta de ingresos si monthlyRevenue existe
-        ...(stats.monthlyRevenue ? [{
+        {
             title: "Monthly Revenue",
             value: `$${stats.monthlyRevenue.toLocaleString()}`,
             icon: CurrencyDollarIcon,
             color: "emerald"
-        }] : [])
+        }
     ];
 
     return (

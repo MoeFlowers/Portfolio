@@ -1,7 +1,6 @@
 // src/app/projects/clinic/dashboard/mockData.ts
 import { Patient } from "../components_clinic/dashboard/types";
 
-
 export const mockData = {
   user: {
     name: "Dr. Juan Pérez",
@@ -9,9 +8,10 @@ export const mockData = {
   },
   stats: {
     totalPatients: 1245,
-    upcomingAppointments: 18,
-    completedProcedures: 342,
-    monthlyRevenue: 12500,
+    totalEmployees: 15, // Nuevo campo requerido
+    todayAppointments: 8, // Nuevo campo requerido
+    clinicalRecords: 342, // Nuevo campo requerido
+    monthlyRevenue: 12500, // Campo opcional
   },
   appointments: [
     {
