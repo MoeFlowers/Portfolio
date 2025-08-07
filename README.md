@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# <img src="https://img.icons8.com/fluency/48/000000/portfolio.png" width="30"/> **Moises Flores**  
+### **Full-Stack Developer Portfolio**  
+🚀 *Transforming Ideas into Scalable Digital Solutions*  
 
-## Getting Started
+![Portfolio Banner](https://img.icons8.com/clouds/400/000000/code.png)  
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌟 **Featured Projects**  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **1. 🦷 Dental Clinic Management System**  
+**Tech:** PHP 8, MySQL, Tailwind CSS, GitHub Actions  
+**Highlights:**  
+- Reduced admin work by **6+ hours/week** with automated billing  
+- **97% user satisfaction** in clinic surveys  
+- Interactive tooth-by-tooth treatment tracking  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+[![View Project](https://img.shields.io/badge/View-Live_Demo-green?style=for-the-badge)](https://github.com/MoeFlowers/dental-clinic)  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### **2. 📚 AI-Powered Book Recommender**  
+**Tech:** Python, Scikit-learn, FastAPI  
+**Highlights:**  
+- **85% recommendation accuracy** (user-tested)  
+- Weekly auto-retraining with ethical web scraping  
+- Cut book search time by **70%**  
 
-## Learn More
+[![View Project](https://img.shields.io/badge/Explore-API-blue?style=for-the-badge)](https://github.com/MoeFlowers/book-recommender)  
 
-To learn more about Next.js, take a look at the following resources:
+### **3. 🤖 Data Processing Bot Army**  
+**Tech:** Python, Pandas, Slack API  
+**Highlights:**  
+- **15+ hours/week saved** through automation  
+- Real-time dashboards updated every **5 minutes**  
+- Multi-platform alerts (Slack/Email)  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[![View Bots](https://img.shields.io/badge/See-Bots-yellow?style=for-the-badge)](https://github.com/MoeFlowers/data-bots)  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## 🛠 **Tech Arsenal**  
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black" alt="React">
+  <img src="https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white" alt="PHP">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white" alt="Tailwind">
+  <img src="https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white" alt="MySQL">
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white" alt="GitHub Actions">
+</p>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🚧 **Under Construction**  
+🔮 *Next Project Teaser: AI-Powered Resume Analyzer (Coming Q4 2024)*  
+💡 **Open to Collaborations!**  
+
+
+## 🌐 **Connect & Collaborate**  
+<p align="center">
+  <a href="mailto:moeflowers2@gmail.com">
+    <img src="https://img.shields.io/badge/Email-Contact%20Me-red?style=flat&logo=gmail" alt="Email">
+  </a>
+  <a href="https://github.com/MoeFlowers">
+    <img src="https://img.shields.io/badge/GitHub-Portfolio-black?style=flat&logo=github" alt="GitHub">
+  </a>
+  <a href="https://wa.me/+584125594556">
+    <img src="https://img.shields.io/badge/WhatsApp-Chat%20Now-green?style=flat&logo=whatsapp" alt="WhatsApp">
+  </a>
+</p>
+
+
+## 📜 **Project Pipeline**  
+| Status       | Project Idea          | Tech Stack           |
+|--------------|-----------------------|----------------------|
+| 🔄 *Planning* | Resume Analyzer AI    | NLP, Next.js, FastAPI|
+| 💡 *Ideation* | Smart Home Dashboard  | IoT, React, Flask    |
+| 🤝 *Open*     | Your Idea Here?       | Let’s Discuss!       |
+
+
+<img src="https://img.icons8.com/color/48/000000/code--v2.png" width="20"/> **"Clean code solves problems. Great code anticipates them."**  
+
+
