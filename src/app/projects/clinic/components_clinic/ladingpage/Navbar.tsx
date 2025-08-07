@@ -9,14 +9,14 @@ export default function Navbar() {
                 <div className="flex justify-between items-center py-4">
                     <div className="flex items-center space-x-4">
                         <Image
-                            src="/projects/clinic/assets/images/logo.jpg"
+                            src="/projects/clinic/assets/images/logo-removebg-preview.png"
                             width={45}
                             height={45}    
                             alt="Clinic Logo"
                             className="h-12"
                         />
                         <span className="text-2xl font-bold text-blue-800">
-                            Clínica Odontológica
+                            Dental Clinic
                         </span>
                     </div>
                     <div className="hidden md:flex items-center space-x-8">
@@ -24,7 +24,7 @@ export default function Navbar() {
                             href="/projects/clinic/login"  // Cambia esto por tu ruta Next.js
                             className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300"
                         >
-                            Iniciar Sesión
+                            Go to Login
                         </a>
                     </div>
                 </div>
