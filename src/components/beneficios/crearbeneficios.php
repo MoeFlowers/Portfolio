@@ -1,5 +1,17 @@
 <?php
-include '../../controladores/conexion.php';
+include '../../controllers/conexion.php';
+
+// Iniciar la sesión
+session_start();
+
+// Verificar si el usuario está logueado
+if (!isset($_SESSION['id_usuario'])) {
+    echo json_encode(['success' => false, 'message' => 'Usuario no logueado']);
+    exit;
+}
+
+// Obtener el ID del usuario desde la sesión
+$idUsuario = $_SESSION['id_usuario'];
 
 // Verificar si se enviaron datos mediante POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -17,6 +29,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "INSERT INTO beneficios (nombre_beneficio, fecha_suministrado) VALUES ('$nombre_beneficio', '$fecha_suministrado')";
 
     if ($conn->query($sql) === TRUE) {
+        // Acción para registrar en la bitácora
+        $accion = "Registrar Beneficio";
+        $descripcion = "Se registró un beneficio con nombre: $nombre_beneficio y fecha suministrado: $fecha_suministrado";
+
+        // Insertar la acción en la tabla de bitácora
+        $logQuery = "INSERT INTO bitacora (id_usuario, accion, descripcion) VALUES (?, ?, ?)";
+        if ($logStmt = $conn->prepare($logQuery)) {
+            $logStmt->bind_param('iss', $idUsuario, $accion, $descripcion);
+            $logStmt->execute();
+            $logStmt->close();
+        }
+
+        // Respuesta exitosa
         echo json_encode(['success' => true, 'message' => 'Beneficio registrado correctamente.']);
     } else {
         echo json_encode(['success' => false, 'message' => 'Error al registrar el beneficio: ' . $conn->error]);

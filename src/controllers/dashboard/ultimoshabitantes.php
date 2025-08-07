@@ -1,10 +1,10 @@
 <?php
 // Incluir archivo de conexión
-include '../../src/controladores/conexion.php';
+include '../../src/controllers/conexion.php';
 
 // Consultar los últimos habitantes
 $sql = "SELECT 
-            CONCAT(primer_nombre, ' ', primer_apellido) AS 'Nombre y Apellido', documento_identidad AS 'Cedula', estado AS 'Status' FROM personas ORDER BY id_persona DESC LIMIT 10";
+            CONCAT(primer_nombre, ' ', primer_apellido) AS 'Nombre y Apellido', documento_identidad AS 'Cedula', estado AS 'Status' FROM personas LIMIT 10";
 
 $result = $conn->query($sql); // `$conn` debe estar definido en el archivo de conexión
 

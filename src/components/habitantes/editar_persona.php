@@ -1,5 +1,5 @@
 <?php
-include '../../controladores/conexion.php'; 
+include '../../controllers/conexion.php'; 
 
 // Mostrar todos los errores para depuración
 ini_set('display_errors', 1);
@@ -9,6 +9,16 @@ error_reporting(E_ALL);
 if ($conn->connect_error) {
     die(json_encode(array("error" => "Conexión fallida: " . $conn->connect_error)));
 }
+
+// Iniciar la sesión para obtener el ID del usuario
+session_start();
+
+// Verificar que el usuario esté logueado
+if (!isset($_SESSION['id_usuario'])) {
+    die(json_encode(array("error" => "Usuario no logueado")));
+}
+
+$idUsuario = $_SESSION['id_usuario'];
 
 // Obtener los datos enviados en el cuerpo de la solicitud
 $data = json_decode(file_get_contents('php://input'), true);
@@ -73,6 +83,18 @@ $stmt->bind_param($types, ...$params);
 
 // Ejecutar la consulta
 if ($stmt->execute()) {
+    // Registrar la acción en la bitácora
+    $accion = "Actualizar Persona";
+    $descripcion = "Se actualizó la persona con ID: $id_persona"; // Personaliza la descripción
+
+    // Insertar en la tabla de la bitácora
+    $logQuery = "INSERT INTO bitacora (id_usuario, accion, descripcion) VALUES (?, ?, ?)";
+    if ($logStmt = $conn->prepare($logQuery)) {
+        $logStmt->bind_param('iss', $idUsuario, $accion, $descripcion);
+        $logStmt->execute();
+        $logStmt->close();
+    }
+
     echo json_encode(array("success" => true));
 } else {
     echo json_encode(array("error" => "Error al actualizar los datos"));

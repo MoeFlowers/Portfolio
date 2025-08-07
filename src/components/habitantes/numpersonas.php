@@ -1,5 +1,5 @@
 <?php
-include '../../src/controladores/conexion.php'; // Asegúrate de que la ruta sea correcta
+include '../../src/controllers/conexion.php'; // Asegúrate de que la ruta sea correcta
 
 // Consulta para obtener el total de personas
 $sql = "SELECT COUNT(id_persona) AS total_personas FROM personas";

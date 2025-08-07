@@ -1,5 +1,5 @@
 <?php
-include '../../controladores/conexion.php'; 
+include '../../controllers/conexion.php'; 
 
 
 // Verificar si la conexión fue exitosa

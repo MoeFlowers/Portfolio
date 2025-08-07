@@ -1,5 +1,5 @@
 <?php
-include '../../controladores/conexion.php';
+include '../../controllers/conexion.php';
 
 // Consulta SQL para obtener los beneficios registrados
 $sql = "SELECT nombre_beneficio, fecha_suministrado FROM beneficios";

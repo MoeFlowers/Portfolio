@@ -1,81 +1,65 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="output.css" rel="stylesheet" />
-    <title>Login</title>
-  </head>
-  <body class="font-roboto">
-    <div class="flex items-center justify-center min-h-screen bg-gray-100">
-      <div class="flex bg-white shadow-lg rounded-lg w-[800px]">
-        <!-- Imagen o Ilustración -->
-        <div
-          class="w-1/2 rounded-l-lg bg-gradient-to-b from-blue-100 to-green-200 flex items-center justify-center"
-        >
-          <img
-            src="assets/img/comunity-bg.jpg"
-            alt="Landscape"
-            class="rounded-l-lg max-w-full h-auto"
-          />
-        </div>
+<html lang="es">
 
-        <!-- Formulario de Login -->
-        <div class="w-1/2 p-8 flex flex-col justify-center">
-          <h1 class="text-2xl font-bold mb-6 text-center">Santa Eduvigis</h1>
-          <form action="../src/controladores/login.php" method="post" class="flex flex-col justify-center w-full">
-    <!-- Input Usuario -->
-    <div class="mb-4">
-        <input
-            type="text"
-            name="usuario"  
-            placeholder="Usuario"
-            class="w-full p-3 border rounded-lg bg-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white"
-            autocomplete="off"
-            id="username"
-            required
-        />
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sistema de inicio de sesión para Santa Eduvigis." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="output.css" rel="stylesheet" />
+  <title>Login</title>
+  <!-- SweetAlert2 -->
+  <script src="../src/js/sweetalert2.all.min.js"></script>
+  
+</head>
 
-            <!-- Input Contraseña -->
-    <div class="mb-4 relative">
-        <input
-            type="password"
-            name="password" 
-            placeholder="Contraseña"
-            class="w-full p-3 border rounded-lg bg-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white"
-            id="password"
-            required
-        />
-        <button
-            type="button"
-            class="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500"
-            onclick="togglePassword()"
-        >
-            <img
-                src="assets/icons/eye-solid.svg"
-                alt="Mostrar contraseña"
-                class="w-6 h-6"
-            />
-        </button>
-    </div>
+<body class="font-roboto">
+  <!-- Contenedor Principal -->
+  <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div class="p-6 md:flex md:w-[800px] bg-white shadow-lg rounded-lg">
+      <!-- Imagen o Ilustración -->
+      <div
+        class="hidden md:w-1/2 md:flex md:items-center md:justify-center md:rounded-l-lg md:bg-gradient-to-b md:from-blue-100 md:to-green-200">
+        <img src="assets/img/comunity-bg.jpg" alt="Paisaje" class="rounded-l-lg md:w-full md:h-auto" />
+      </div>
 
-    <!-- Enlace Olvidó su Contraseña -->
-    <a
-        href="pages/change_password.php"
-        class="text-sm text-gray-500 hover:text-blue-500 mb-4 text-center block"
-    >
-        ¿Olvidó su contraseña?
-    </a>
+      <!-- Formulario de Login -->
+      <div class="flex flex-col md:w-1/2 md:p-8 items-center justify-center">
+        <h1 class="text-xl md:text-2xl md:font-bold mb-6 text-center">Santa Eduvigis</h1>
+        <form id="loginForm" class="flex flex-col justify-center w-full">
+          <!-- Input Usuario -->
+          <div class="mb-4">
+            <input type="text" name="usuario" id="username" placeholder="Usuario"
+              class="w-full p-3 border rounded-lg bg-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white"
+              autocomplete="off" required />
+          </div>
 
-    <!-- Botón de Enviar -->
-    <button type="submit" class="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition">
-        Iniciar Sesión
-    </button>
-</form>
+          <!-- Input Contraseña -->
+          <div class="mb-4 relative">
+            <input type="password" name="password" id="password" placeholder="Contraseña"
+              class="w-full p-3 border rounded-lg bg-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white"
+              required />
+            <button type="button" class="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500"
+              onclick="togglePassword()">
+              <img src="assets/icons/eye-solid.svg" alt="Mostrar contraseña" class="w-6 h-6" />
+            </button>
+          </div>
+
+          <!-- Enlace Olvidó su Contraseña -->
+          <a href="pages/change_password.php" class="text-sm text-gray-500 hover:text-blue-500 mb-4 text-center block">
+            ¿Olvidó su contraseña?
+          </a>
+
+          <!-- Botón de Enviar -->
+          <button type="submit" class="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition">
+            Iniciar Sesión
+          </button>
+        </form>
       </div>
     </div>
-  </body>
-  <script src="js/login.js"></script>
+  </div>
+
+  <script src="./js/validate.js"></script>
+</body>
+
 </html>

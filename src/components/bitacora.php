@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
     <div class="flex min-h-screen">
         <!-- Sidebar -->
         <?php include '../components/aside.php'; ?>
-        <div class="ml-64 flex-grow flex flex-col">
+        <div class="container ml-24 lg:ml-64 flex-grow flex flex-col">
             <div class="ml-4 mt-6 bg-gray-50 dark:bg-gray-800 shadow-md rounded-lg p-4">
                 <section class="container px-4 mx-auto">
                     <div class="sm:flex sm:items-center sm:justify-between">
@@ -43,7 +43,7 @@
                                         </thead>
                                         <!-- Filas -->
                                         <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
-                                            <?php include '../controladores/getbitacora.php'; ?>
+                                            <?php include '../controllers/getbitacora.php'; ?>
                                         </tbody>
                                     </table>
                                 </div>
