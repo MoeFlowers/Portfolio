@@ -1,44 +1,49 @@
-// src/app/projects/clinic/dashboard/data/mockData.ts
-import type { Patient, Procedure } from "../components_clinic/dashboard/types";
+// src/app/projects/clinic/dashboard/mockData.ts
+import { Patient } from "../components_clinic/dashboard/types";
+
 
 export const mockData = {
   user: {
-    name: "Dr. John Smith",
-    role: "Dentist",
+    name: "Dr. Juan Pérez",
+    role: "Odontólogo",
   },
   stats: {
-    totalPatients: 124,
-    totalEmployees: 15,
-    todayAppointments: 8,
-    clinicalRecords: 230,
+    totalPatients: 1245,
+    upcomingAppointments: 18,
+    completedProcedures: 342,
+    monthlyRevenue: 12500,
   },
-  upcomingAppointments: [
+  appointments: [
     {
       id: 1,
-      patientName: "Maria Gonzalez",
-      procedure: "Dental cleaning",
-      dateTime: "2023-11-15T10:00:00",
-      status: "Scheduled",
+      dateTime: "2023-11-15T09:30:00",
+      patientName: "María González",
+      procedure: "Limpieza dental",
+      status: "Programada",
     },
-    // ... other appointments
   ],
   recentPatients: [
     {
       id: 1,
-      firstName: "Maria",
-      lastName: "Gonzalez",
-      idNumber: "ID123456",
-      registrationDate: "2023-10-15",
+      primer_nombre: "Carlos",
+      primer_apellido: "Rodríguez",
+      cedula: "V-12345678",
+      fecha_registro: "2023-11-10",
     },
-    // ... other recent patients
+    {
+      id: 2,
+      primer_nombre: "María",
+      primer_apellido: "González",
+      cedula: "V-87654321",
+      fecha_registro: "2023-11-08",
+    },
   ] as Patient[],
-  commonProcedures: [
-    { name: "Dental cleaning", count: 45 },
-    { name: "Tooth extraction", count: 23 },
-    // ... other procedures
-  ] as Procedure[],
   monthlyAppointments: {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-    data: [12, 19, 15, 20, 18, 24], // Changed from 'values' to 'data'
+    labels: ["Ene", "Feb", "Mar", "Abr", "May", "Jun"],
+    data: [12, 19, 15, 8, 12, 17],
   },
+  commonProcedures: [
+    { name: "Limpieza dental", count: 45 },
+    { name: "Extracción", count: 32 },
+  ],
 };
