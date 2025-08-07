@@ -1,5 +1,5 @@
 <?php
-include '../../controladores/conexion.php'; // Ajusta la ruta según tu estructura
+include '../../controllers/conexion.php'; // Ajusta la ruta según tu estructura
 
 $response = [];
 
@@ -27,7 +27,7 @@ if (isset($_GET['id_manzana'])) {
 // Obtener grupos familiares filtrados por la casa seleccionada
 if (isset($_GET['id_casa'])) {
     $idCasa = $_GET['id_casa'];
-    $sqlGruposFamiliares = "SELECT id_persona, primer_nombre, nombre_familia FROM datos_gruposf WHERE id_casa = ?";
+    $sqlGruposFamiliares = "SELECT id_persona, nombre, nombre_familia FROM datos_casas WHERE id_casa = ?";
     $stmtGruposFamiliares = $conn->prepare($sqlGruposFamiliares);
     $stmtGruposFamiliares->bind_param("i", $idCasa);
     $stmtGruposFamiliares->execute();

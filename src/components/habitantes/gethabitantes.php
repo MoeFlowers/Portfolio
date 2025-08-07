@@ -1,6 +1,6 @@
 <?php
 // Conexión a la base de datos
-include '../controladores/conexion.php'; // Asegúrate de incluir tu archivo de conexión
+include '../controllers/conexion.php'; // Asegúrate de incluir tu archivo de conexión
 
 // Consulta
 $query = "SELECT CONCAT(primer_nombre, ' ' ,segundo_nombre) AS nombres, CONCAT(primer_apellido, ' ' ,segundo_apellido) AS apellidos, documento_identidad AS cedula, telefono, estado AS status, id_persona FROM personas"; // Cambié la consulta para incluir el campo 'id'
@@ -10,25 +10,25 @@ if ($resultado->num_rows > 0) {
     // Genera dinámicamente las filas de la tabla
     while ($row = $resultado->fetch_assoc()) {
         echo "<tr>";
-        echo "<td class='px-4 py-4 text-sm font-medium whitespace-nowrap'>
+        echo "<td class='px-4 py-4 text-center text-sm font-medium whitespace-nowrap'>
                 <div>
                     <h2 class='font-medium text-gray-800 dark:text-white'>{$row['nombres']}</h2>
                     <p class='text-sm font-normal text-gray-600 dark:text-gray-400'>{$row['apellidos']}</p>
                 </div>
               </td>";
-        echo "<td class='px-4 py-4 text-sm font-medium whitespace-nowrap'>
+        echo "<td class='px-4 py-4 text-center text-sm font-medium whitespace-nowrap'>
                 <h2 class='font-medium text-gray-800 dark:text-white'>{$row['cedula']}</h2>
               </td>";
-        echo "<td class='px-4 py-4 text-sm font-medium whitespace-nowrap'>
+        echo "<td class='px-4 py-4 text-center text-sm font-medium whitespace-nowrap'>
                 <h2 class='font-medium text-gray-800 dark:text-white'>{$row['telefono']}</h2>
               </td>";
-        echo "<td class='px-12 py-4 text-sm font-medium whitespace-nowrap'>
+        echo "<td class='px-12 py-4 text-center text-sm font-medium whitespace-nowrap'>
                     <div class='inline px-3 py-1 text-sm font-normal rounded-full " . ($row['status'] === 'Activo' ? "text-emerald-500 bg-emerald-100/60" : "text-gray-500 bg-gray-100") . " dark:bg-gray-800'>
                         {$row['status']}
                     </div>
                 </td>";
-        echo "<td class='px-4 py-4 text-sm whitespace-nowrap'>
-                <div class='flex items-center gap-x-6'>
+        echo "<td class='px-4 py-4 text-right text-sm whitespace-nowrap'>
+                <div class='flex items-center justify-center gap-x-6'>
                     <!-- Botón Ver -->
                     <button class='text-gray-500 transition-colors duration-200 dark:hover:text-blue-600 dark:text-gray-300 hover:text-blue-600 focus:outline-none' onclick='verDetalles({$row['id_persona']})' aria-label='Ver detalles'>
                         <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-5 h-5'>
@@ -55,7 +55,7 @@ $conn->close();
 ?>
 
 <!-- Incluir SweetAlert2 -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="..//../js//sweetalert2@11.js"></script>
 
 <script>
     // Función para mostrar los detalles

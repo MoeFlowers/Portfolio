@@ -2,11 +2,11 @@
 $servername = "localhost"; 
 $username = "root";          
 $password = "";              
-$database = "servicio_comunitario_editado";      
-$port = 3307;                
+$database = "servicio_comunitario_final";      
+             
 
 // Crear conexión usando mysqli
-$conn = new mysqli($servername, $username, $password, $database, $port);
+$conn = new mysqli($servername, $username, $password, $database);
 
 // Verificar la conexión
 if ($conn->connect_error) {
