@@ -1,7 +1,7 @@
 // src/app/projects/clinic/dashboard/components/PatientModal.tsx
 'use client';
 import { useState } from 'react';
-import { Patient } from '../../components_clinic/dashboard/types';
+import { Patient } from './types';
 
 
 export default function PatientModal({ onClose, onSave }: {

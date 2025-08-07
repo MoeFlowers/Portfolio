@@ -1,6 +1,6 @@
 // src/app/projects/clinic/dashboard/components/PatientsTable.tsx
 'use client';
-import { Patient } from '../../components_clinic/dashboard/types';
+import { Patient } from './types';
 
 export default function PatientsTable({ patients }: { patients: Patient[] }) {
     return (
