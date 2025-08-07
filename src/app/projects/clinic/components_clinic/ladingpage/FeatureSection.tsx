@@ -5,10 +5,10 @@ export default function FeatureSection(): ReactElement {
         <section className="py-16 bg-white">
             <div className="max-w-6xl mx-auto px-4">
                 <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">
-                    Características Principales
+                    Key Features
                 </h2>
                 <div className="grid md:grid-cols-3 gap-8">
-                    {/* Tarjeta 1 */}
+                    {/* Card 1 */}
                     <div className="bg-blue-50 p-6 rounded-xl">
                         <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                             <svg
@@ -27,14 +27,14 @@ export default function FeatureSection(): ReactElement {
                             </svg>
                         </div>
                         <h3 className="text-xl font-semibold text-blue-800 mb-2">
-                            Historiales Digitales
+                            Digital Records
                         </h3>
                         <p className="text-gray-600">
-                            Acceso rápido y seguro a los historiales clínicos dentales.
+                            Quick and secure access to dental clinical records.
                         </p>
                     </div>
 
-                    {/* Tarjeta 2 */}
+                    {/* Card 2 */}
                     <div className="bg-blue-50 p-6 rounded-xl">
                         <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                             <svg
@@ -53,14 +53,14 @@ export default function FeatureSection(): ReactElement {
                             </svg>
                         </div>
                         <h3 className="text-xl font-semibold text-blue-800 mb-2">
-                            Seguridad Garantizada
+                            Guaranteed Security
                         </h3>
                         <p className="text-gray-600">
-                            Protección de datos con cifrado avanzado.
+                            Data protection with advanced encryption.
                         </p>
                     </div>
 
-                    {/* Tarjeta 3 */}
+                    {/* Card 3 */}
                     <div className="bg-blue-50 p-6 rounded-xl">
                         <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                             <svg
@@ -79,10 +79,10 @@ export default function FeatureSection(): ReactElement {
                             </svg>
                         </div>
                         <h3 className="text-xl font-semibold text-blue-800 mb-2">
-                            Agenda Integrada
+                            Integrated Schedule
                         </h3>
                         <p className="text-gray-600">
-                            Gestión de citas y recordatorios automáticos.
+                            Appointment management with automatic reminders.
                         </p>
                     </div>
                 </div>
