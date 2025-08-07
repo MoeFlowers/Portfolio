@@ -1,14 +1,9 @@
-Here’s a **creative, professional, and eye-catching** README for your portfolio's main branch:
-
----
-
 # <img src="https://img.icons8.com/fluency/48/000000/portfolio.png" width="30"/> **Moises Flores**  
 ### **Full-Stack Developer Portfolio**  
 🚀 *Transforming Ideas into Scalable Digital Solutions*  
 
 ![Portfolio Banner](https://img.icons8.com/clouds/400/000000/code.png)  
 
----
 
 ## 🌟 **Featured Projects**  
 
@@ -21,8 +16,6 @@ Here’s a **creative, professional, and eye-catching** README for your portfoli
 
 [![View Project](https://img.shields.io/badge/View-Live_Demo-green?style=for-the-badge)](https://github.com/MoeFlowers/dental-clinic)  
 
----
-
 ### **2. 📚 AI-Powered Book Recommender**  
 **Tech:** Python, Scikit-learn, FastAPI  
 **Highlights:**  
@@ -31,8 +24,6 @@ Here’s a **creative, professional, and eye-catching** README for your portfoli
 - Cut book search time by **70%**  
 
 [![View Project](https://img.shields.io/badge/Explore-API-blue?style=for-the-badge)](https://github.com/MoeFlowers/book-recommender)  
-
----
 
 ### **3. 🤖 Data Processing Bot Army**  
 **Tech:** Python, Pandas, Slack API  
@@ -43,7 +34,6 @@ Here’s a **creative, professional, and eye-catching** README for your portfoli
 
 [![View Bots](https://img.shields.io/badge/See-Bots-yellow?style=for-the-badge)](https://github.com/MoeFlowers/data-bots)  
 
----
 
 ## 🛠 **Tech Arsenal**  
 <p align="center">
@@ -55,13 +45,11 @@ Here’s a **creative, professional, and eye-catching** README for your portfoli
   <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white" alt="GitHub Actions">
 </p>
 
----
 
 ## 🚧 **Under Construction**  
 🔮 *Next Project Teaser: AI-Powered Resume Analyzer (Coming Q4 2024)*  
 💡 **Open to Collaborations!**  
 
----
 
 ## 🌐 **Connect & Collaborate**  
 <p align="center">
@@ -76,7 +64,6 @@ Here’s a **creative, professional, and eye-catching** README for your portfoli
   </a>
 </p>
 
----
 
 ## 📜 **Project Pipeline**  
 | Status       | Project Idea          | Tech Stack           |
@@ -85,7 +72,6 @@ Here’s a **creative, professional, and eye-catching** README for your portfoli
 | 💡 *Ideation* | Smart Home Dashboard  | IoT, React, Flask    |
 | 🤝 *Open*     | Your Idea Here?       | Let’s Discuss!       |
 
----
 
 <img src="https://img.icons8.com/color/48/000000/code--v2.png" width="20"/> **"Clean code solves problems. Great code anticipates them."**  
 
