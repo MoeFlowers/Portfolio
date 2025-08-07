@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { CleanDOM } from "./CleanDOM";
 import { Inter, Roboto_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
-// Configuración de fuentes (Inter es muy similar a la que usa X)
+// Configuración de fuentes
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -19,6 +20,10 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: "Moises Flores",
   description: "Full-Stack Developer",
+  other: {
+    "bis_extension": "disable", // Bloquea extensiones de Microsoft/Bing
+    "x-extension": "disable"   // Protección adicional
+  }
 };
 
 export default function RootLayout({
@@ -26,13 +31,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={`${inter.variable} ${robotoMono.variable} font-sans bg-white dark:bg-gray-900 transition-colors duration-200`}>
-        <ThemeProvider attribute="class"
+        <CleanDOM />
+        <ThemeProvider
+          attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange>
+          disableTransitionOnChange
+        >
           <main className="min-h-screen">
             {children}
           </main>

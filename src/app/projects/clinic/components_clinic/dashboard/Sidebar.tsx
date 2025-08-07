@@ -2,6 +2,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import {
     HomeIcon,
     UserGroupIcon,
@@ -13,12 +14,15 @@ import {
 } from '@heroicons/react/24/outline';
 
 export default function Sidebar({ user }: { user: { name: string; role: string } }) {
+    const pathname = usePathname();
+    const basePath = '/projects/clinic/dashboard';
+
     const menuItems = [
-        { name: "Home", icon: HomeIcon, href: "#" },
-        { name: "Patients", icon: UserGroupIcon, href: "#" },
-        { name: "Appointments", icon: CalendarIcon, href: "#" },
-        { name: "Records", icon: ClipboardDocumentIcon, href: "#" },
-        { name: "Settings", icon: Cog6ToothIcon, href: "#" }
+        { name: "Home", icon: HomeIcon, href: `${basePath}` },
+        { name: "Patients", icon: UserGroupIcon, href: `${basePath}/patients` },
+        { name: "Appointments", icon: CalendarIcon, href: `${basePath}/appointments` },
+        { name: "Records", icon: ClipboardDocumentIcon, href: `${basePath}/records` },
+        { name: "Settings", icon: Cog6ToothIcon, href: `${basePath}/settings` }
     ];
 
     return (
@@ -43,7 +47,7 @@ export default function Sidebar({ user }: { user: { name: string; role: string }
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                className="text-blue-200 hover:bg-blue-700 hover:text-white group flex items-center px-4 py-3 text-sm font-medium rounded-md"
+                                className={`${pathname === item.href ? 'bg-blue-700 text-white' : 'text-blue-200 hover:bg-blue-700 hover:text-white'} group flex items-center px-4 py-3 text-sm font-medium rounded-md`}
                             >
                                 <item.icon className="mr-3 h-6 w-6" />
                                 {item.name}
