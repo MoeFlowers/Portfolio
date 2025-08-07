@@ -9,7 +9,7 @@ export default function Navbar() {
                 <div className="flex justify-between items-center py-4">
                     <div className="flex items-center space-x-4">
                         <Image
-                            src="/projects/clinic/assets/images/logo-removebg-preview.png"
+                            src="/projects/clinic/assets/images/logo.jng"
                             width={45}
                             height={45}    
                             alt="Clinic Logo"
