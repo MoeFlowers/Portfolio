@@ -15,8 +15,6 @@ export default function ClinicDashboard() {
           <div className="max-w-7xl mx-auto">
             <WelcomeBanner user={mockData.user} />
             <StatsCards stats={mockData.stats} />
-            
-            {/* Podrías agregar más componentes aquí */}
           </div>
         </div>
       </div>

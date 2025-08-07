@@ -1,7 +1,7 @@
 // src/app/projects/clinic/dashboard/data/mockData.ts
 export const mockData = {
   user: {
-    name: "Dr. Juan Pérez",
+    name: "Dr. John Smith",
     role: "Dentist"
   },
   stats: {
@@ -13,15 +13,21 @@ export const mockData = {
   upcomingAppointments: [
     {
       id: 1,
-      patientName: "María González",
-      procedure: "Limpieza dental",
+      patientName: "Maria Gonzalez",
+      procedure: "Dental cleaning",
       date: "2023-11-15T10:00:00",
       status: "Scheduled"
     },
-    // ... más datos simulados
+    {
+      id: 2,
+      patientName: "Robert Johnson",
+      procedure: "Tooth extraction",
+      date: "2023-11-16T14:30:00",
+      status: "Confirmed"
+    }
   ],
   monthlyAppointments: {
-    labels: ["Ene", "Feb", "Mar", "Abr", "May", "Jun"],
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
     values: [12, 19, 15, 20, 18, 24]
   }
 };
