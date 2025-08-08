@@ -1,13 +1,16 @@
 import { TechName } from "@/data/techIcons";
 
-interface Project {
+export interface Project {
   id: number;
   title: string;
   description: string;
   technologies: TechName[];
   githubLink?: string;
   demoLink?: string;
-  duration?: string;
+  externalLink?: string;
+  duration: string;
+  image: string; // Obligatorio
+  category?: string; // Opcional
 }
 
 export const projects: Project[] = [
@@ -19,7 +22,10 @@ export const projects: Project[] = [
     technologies: ["Python", "Scikit-learn", "FastAPI", "Flask"],
     githubLink: "https://github.com/MoeFlowers/Portfolio/tree/book",
     demoLink: "#",
+    externalLink: "https://book-recommendation-ai.vercel.app/",
     duration: "2 months",
+    image: "/images/projects/AIPoweredBookRecommendation.jpeg",
+    category: "Machine Learning"
   },
   {
     id: 2,
@@ -29,7 +35,10 @@ export const projects: Project[] = [
     technologies: ["PHP", "JavaScript", "MySQL", "Tailwind CSS"],
     githubLink: "https://github.com/MoeFlowers/Portfolio/tree/clinica",
     demoLink: "/projects/clinic",
+    externalLink: "https://dental-clinic-web-system.vercel.app/",
     duration: "6 months",
+    image: "/images/projects/DentalClinicProject.jpeg",
+    category: "Web Development"
   },
   {
     id: 3,
@@ -39,19 +48,23 @@ export const projects: Project[] = [
     technologies: ["PHP", "JavaScript", "MySQL", "Tailwind CSS"],
     githubLink: "https://github.com/MoeFlowers/Portfolio/tree/comunity",
     demoLink: "#",
+    externalLink: "https://comunity.vercel.app/",
     duration: "Jan 2024 – Jun 2024",
+    image: "/images/projects/ComunityServiceProject.jpeg",
+    category: "Full Stack"
   },
   {
     id: 4,
     title: "Data Processing Bots | Python",
     description:
       "API-powered bots updating dashboards every 5 mins with Slack alerts. Automated repetitive tasks (~15h/week saved).",
-    technologies: ["Python",],
+    technologies: ["Python"],
     githubLink: "https://github.com/MoeFlowers/Portfolio/tree/comunity",
     demoLink: "#",
+    externalLink: "https://data-processing-bots.vercel.app/",
     duration: "4 months",
+    image: "/images/projects/DataProcessingBots.jpeg",
+    category: "Automation"
   },
-  // Others
+  // Puedes agregar más proyectos aquí...
 ];
-
-export type { Project };

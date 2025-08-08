@@ -16,15 +16,27 @@ export default function Home() {
         </p>
       </section>
       <AboutSection />
+
       {/* Proyectos Destacados */}
-      <section id="projects" className="py-12 px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center">Mis Proyectos</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+      <section id="projects" className="py-20 px-4 bg-gray-50 dark:bg-gray-900/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Mis <span className="text-[#1DA1F2]">Proyectos</span> Destacados
+            </h2>
+            <p className="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400">
+              Soluciones reales que he desarrollado para clientes y proyectos personales
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
         </div>
       </section>
+
       <ContactForm />
     </main>
   );
