@@ -2,6 +2,7 @@ import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 import ContactForm from "../components/ContactForm";
 import AboutSection from "../components/AboutSection";
+import HeroSection from "../components/HeroSection";
 import Navbar from "../components/Navbar";
 
 export default function Home() {
@@ -9,14 +10,9 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       {/* Hero Section */}
-      <section className="text-center py-20">
-        <h1 className="text-4xl font-bold mb-4">Desarrollador Full-Stack</h1>
-        <p className="text-xl text-gray-600">
-          Soluciones web con Python, React y automatización.
-        </p>
-      </section>
+      <HeroSection />
+      {/* About Section */}
       <AboutSection />
-
       {/* Proyectos Destacados */}
       <section id="projects" className="py-20 px-4 bg-gray-50 dark:bg-gray-900/50">
         <div className="max-w-7xl mx-auto">
