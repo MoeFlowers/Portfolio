@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import { motion, Variants } from "framer-motion";
-import { FiSend, FiUser, FiMail, FiMessageSquare } from "react-icons/fi";
+import { FiSend, FiUser, FiMail, FiMessageSquare, FiCheckCircle } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -10,131 +10,143 @@ export default function ContactForm() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulación de envío (reemplazar con tu API)
+    // Simulación de envío
     await new Promise(resolve => setTimeout(resolve, 1500));
     console.log("Form submitted:", formData);
 
     setIsSubmitting(false);
+    setIsSuccess(true);
     setFormData({ name: "", email: "", message: "" });
-  };
 
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants: Variants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100
-      }
-    }
+    // Resetear estado de éxito después de 3 segundos
+    setTimeout(() => setIsSuccess(false), 3000);
   };
 
   return (
-    <motion.form
-      onSubmit={handleSubmit}
-      className="max-w-lg mx-auto space-y-6"
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-      viewport={{ once: true, margin: "-100px" }}
-    >
-      <motion.div variants={itemVariants}>
-        <div className="relative">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <FiUser className="text-gray-400 dark:text-gray-500" />
-          </div>
-          <input
-            type="text"
-            id="name"
-            value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
-            placeholder="Tu nombre completo"
-            required
-          />
+    <section id="contact" className="py-20 px-4 bg-white dark:bg-gray-900">
+      <div className="max-w-4xl mx-auto">
+        {/* Encabezado */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <span className="text-[#1DA1F2]">Contáctame</span>
+          </h2>
+          <p className="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400">
+            ¿Tienes un proyecto en mente? Envíame un mensaje y hablemos sobre cómo puedo ayudarte.
+          </p>
         </div>
-      </motion.div>
 
-      <motion.div variants={itemVariants}>
-        <div className="relative">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <FiMail className="text-gray-400 dark:text-gray-500" />
+        {/* Formulario */}
+        <div className="bg-gray-50 dark:bg-gray-800/50 p-8 md:p-10 rounded-xl border border-gray-200 dark:border-gray-700">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Campo Nombre */}
+            <div className="group">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Nombre completo
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <FiUser className="h-5 w-5 text-gray-400 dark:text-gray-500 group-focus-within:text-[#1DA1F2]" />
+                </div>
+                <input
+                  type="text"
+                  id="name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="block w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-[#1DA1F2] focus:border-transparent transition-all"
+                  placeholder="Ej: Juan Pérez"
+                  required
+                />
+              </div>
+            </div>
+
+            {/* Campo Email */}
+            <div className="group">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Correo electrónico
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <FiMail className="h-5 w-5 text-gray-400 dark:text-gray-500 group-focus-within:text-[#1DA1F2]" />
+                </div>
+                <input
+                  type="email"
+                  id="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="block w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-[#1DA1F2] focus:border-transparent transition-all"
+                  placeholder="Ej: juan@ejemplo.com"
+                  required
+                />
+              </div>
+            </div>
+
+            {/* Campo Mensaje */}
+            <div className="group">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Mensaje
+              </label>
+              <div className="relative">
+                <div className="absolute top-3 left-3">
+                  <FiMessageSquare className="h-5 w-5 text-gray-400 dark:text-gray-500 group-focus-within:text-[#1DA1F2]" />
+                </div>
+                <textarea
+                  id="message"
+                  rows={5}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="block w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-[#1DA1F2] focus:border-transparent transition-all"
+                  placeholder="Cuéntame sobre tu proyecto..."
+                  required
+                />
+              </div>
+            </div>
+
+            {/* Botón de envío */}
+            <div className="pt-2">
+              <motion.button
+                type="submit"
+                disabled={isSubmitting || isSuccess}
+                className={`flex items-center justify-center gap-2 w-full px-6 py-4 rounded-lg font-medium transition-all ${isSubmitting || isSuccess
+                  ? "bg-[#1DA1F2]/80 cursor-not-allowed"
+                  : "bg-[#1DA1F2] hover:bg-[#1a8cd8] shadow-lg hover:shadow-[#1DA1F2]/30"
+                  }`}
+                whileHover={!(isSubmitting || isSuccess) ? { scale: 1.02 } : {}}
+                whileTap={!(isSubmitting || isSuccess) ? { scale: 0.98 } : {}}
+              >
+                {isSuccess ? (
+                  <>
+                    <FiCheckCircle className="w-5 h-5 text-white" />
+                    <span className="text-white">¡Mensaje enviado!</span>
+                  </>
+                ) : isSubmitting ? (
+                  <span className="text-white">Enviando...</span>
+                ) : (
+                  <>
+                    <FiSend className="w-5 h-5 text-white" />
+                    <span className="text-white">Enviar mensaje</span>
+                  </>
+                )}
+              </motion.button>
+            </div>
+          </form>
+
+          {/* Mensaje alternativo */}
+          <div className="mt-8 text-center">
+            <p className="text-gray-600 dark:text-gray-400">
+              También puedes contactarme directamente a{' '}
+              <a href="mailto:moeflowers2@gmail.com" className="text-[#1DA1F2] hover:underline">
+                moeflowers2@gmail.com
+              </a>
+            </p>
           </div>
-          <input
-            type="email"
-            id="email"
-            value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
-            placeholder="tucorreo@ejemplo.com"
-            required
-          />
         </div>
-      </motion.div>
-
-      <motion.div variants={itemVariants}>
-        <div className="relative">
-          <div className="absolute top-3 left-3">
-            <FiMessageSquare className="text-gray-400 dark:text-gray-500" />
-          </div>
-          <textarea
-            id="message"
-            rows={5}
-            value={formData.message}
-            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
-            placeholder="Escribe tu mensaje aquí..."
-            required
-          />
-        </div>
-      </motion.div>
-
-      <motion.div variants={itemVariants}>
-        <motion.button
-          type="submit"
-          disabled={isSubmitting}
-          className={`flex items-center justify-center gap-2 w-full px-6 py-3 rounded-full transition-all ${isSubmitting
-              ? "bg-gray-400 dark:bg-gray-600 cursor-not-allowed"
-              : "bg-gray-900 dark:bg-gray-700 hover:bg-gray-800 dark:hover:bg-gray-600 hover:shadow-lg"
-            }`}
-          whileHover={!isSubmitting ? { scale: 1.02 } : {}}
-          whileTap={!isSubmitting ? { scale: 0.98 } : {}}
-        >
-          <span className="text-white font-medium">
-            {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
-          </span>
-          {!isSubmitting && (
-            <FiSend className="w-4 h-4 text-white animate-pulse" />
-          )}
-        </motion.button>
-      </motion.div>
-
-      {isSubmitting && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="text-center text-green-500 text-sm mt-2"
-        >
-          Gracias por tu mensaje. ¡Te responderé pronto!
-        </motion.div>
-      )}
-    </motion.form>
+      </div>
+    </section>
   );
 }

@@ -46,6 +46,14 @@ export default function RootLayout({
             {children}
           </main>
         </ThemeProvider>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('[bis_skin_checked]');
+      elements.forEach(el => el.removeAttribute('bis_skin_checked'));
+    });
+  `
+        }} />
       </body>
     </html>
   );

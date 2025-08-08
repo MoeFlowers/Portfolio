@@ -1,12 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
-import { FiAward, FiCode, FiClock } from "react-icons/fi";
+import { FiAward, FiCode, FiLayers } from "react-icons/fi";
 
 export default function AboutSection() {
     return (
         <section id="about" className="py-20 px-4 bg-white dark:bg-gray-900">
             <div className="max-w-6xl mx-auto">
-                {/* Encabezado */}
+                {/* Encabezado mejorado */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -14,15 +14,20 @@ export default function AboutSection() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                    <span className="inline-block px-3 py-1 text-lg font-medium rounded-full bg-[#1DA1F2]/10 text-[#1DA1F2] mb-4">
                         Sobre Mí
+                    </span>
+                    <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        Más que un desarrollador, un <span className="text-[#1DA1F2]">solucionador</span> de problemas
                     </h2>
-                    <div className="w-20 h-1 bg-gray-200 dark:bg-gray-700 mx-auto"></div>
+                    <p className="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400">
+                        Transformo desafíos técnicos en oportunidades de negocio
+                    </p>
                 </motion.div>
 
-                {/* Contenido principal */}
+                {/* Contenido principal mejorado */}
                 <div className="grid md:grid-cols-2 gap-12 items-center">
-                    {/* Texto descriptivo */}
+                    {/* Texto descriptivo mejorado */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -30,20 +35,22 @@ export default function AboutSection() {
                         viewport={{ once: true }}
                     >
                         <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6">
-                            Desarrollador Full-Stack orientado a resultados
+                            <span className="text-[#1DA1F2]">Full-Stack Developer</span> con enfoque en resultados
                         </h3>
-                        <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                            Convierto datos en productos útiles, optimizo procesos y mejoro la UX.
-                            Domino el ciclo completo de desarrollo (backend → frontend) y disfruto
-                            el trabajo asíncrono en equipos distribuidos ágiles.
-                        </p>
-                        <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Comunicación clara en español e inglés. Autodidacta por naturaleza
-                            con 3+ años creando soluciones web y bots en Python.
-                        </p>
+                        <div className="space-y-4">
+                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Especializado en construir aplicaciones web <span className="font-medium text-gray-800 dark:text-gray-200">escalables</span> y <span className="font-medium text-gray-800 dark:text-gray-200">eficientes</span>, domino todo el ciclo de desarrollo desde la arquitectura backend hasta interfaces de usuario intuitivas.
+                            </p>
+                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Mi experiencia abarca desde <span className="font-medium text-gray-800 dark:text-gray-200">React/Next.js/Vue</span> en el frontend hasta <span className="font-medium text-gray-800 dark:text-gray-200">Node.js/Python</span> en el backend, con especial énfasis en automatización de procesos.
+                            </p>
+                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Valorado por mi capacidad para <span className="font-medium text-gray-800 dark:text-gray-200">comunicarme claramente</span> en español e inglés, y por mi enfoque <span className="font-medium text-gray-800 dark:text-gray-200">autodidacta</span> para mantenerme actualizado con las últimas tecnologías.
+                            </p>
+                        </div>
                     </motion.div>
 
-                    {/* Estadísticas y habilidades */}
+                    {/* Estadísticas y habilidades mejoradas */}
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -51,56 +58,66 @@ export default function AboutSection() {
                         viewport={{ once: true }}
                         className="space-y-6"
                     >
-                        {/* Item 1 */}
-                        <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                        {/* Item 1 - Experiencia */}
+                        <motion.div
+                            whileHover={{ y: -5 }}
+                            className="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-[#1DA1F2]/30 transition-all duration-300"
+                        >
                             <div className="flex items-start gap-4">
-                                <div className="p-3 bg-gray-200 dark:bg-gray-700 rounded-lg text-gray-800 dark:text-gray-200">
-                                    <FiCode className="w-6 h-6 text-green-500 dark:text-green-400" />
+                                <div className="p-3 bg-[#1DA1F2]/10 rounded-lg">
+                                    <FiCode className="w-6 h-6 text-[#1DA1F2]" />
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
-                                        Experiencia
+                                        +3 Años de Experiencia
                                     </h4>
                                     <p className="text-gray-600 dark:text-gray-400">
-                                        3+ años desarrollando soluciones web y bots de automatización
+                                        Desarrollando soluciones web completas y sistemas de automatización que han procesado millones de datos
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        {/* Item 2 */}
-                        <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                        {/* Item 2 - Educación */}
+                        <motion.div
+                            whileHover={{ y: -5 }}
+                            className="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-[#1DA1F2]/30 transition-all duration-300"
+                        >
                             <div className="flex items-start gap-4">
-                                <div className="p-3 bg-gray-200 dark:bg-gray-700 rounded-lg text-gray-800 dark:text-gray-200">
-                                    <FiAward className="w-6 h-6 text-yellow-500 dark:text-yellow-400" />
+                                <div className="p-3 bg-[#1DA1F2]/10 rounded-lg">
+                                    <FiAward className="w-6 h-6 text-[#1DA1F2]" />
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
-                                        Educación
+                                        Formación Académica
                                     </h4>
                                     <p className="text-gray-600 dark:text-gray-400">
-                                        Ingeniería en Sistemas - UNEFA (2020-2025)
+                                        Ingeniería en Sistemas - UNEFA (2020-2025)<br />
+                                        Cursos especializados en arquitectura de software y DevOps
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        {/* Item 3 */}
-                        <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                        {/* Item 3 - Enfoque */}
+                        <motion.div
+                            whileHover={{ y: -5 }}
+                            className="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-[#1DA1F2]/30 transition-all duration-300"
+                        >
                             <div className="flex items-start gap-4">
-                                <div className="p-3 bg-gray-200 dark:bg-gray-700 rounded-lg text-gray-800 dark:text-gray-200">
-                                    <FiClock className="w-6 h- text-blue-500 dark:text-blue-400" />
+                                <div className="p-3 bg-[#1DA1F2]/10 rounded-lg">
+                                    <FiLayers className="w-6 h-6 text-[#1DA1F2]" />
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
-                                        Disponibilidad
+                                        Enfoque Full-Stack
                                     </h4>
                                     <p className="text-gray-600 dark:text-gray-400">
-                                        Tiempo completo, parcial o por proyecto. Preferencia por contratos remotos/híbridos.
+                                        Desarrollo integral desde APIs robustas hasta interfaces de usuario optimizadas, con énfasis en performance y seguridad
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     </motion.div>
                 </div>
             </div>
