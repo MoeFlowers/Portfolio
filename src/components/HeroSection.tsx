@@ -14,9 +14,9 @@ export default function HeroSection() {
                 <div className="relative w-64 h-64 flex items-center justify-center">
                     {/* Imagen Circular */}
                     <div
-                        className={`relative w-48 h-48 rounded-full overflow-hidden border-4 transition-colors duration-300 
-                            ${theme === "dark" ? "border-blue-500" : "border-black"}`}
+                        className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-blue-500 transition-colors duration-300"
                     >
+
                         <Image
                             src="/foto-perfil.jpg"
                             alt="Moises Flores"
