@@ -1,7 +1,7 @@
 class Settings:
     WINDOW_TITLE = "::PREMIERPLUSS:: Pago / Cambio"
-    TELEGRAM_TOKEN = "7846172857:AAGKJPqr6srXHuRfzrAZTGpjj6qXftXPsf8"
-    TELEGRAM_CHAT_ID = "-1002260213291"
+    TELEGRAM_TOKEN = "token_telegram"
+    TELEGRAM_CHAT_ID = "id_telegram"
     SCAN_INTERVAL = 1  # 1 segundo entre capturas (reducido por OCR)
     DEBOUNCE_TIME = 3  # 3 segundos para evitar spam
     TABLE_REGION = {
