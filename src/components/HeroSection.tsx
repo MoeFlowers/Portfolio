@@ -18,7 +18,7 @@ export default function HeroSection() {
                     >
 
                         <Image
-                            src="/foto-perfil.jpg"
+                            src="/images/profilephoto.png"
                             alt="Moises Flores"
                             fill
                             className="object-cover"
