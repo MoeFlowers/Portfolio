@@ -39,8 +39,8 @@ export default function Navbar() {
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md"
-          : "bg-transparent backdrop-blur-sm"
+        ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md"
+        : "bg-transparent backdrop-blur-sm"
         }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -122,6 +122,29 @@ export default function Navbar() {
             <MobileNavLink href="/#skills">Habilidades</MobileNavLink>
             <MobileNavLink href="/#projects">Proyectos</MobileNavLink>
             <MobileNavLink href="/#contact">Contacto</MobileNavLink>
+            {/* Descarga de CV en móvil */}
+            <div className="mt-3 px-2 pt-3 border-t border-gray-200 dark:border-gray-800 md:hidden">
+              <div className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-2">
+                Currículum
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                <a
+                  href="/cv-moises-flores-es.pdf"
+                  download
+                  className="w-full text-center border-2 border-[#1DA1F2] px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 hover:bg-[#1DA1F2] hover:text-white"
+                >
+                  Descargar ES
+                </a>
+                <a
+                  href="/cv-moises-flores-en.pdf"
+                  download
+                  className="w-full text-center border-2 border-[#1DA1F2] px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 hover:bg-[#1DA1F2] hover:text-white"
+                >
+                  Descargar EN
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </nav>
@@ -138,8 +161,8 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
     <Link
       href={href}
       className={`relative px-4 py-2.5 text-sm font-medium group ${isActive
-          ? "text-[#1DA1F2]"
-          : "text-gray-700 dark:text-gray-300"
+        ? "text-[#1DA1F2]"
+        : "text-gray-700 dark:text-gray-300"
         }`}
     >
       {children}
@@ -155,8 +178,8 @@ function MobileNavLink({ href, children }: { href: string; children: React.React
     <Link
       href={href}
       className={`px-4 py-3 rounded-lg text-sm transition-colors duration-200 ${isActive
-          ? "bg-[#1DA1F2]/10 text-[#1DA1F2]"
-          : "text-gray-700 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-800"
+        ? "bg-[#1DA1F2]/10 text-[#1DA1F2]"
+        : "text-gray-700 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-800"
         }`}
     >
       {children}
