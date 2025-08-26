@@ -16,55 +16,55 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "AI-Powered Book Recommendation",
+    title: "Sistema de Recomendación de Libros con IA",
     description:
-      "Developed a collaborative filtering model (Scikitlearn) processing 10,000+ books. Integrated REST API (Flask/FastAPI) for real-time recommendations → 85% user-rated accuracy.",
+      "Desarrollé un modelo de filtrado colaborativo (Scikitlearn) procesando 10,000+ libros. Integré una API REST (Flask/FastAPI) para recomendaciones en tiempo real → 85% de precisión según usuarios.",
     technologies: ["Python", "Scikit-learn", "FastAPI", "Flask"],
     githubLink: "https://github.com/MoeFlowers/Portfolio/tree/book",
     demoLink: "#",
     externalLink: "https://book-recommendation-ai.vercel.app/",
-    duration: "2 months",
+    duration: "2 meses",
     image: "/images/projects/AIPoweredBookRecommendation.jpeg",
-    category: "Machine Learning"
+    category: "Machine Learning",
   },
   {
     id: 2,
-    title: "Dental Clinic Web System",
+    title: "Sistema Web para Clínica Odontológica",
     description:
-      "Digitized 100% of patient records and automated billing, saving 6h/week in admin work. Built an appointment module with automated email reminders.",
+      "Digitalicé 100% de los historiales y automatizó la facturación, ahorrando 6h/sem en trabajo administrativo. Construí un módulo de citas con recordatorios automáticos por correo.",
     technologies: ["PHP", "JavaScript", "MySQL", "Tailwind CSS"],
     githubLink: "https://github.com/MoeFlowers/Portfolio/tree/clinica",
     demoLink: "/projects/clinic",
     externalLink: "https://dental-clinic-web-system.vercel.app/",
-    duration: "6 months",
+    duration: "6 meses",
     image: "/images/projects/DentalClinicProject.jpeg",
-    category: "Web Development"
+    category: "Desarrollo Web",
   },
   {
     id: 3,
-    title: "Full-Stack Web Developer — Community Service Project",
+    title: "Desarrollador Web Full‑Stack — Proyecto de Servicio Comunitario",
     description:
-      "Led end-to-end development of a web app used by 2,000+ users, reducing data query time by 80%. Implemented secure CRUD operations with PHP/MySQL and responsive UI → 97% user satisfaction",
+      "Lideré el desarrollo end-to-end de una app web usada por 2,000+ usuarios, reduciendo el tiempo de consulta de datos un 80%. Implementé operaciones CRUD seguras con PHP/MySQL y una UI responsive → 97% de satisfacción del usuario.",
     technologies: ["PHP", "JavaScript", "MySQL", "Tailwind CSS"],
     githubLink: "https://github.com/MoeFlowers/Portfolio/tree/comunity",
     demoLink: "#",
     externalLink: "https://comunity.vercel.app/",
-    duration: "Jan 2024 – Jun 2024",
+    duration: "Ene 2024 – Jun 2024",
     image: "/images/projects/ComunityServiceProject.jpeg",
-    category: "Full Stack"
+    category: "Full Stack",
   },
   {
     id: 4,
-    title: "Data Processing Bots | Python",
+    title: "Bots de Procesamiento de Datos | Python",
     description:
-      "API-powered bots updating dashboards every 5 mins with Slack alerts. Automated repetitive tasks (~15h/week saved).",
+      "Bots que consumen APIs y actualizan dashboards cada 5 min con alertas por Slack. Automatizó tareas repetitivas (~15h/sem ahorradas).",
     technologies: ["Python"],
     githubLink: "https://github.com/MoeFlowers/Portfolio/tree/comunity",
     demoLink: "#",
     externalLink: "https://data-processing-bots.vercel.app/",
-    duration: "4 months",
+    duration: "4 meses",
     image: "/images/projects/DataProcessingBots.jpeg",
-    category: "Automation"
+    category: "Automatización",
   },
   // Puedes agregar más proyectos aquí...
 ];
