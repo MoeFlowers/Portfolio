@@ -85,7 +85,7 @@ export default function Navbar() {
                 className="border-2 border-[#1DA1F2] text-[#1DA1F2] px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-2 hover:bg-[#1DA1F2] hover:text-white"
               >
                 <DownloadIcon />
-                Download CV
+                Descargar CV
                 <span className="text-xs opacity-80">{cvLanguage}</span>
               </button>
 
