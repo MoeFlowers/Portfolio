@@ -104,6 +104,16 @@ export default function Navbar() {
             <SocialIcon href="https://github.com/Moeflowers" label="GitHub">
               <GitHubIcon className="h-5 w-5 text-gray-700 dark:text-gray-300" />
             </SocialIcon>
+            <SocialIcon href="https://www.linkedin.com/in/moises-flores-09668b307" label="LinkedIn">
+              <LinkedInIcon className="h-5 w-5 text-gray-700 dark:text-gray-300 group-hover:text-[#1DA1F2]" />
+            </SocialIcon>
+            <button
+              onClick={handleEmailClick}
+              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-200 group"
+              aria-label="Enviar email"
+            >
+              <EmailIcon className="h-5 w-5 text-gray-700 dark:text-gray-300 group-hover:text-[#1DA1F2]" />
+            </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#1DA1F2]"
