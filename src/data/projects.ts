@@ -16,7 +16,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Sistema de Recomendación de Libros con IA",
+    title: "Sistema de Recomendación de Peliculas con IA",
     description:
       "Desarrollé un modelo de filtrado colaborativo (Scikitlearn) procesando 10,000+ libros. Integré una API REST (Flask/FastAPI) para recomendaciones en tiempo real → 85% de precisión según usuarios.",
     technologies: ["Python", "Scikit-learn", "FastAPI", "Flask"],
