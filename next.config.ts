@@ -1,9 +1,5 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true, // Solo para no frenar despliegue
-  },
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;

@@ -1,78 +1,56 @@
-# <img src="https://img.icons8.com/fluency/48/000000/portfolio.png" width="30"/> **Moises Flores**  
-### **Full-Stack Developer Portfolio**  
-🚀 *Transforming Ideas into Scalable Digital Solutions*  
+# Portfolio — Moises Flores
 
-![Portfolio Banner](https://img.icons8.com/clouds/400/000000/code.png)  
+Portfolio personal de desarrollador Full-Stack, con proyectos presentados como casos de estudio (problema → solución → resultados medibles).
 
+**En vivo:** https://portfolio-eosin-theta-40.vercel.app/
 
-## 🌟 **Featured Projects**  
+## Stack
 
-### **1. 🦷 Dental Clinic Management System**  
-**Tech:** PHP 8, MySQL, Tailwind CSS, GitHub Actions  
-**Highlights:**  
-- Reduced admin work by **6+ hours/week** with automated billing  
-- **97% user satisfaction** in clinic surveys  
-- Interactive tooth-by-tooth treatment tracking  
+- [Next.js 15](https://nextjs.org/) (App Router) + React 19 + TypeScript
+- [Tailwind CSS v4](https://tailwindcss.com/) (tokens en `src/app/globals.css`)
+- [Framer Motion](https://www.framer.com/motion/) — animaciones que respetan `prefers-reduced-motion`
+- [next-themes](https://github.com/pacocoursey/next-themes) — modo claro/oscuro con toggle
+- [Resend](https://resend.com/) — envío real del formulario de contacto
+- [Vercel Analytics](https://vercel.com/analytics) — métricas de visitas
+- CI con GitHub Actions (lint + build en cada push/PR)
 
-[![View Project](https://img.shields.io/badge/View-Live_Demo-green?style=for-the-badge)](https://github.com/MoeFlowers/dental-clinic)  
+## Desarrollo
 
-### **2. 📚 AI-Powered Book Recommender**  
-**Tech:** Python, Scikit-learn, FastAPI  
-**Highlights:**  
-- **85% recommendation accuracy** (user-tested)  
-- Weekly auto-retraining with ethical web scraping  
-- Cut book search time by **70%**  
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run lint
+npm run build
+```
 
-[![View Project](https://img.shields.io/badge/Explore-API-blue?style=for-the-badge)](https://github.com/MoeFlowers/book-recommender)  
+## Variables de entorno
 
-### **3. 🤖 Data Processing Bot Army**  
-**Tech:** Python, Pandas, Slack API  
-**Highlights:**  
-- **15+ hours/week saved** through automation  
-- Real-time dashboards updated every **5 minutes**  
-- Multi-platform alerts (Slack/Email)  
+Copia `.env.example` a `.env.local`:
 
-[![View Bots](https://img.shields.io/badge/See-Bots-yellow?style=for-the-badge)](https://github.com/MoeFlowers/data-bots)  
+| Variable | Requerida | Descripción |
+|---|---|---|
+| `RESEND_API_KEY` | Para el formulario | API key de Resend. Sin ella, el formulario muestra el email directo como alternativa. |
+| `CONTACT_FROM_EMAIL` | No | Remitente verificado en Resend (default: `onboarding@resend.dev`). |
+| `CONTACT_TO_EMAIL` | No | Destinatario de los mensajes (default: email personal). |
 
+En producción, configúralas en **Vercel → Project → Settings → Environment Variables**.
 
-## 🛠 **Tech Arsenal**  
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black" alt="React">
-  <img src="https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white" alt="PHP">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white" alt="Tailwind">
-  <img src="https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white" alt="MySQL">
-  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white" alt="GitHub Actions">
-</p>
+## Estructura
 
+```
+src/
+├── app/                  # Rutas: home, /projects/[slug], API contacto, SEO (sitemap, robots, OG)
+├── components/           # Secciones de la página + ui/ (primitivos reutilizables)
+└── data/                 # Contenido: proyectos (case studies), skills, experiencia, config del sitio
+```
 
-## 🚧 **Under Construction**  
-🔮 *Next Project Teaser: AI-Powered Resume Analyzer (Coming Q4 2024)*  
-💡 **Open to Collaborations!**  
+Para añadir un proyecto: editar `src/data/projects.ts` (el case study, el sitemap y el grid se generan solos).
 
+## Proyectos incluidos (ramas de este repo)
 
-## 🌐 **Connect & Collaborate**  
-<p align="center">
-  <a href="mailto:moeflowers2@gmail.com">
-    <img src="https://img.shields.io/badge/Email-Contact%20Me-red?style=flat&logo=gmail" alt="Email">
-  </a>
-  <a href="https://github.com/MoeFlowers">
-    <img src="https://img.shields.io/badge/GitHub-Portfolio-black?style=flat&logo=github" alt="GitHub">
-  </a>
-  <a href="https://wa.me/+584125594556">
-    <img src="https://img.shields.io/badge/WhatsApp-Chat%20Now-green?style=flat&logo=whatsapp" alt="WhatsApp">
-  </a>
-</p>
-
-
-## 📜 **Project Pipeline**  
-| Status       | Project Idea          | Tech Stack           |
-|--------------|-----------------------|----------------------|
-| 🔄 *Planning* | Resume Analyzer AI    | NLP, Next.js, FastAPI|
-| 💡 *Ideation* | Smart Home Dashboard  | IoT, React, Flask    |
-| 🤝 *Open*     | Your Idea Here?       | Let’s Discuss!       |
-
-
-<img src="https://img.icons8.com/color/48/000000/code--v2.png" width="20"/> **"Clean code solves problems. Great code anticipates them."**  
-
-
+| Rama | Proyecto | Demo |
+|---|---|---|
+| `clinica` | Sistema web para clínica odontológica | [Ver](https://dental-clinic-web-system.vercel.app/) |
+| `comunity` | Plataforma de servicio comunitario (2.000+ usuarios) | [Ver](https://comunity.vercel.app/) |
+| `book` | Recomendador de libros con IA | [Ver](https://book-recommendation-ai.vercel.app/) |
+| `bot` | Bots de procesamiento de datos | [Ver](https://data-processing-bots.vercel.app/) |

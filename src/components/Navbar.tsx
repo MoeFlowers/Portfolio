@@ -1,160 +1,170 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { useState, useEffect, useRef } from "react";
+import { FiGithub, FiLinkedin, FiMail, FiDownload, FiMenu, FiX, FiChevronDown } from "react-icons/fi";
+import { site } from "@/data/site";
+import ThemeToggle from "./ThemeToggle";
+
+const sections = [
+  { id: "skills", label: "Habilidades" },
+  { id: "experience", label: "Experiencia" },
+  { id: "projects", label: "Proyectos" },
+  { id: "contact", label: "Contacto" },
+] as const;
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [cvLanguage, setCvLanguage] = useState<'ES' | 'EN'>('ES');
-  const pathname = usePathname();
+  const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Scroll spy: resalta la sección visible
   useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
-
-  const handleCvDownload = () => {
-    const cvUrl = cvLanguage === 'ES'
-      ? '/cv-moises-flores-es.pdf'
-      : '/cv-moises-flores-en.pdf';
-
-    const link = document.createElement('a');
-    link.href = cvUrl;
-    link.download = `CV-Moises-Flores-${cvLanguage}.pdf`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  const handleEmailClick = () => {
-    window.location.href = "mailto:moeflowers2@gmail.com";
-  };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        }
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+    for (const { id } of sections) {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    }
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
-        ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md"
-        : "bg-transparent backdrop-blur-sm"
-        }`}
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/80 dark:bg-[#0a0a0f]/80 backdrop-blur-md border-b border-zinc-200/80 dark:border-white/10"
+          : "bg-transparent"
+      }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-
+      <nav aria-label="Principal" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-1 group" aria-label="Inicio">
-            <span className="text-2xl font-bold text-gray-900 dark:text-gray-100 group-hover:text-[#1DA1F2] transition-colors duration-200">
-              MoisesFlores
-            </span>
-            <span className="text-gray-500 dark:text-gray-400 text-sm group-hover:text-[#1DA1F2] transition-colors duration-200">
-              .dev
-            </span>
+          <Link
+            href="/"
+            className="font-display text-lg font-bold tracking-tight text-zinc-900 dark:text-white hover:text-accent dark:hover:text-accent-soft transition-colors"
+            aria-label="Inicio"
+          >
+            moisesflores<span className="text-accent">.dev</span>
           </Link>
 
-          {/* Menú Desktop */}
-          <div className="hidden md:flex items-center space-x-1">
-            <NavLink href="/#about">Sobre mí</NavLink>
-            <NavLink href="/#skills">Habilidades</NavLink>
-            <NavLink href="/#projects">Proyectos</NavLink>
-            <NavLink href="/#contact">Contacto</NavLink>
-
-            {/* Redes Sociales */}
-            <SocialIcon href="https://github.com/Moeflowers" label="GitHub">
-              <GitHubIcon className="h-5 w-5 text-gray-700 dark:text-gray-300 group-hover:text-[#1DA1F2]" />
-            </SocialIcon>
-            <SocialIcon href="https://www.linkedin.com/in/moises-flores-09668b307" label="LinkedIn">
-              <LinkedInIcon className="h-5 w-5 text-gray-700 dark:text-gray-300 group-hover:text-[#1DA1F2]" />
-            </SocialIcon>
-            <button
-              onClick={handleEmailClick}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-200 group"
-              aria-label="Enviar email"
-            >
-              <EmailIcon className="h-5 w-5 text-gray-700 dark:text-gray-300 group-hover:text-[#1DA1F2]" />
-            </button>
-
-            {/* Botón de CV */}
-            <div className="ml-4 relative group">
-              <button
-                onClick={handleCvDownload}
-                className="border-2 border-[#1DA1F2] text-[#1DA1F2] px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-2 hover:bg-[#1DA1F2] hover:text-white"
+          {/* Menú desktop */}
+          <div className="hidden md:flex items-center gap-1">
+            {sections.map(({ id, label }) => (
+              <a
+                key={id}
+                href={`/#${id}`}
+                aria-current={activeSection === id ? "true" : undefined}
+                className={`relative px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
+                  activeSection === id
+                    ? "text-accent dark:text-accent-soft"
+                    : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+                }`}
               >
-                <DownloadIcon />
-                Descargar CV
-                <span className="text-xs opacity-80">{cvLanguage}</span>
-              </button>
+                {label}
+                {activeSection === id && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-x-3 -bottom-px h-px bg-gradient-to-r from-accent to-cyan-accent"
+                  />
+                )}
+              </a>
+            ))}
 
-              {/* Selector de idioma */}
-              <div className="absolute right-0 mt-1 w-32 origin-top-right rounded-md bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200 transform z-10">
-                <div className="py-1">
-                  <CvLangOption lang="ES" active={cvLanguage} setLang={setCvLanguage} />
-                  <CvLangOption lang="EN" active={cvLanguage} setLang={setCvLanguage} />
-                </div>
-              </div>
-            </div>
+            <span aria-hidden="true" className="mx-2 h-5 w-px bg-zinc-300 dark:bg-white/10" />
+
+            <IconLink href={site.github} label="GitHub">
+              <FiGithub className="w-5 h-5" />
+            </IconLink>
+            <IconLink href={site.linkedin} label="LinkedIn">
+              <FiLinkedin className="w-5 h-5" />
+            </IconLink>
+            <IconLink href={`mailto:${site.email}`} label="Enviar email">
+              <FiMail className="w-5 h-5" />
+            </IconLink>
+            <ThemeToggle />
+            <CvMenu />
           </div>
 
-          {/* Botón Menú Móvil */}
-          <div className="mb-4 md:hidden flex items-center space-x-2">
-            <SocialIcon href="https://github.com/Moeflowers" label="GitHub">
-              <GitHubIcon className="h-5 w-5 text-gray-700 dark:text-gray-300" />
-            </SocialIcon>
-            <SocialIcon href="https://www.linkedin.com/in/moises-flores-09668b307" label="LinkedIn">
-              <LinkedInIcon className="h-5 w-5 text-gray-700 dark:text-gray-300 group-hover:text-[#1DA1F2]" />
-            </SocialIcon>
+          {/* Controles móvil */}
+          <div className="md:hidden flex items-center gap-1">
+            <ThemeToggle />
             <button
-              onClick={handleEmailClick}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-200 group"
-              aria-label="Enviar email"
-            >
-              <EmailIcon className="h-5 w-5 text-gray-700 dark:text-gray-300 group-hover:text-[#1DA1F2]" />
-            </button>
-            <button
+              type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#1DA1F2]"
+              className="p-2 rounded-lg text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200/70 dark:hover:bg-white/10 transition-colors"
               aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
               aria-expanded={isOpen}
+              aria-controls="mobile-menu"
             >
-              {isOpen ? <XIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
+              {isOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
             </button>
           </div>
         </div>
 
-        {/* Contenido Menú Móvil */}
-        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-[500px] py-4" : "max-h-0 py-0"}`}>
-          <div className="flex flex-col space-y-3 px-2 pt-2">
-            <MobileNavLink href="/#about">Sobre mí</MobileNavLink>
-            <MobileNavLink href="/#skills">Habilidades</MobileNavLink>
-            <MobileNavLink href="/#projects">Proyectos</MobileNavLink>
-            <MobileNavLink href="/#contact">Contacto</MobileNavLink>
-            {/* Descarga de CV en móvil */}
-            <div className="mt-3 px-2 pt-3 border-t border-gray-200 dark:border-gray-800 md:hidden">
-              <div className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-2">
-                Currículum
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                <a
-                  href="/cv-moises-flores-es.pdf"
-                  download
-                  className="w-full text-center border-2 border-[#1DA1F2] px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 hover:bg-[#1DA1F2] hover:text-white"
-                >
-                  Descargar ES
-                </a>
-                <a
-                  href="/cv-moises-flores-en.pdf"
-                  download
-                  className="w-full text-center border-2 border-[#1DA1F2] px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 hover:bg-[#1DA1F2] hover:text-white"
-                >
-                  Descargar EN
-                </a>
-              </div>
+        {/* Menú móvil */}
+        <div
+          id="mobile-menu"
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isOpen ? "max-h-[500px] pb-6" : "max-h-0"
+          }`}
+        >
+          <div className="flex flex-col gap-1 pt-2">
+            {sections.map(({ id, label }) => (
+              <a
+                key={id}
+                href={`/#${id}`}
+                onClick={() => setIsOpen(false)}
+                className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                  activeSection === id
+                    ? "bg-accent/10 text-accent dark:text-accent-soft"
+                    : "text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200/70 dark:hover:bg-white/10"
+                }`}
+              >
+                {label}
+              </a>
+            ))}
+
+            <div className="mt-3 pt-4 border-t border-zinc-200 dark:border-white/10 flex items-center gap-2 px-2">
+              <IconLink href={site.github} label="GitHub">
+                <FiGithub className="w-5 h-5" />
+              </IconLink>
+              <IconLink href={site.linkedin} label="LinkedIn">
+                <FiLinkedin className="w-5 h-5" />
+              </IconLink>
+              <IconLink href={`mailto:${site.email}`} label="Enviar email">
+                <FiMail className="w-5 h-5" />
+              </IconLink>
             </div>
 
+            <div className="mt-3 grid grid-cols-2 gap-2 px-2">
+              <a
+                href="/cv-moises-flores-es.pdf"
+                download
+                className="flex items-center justify-center gap-2 border border-accent text-accent px-4 py-2.5 rounded-full text-sm font-medium hover:bg-accent hover:text-white transition-colors"
+              >
+                <FiDownload aria-hidden="true" /> CV Español
+              </a>
+              <a
+                href="/cv-moises-flores-en.pdf"
+                download
+                className="flex items-center justify-center gap-2 border border-accent text-accent px-4 py-2.5 rounded-full text-sm font-medium hover:bg-accent hover:text-white transition-colors"
+              >
+                <FiDownload aria-hidden="true" /> CV English
+              </a>
+            </div>
           </div>
         </div>
       </nav>
@@ -162,101 +172,93 @@ export default function Navbar() {
   );
 }
 
-/* Subcomponentes */
+/** Menú de descarga de CV accesible: se abre con click/Enter, se cierra con Escape o click fuera. */
+function CvMenu() {
+  const [open, setOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-  const pathname = usePathname();
-  const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
-  return (
-    <Link
-      href={href}
-      className={`relative px-4 py-2.5 text-sm font-medium group ${isActive
-        ? "text-[#1DA1F2]"
-        : "text-gray-700 dark:text-gray-300"
-        }`}
-    >
-      {children}
-      <span className={`absolute left-0 bottom-0 h-[2px] bg-[#1DA1F2] transition-all duration-300 group-hover:w-full ${isActive ? "w-full" : "w-0"}`} />
-    </Link>
-  );
-}
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    const onClickOutside = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("mousedown", onClickOutside);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("mousedown", onClickOutside);
+    };
+  }, [open]);
 
-function MobileNavLink({ href, children }: { href: string; children: React.ReactNode }) {
-  const pathname = usePathname();
-  const isActive = pathname === href;
   return (
-    <Link
-      href={href}
-      className={`px-4 py-3 rounded-lg text-sm transition-colors duration-200 ${isActive
-        ? "bg-[#1DA1F2]/10 text-[#1DA1F2]"
-        : "text-gray-700 hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-800"
-        }`}
-    >
-      {children}
-    </Link>
-  );
-}
+    <div ref={menuRef} className="relative ml-2">
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+        aria-haspopup="menu"
+        className="flex items-center gap-2 border border-accent text-accent px-4 py-2 rounded-full text-sm font-medium hover:bg-accent hover:text-white transition-colors duration-200"
+      >
+        <FiDownload aria-hidden="true" className="w-4 h-4" />
+        Descargar CV
+        <FiChevronDown
+          aria-hidden="true"
+          className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-180" : ""}`}
+        />
+      </button>
 
-function SocialIcon({ href, label, children }: { href: string; label: string; children: React.ReactNode }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={label}
-      className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-200 group"
-    >
-      {children}
-    </a>
-  );
-}
-
-function CvLangOption({ lang, active, setLang }: { lang: 'ES' | 'EN'; active: 'ES' | 'EN'; setLang: (lang: 'ES' | 'EN') => void }) {
-  return (
-    <div
-      className={`flex justify-between items-center px-4 py-2 text-sm cursor-pointer ${active === lang ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-50 dark:hover:bg-gray-700'
-        } transition-colors duration-150`}
-      onClick={() => setLang(lang)}
-    >
-      <span>{lang === 'ES' ? 'Español' : 'English'}</span>
-      <span className="text-xs font-bold">{lang}</span>
+      {open && (
+        <div
+          role="menu"
+          className="absolute right-0 mt-2 w-40 rounded-xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-zinc-900 shadow-lg overflow-hidden"
+        >
+          <a
+            role="menuitem"
+            href="/cv-moises-flores-es.pdf"
+            download
+            onClick={() => setOpen(false)}
+            className="block px-4 py-2.5 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/10 transition-colors"
+          >
+            Español (ES)
+          </a>
+          <a
+            role="menuitem"
+            href="/cv-moises-flores-en.pdf"
+            download
+            onClick={() => setOpen(false)}
+            className="block px-4 py-2.5 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/10 transition-colors"
+          >
+            English (EN)
+          </a>
+        </div>
+      )}
     </div>
   );
 }
 
-/* Iconos */
-function MenuIcon({ className }: { className?: string }) {
-  return <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>;
-}
-
-function XIcon({ className }: { className?: string }) {
-  return <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>;
-}
-
-function DownloadIcon({ className }: { className?: string }) {
-  return <svg className={className || "h-4 w-4"} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>;
-}
-
-function GitHubIcon({ className }: { className?: string }) {
+function IconLink({
+  href,
+  label,
+  children,
+}: {
+  href: string;
+  label: string;
+  children: React.ReactNode;
+}) {
+  const external = href.startsWith("http");
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-    </svg>
-  );
-}
-
-function LinkedInIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-    </svg>
-  );
-}
-
-function EmailIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-    </svg>
+    <a
+      href={href}
+      {...(external && { target: "_blank", rel: "noopener noreferrer" })}
+      aria-label={label}
+      className="p-2 rounded-full text-zinc-600 dark:text-zinc-400 hover:text-accent dark:hover:text-accent-soft hover:bg-zinc-200/70 dark:hover:bg-white/10 transition-colors duration-200"
+    >
+      {children}
+    </a>
   );
 }
