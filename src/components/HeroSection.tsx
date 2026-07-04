@@ -1,101 +1,126 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
-import { useTheme } from "next-themes";
-import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaJs } from "react-icons/fa";
+import { motion, useReducedMotion } from "framer-motion";
+import { site, heroMetrics } from "@/data/site";
 
 export default function HeroSection() {
-    const { theme } = useTheme();
+  const reduceMotion = useReducedMotion();
 
-    return (
-        <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-            <div className="flex flex-col md:flex-row items-center gap-12">
-                {/* Lado Izquierdo: Foto + Iconos Orbitando */}
-                <div className="relative w-64 h-64 flex items-center justify-center">
-                    {/* Imagen Circular */}
-                    <div
-                        className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-blue-500 transition-colors duration-300"
-                    >
+  const fadeUp = (delay: number) =>
+    reduceMotion
+      ? {}
+      : {
+          initial: { opacity: 0, y: 24 },
+          animate: { opacity: 1, y: 0 },
+          transition: { duration: 0.55, delay, ease: "easeOut" as const },
+        };
 
-                        <Image
-                            src="/images/profilephoto.png"
-                            alt="Moises Flores"
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
+  return (
+    <section className="relative overflow-hidden">
+      {/* Fondo: gradiente radial discreto */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(99,102,241,0.10),transparent)] dark:bg-[radial-gradient(60%_50%_at_50%_0%,rgba(99,102,241,0.15),transparent)]"
+      />
 
-                    {/* Iconos Orbitando */}
-                    <div className="absolute w-full h-full animate-spin-slow">
-                        <div className="absolute -top-6 left-1/2 -translate-x-1/2">
-                            <FaReact size={32} className="text-[#61DAFB]" />
-                        </div>
-                        <div className="absolute top-1/2 -right-6 -translate-y-1/2">
-                            <FaNodeJs size={32} className="text-green-500" />
-                        </div>
-                        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
-                            <FaPython size={32} className="text-yellow-400" />
-                        </div>
-                        <div className="absolute top-1/2 -left-6 -translate-y-1/2">
-                            <FaJs size={32} className="text-yellow-300" />
-                        </div>
-                        <div className="absolute top-10 -right-4">
-                            <FaHtml5 size={32} className="text-orange-500" />
-                        </div>
-                        <div className="absolute -top-4 right-10">
-                            <FaCss3Alt size={32} className="text-blue-400" />
-                        </div>
-                    </div>
-                </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-28 md:pb-24">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+          {/* Texto */}
+          <div className="max-w-2xl text-center md:text-left">
+            <motion.p
+              {...fadeUp(0)}
+              className="inline-flex items-center gap-2 font-mono text-xs text-zinc-600 dark:text-zinc-400 border border-zinc-300 dark:border-white/15 rounded-full px-3 py-1.5 mb-6"
+            >
+              <span aria-hidden="true" className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              Disponible para nuevos proyectos
+            </motion.p>
 
-                {/* Lado Derecho: Texto y Botones */}
-                <div className="text-center md:text-left max-w-lg">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
-                        Moises Flores
-                        <span className="block bg-gradient-to-r from-[#1DA1F2] to-blue-600 bg-clip-text text-transparent">
-                            Desarrollador Full-Stack
-                        </span>
-                    </h1>
-                    <p className="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Desarrollo soluciones <span className="font-semibold text-indigo-600 dark:text-indigo-400">end-to-end</span> con
-                        <span className="font-semibold text-[#1DA1F2] dark:text-[#61DAFB]"> React</span>,
-                        <span className="font-semibold text-[#1DA1F2] dark:text-[#61DAFB]"> Next.js</span>,
-                        <span className="font-semibold text-[#1DA1F2] dark:text-[#61DAFB]"> Vue</span> en el frontend y
-                        <span className="font-semibold text-[#1DA1F2] dark:text-[#61DAFB]"> Node.js</span>,
-                        <span className="font-semibold text-[#1DA1F2] dark:text-[#61DAFB]"> Python</span> en el backend.
-                    </p>
+            <motion.h1
+              {...fadeUp(0.1)}
+              className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 dark:text-white text-balance"
+            >
+              Construyo productos web que{" "}
+              <span className="bg-gradient-to-r from-accent to-cyan-accent bg-clip-text text-transparent">
+                ahorran horas
+              </span>{" "}
+              y sirven a miles de usuarios.
+            </motion.h1>
 
-                    {/* Botones */}
-                    <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <Link
-                            href="#projects"
-                            className="px-8 py-3.5 text-base font-semibold rounded-lg bg-[#1DA1F2] text-white hover:bg-blue-600 transition-all duration-200 shadow-lg hover:shadow-[#1DA1F2]/30"
-                        >
-                            Ver mis proyectos
-                        </Link>
-                        <Link
-                            href="#contact"
-                            className="px-8 py-3.5 text-base font-semibold rounded-lg border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200"
-                        >
-                            Contactarme
-                        </Link>
-                    </div>
-                </div>
+            <motion.p
+              {...fadeUp(0.2)}
+              className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed"
+            >
+              Soy <strong className="text-zinc-900 dark:text-white font-semibold">{site.name}</strong>,{" "}
+              {site.role.toLowerCase()} especializado en{" "}
+              <strong className="text-zinc-900 dark:text-white font-semibold">React, Next.js y Python</strong>.
+              Del backend a la interfaz, con foco en resultados medibles.
+            </motion.p>
+
+            <motion.div
+              {...fadeUp(0.3)}
+              className="mt-8 flex flex-col sm:flex-row gap-3 justify-center md:justify-start"
+            >
+              <a
+                href="#projects"
+                className="px-7 py-3 text-sm font-semibold rounded-full bg-accent text-white hover:bg-accent-hover transition-colors duration-200 shadow-lg shadow-accent/25"
+              >
+                Ver proyectos
+              </a>
+              <a
+                href="#contact"
+                className="px-7 py-3 text-sm font-semibold rounded-full border border-zinc-300 dark:border-white/15 text-zinc-700 dark:text-zinc-300 hover:border-accent hover:text-accent dark:hover:text-accent-soft transition-colors duration-200"
+              >
+                Contactarme
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Foto */}
+          <motion.div
+            {...(reduceMotion
+              ? {}
+              : {
+                  initial: { opacity: 0, scale: 0.92 },
+                  animate: { opacity: 1, scale: 1 },
+                  transition: { duration: 0.6, ease: "easeOut" as const },
+                })}
+            className="relative shrink-0"
+          >
+            <div
+              aria-hidden="true"
+              className="absolute -inset-2 rounded-full bg-gradient-to-tr from-accent/60 to-cyan-accent/60 blur-xl opacity-40"
+            />
+            <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden ring-2 ring-zinc-200 dark:ring-white/15">
+              <Image
+                src="/images/profilephoto.png"
+                alt="Foto de Moises Flores"
+                fill
+                priority
+                sizes="(max-width: 768px) 176px, 224px"
+                className="object-cover"
+              />
             </div>
+          </motion.div>
+        </div>
 
-            <style jsx>{`
-                .animate-spin-slow {
-                    animation: spin 12s linear infinite;
-                }
-                @keyframes spin {
-                    from {
-                        transform: rotate(0deg);
-                    }
-                    to {
-                        transform: rotate(360deg);
-                    }
-                }
-            `}</style>
-        </section>
-    );
+        {/* Métricas de impacto */}
+        <motion.dl
+          {...fadeUp(0.4)}
+          className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/10 bg-zinc-200 dark:bg-white/10"
+        >
+          {heroMetrics.map(({ value, label }) => (
+            <div
+              key={label}
+              className="flex flex-col bg-white/90 dark:bg-[#0d0d14]/90 backdrop-blur-sm px-6 py-5 text-center md:text-left"
+            >
+              <dt className="order-2 text-xs text-zinc-500 dark:text-zinc-400 mt-1">{label}</dt>
+              <dd className="order-1 font-mono text-2xl md:text-3xl font-semibold text-zinc-900 dark:text-white">
+                {value}
+              </dd>
+            </div>
+          ))}
+        </motion.dl>
+      </div>
+    </section>
+  );
 }
