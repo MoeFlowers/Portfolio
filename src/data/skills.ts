@@ -24,12 +24,18 @@ export const skillCategories: SkillCategory[] = [
     id: "data",
     title: "Datos & ML",
     description: "De datos crudos a decisiones y modelos.",
-    skills: ["MySQL", "Pandas", "Scikit-learn"],
+    skills: ["MySQL", "PostgreSQL", "Supabase", "Pandas", "Scikit-learn"],
+  },
+  {
+    id: "ai",
+    title: "Automatización & IA",
+    description: "Bots, machine learning y automatización de procesos.",
+    skills: ["Python", "FastAPI", "Scikit-learn"],
   },
   {
     id: "tools",
     title: "Herramientas & DevOps",
-    description: "Flujo de trabajo, CI/CD y despliegue.",
-    skills: ["Git", "GitHub Actions", "Vercel"],
+    description: "Flujo de trabajo, CI/CD, contenedores y despliegue.",
+    skills: ["Git", "GitHub Actions", "Docker", "Vercel"],
   },
 ];

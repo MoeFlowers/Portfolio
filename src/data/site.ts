@@ -5,10 +5,10 @@ export const site = {
   url: "https://portfolio-eosin-theta-40.vercel.app",
   email: "moeflowers2@gmail.com",
   github: "https://github.com/MoeFlowers",
-  linkedin: "https://www.linkedin.com/in/moises-flores-09668b307",
+  linkedin: "https://www.linkedin.com/in/moeflowers-dev/",
   location: "Venezuela · Remoto",
   description:
-    "Desarrollador Full-Stack especializado en React, Next.js y Python. Construyo aplicaciones web y automatizaciones que ahorran horas de trabajo y sirven a miles de usuarios.",
+    "Desarrollador Full-Stack especializado en React, Next.js y Python. Construyo aplicaciones web, bots y automatizaciones que ahorran horas de trabajo y sirven a miles de usuarios.",
   keywords: [
     "Desarrollador Full-Stack",
     "React",
@@ -16,7 +16,10 @@ export const site = {
     "TypeScript",
     "Python",
     "Automatización",
+    "Bots",
     "Machine Learning",
+    "Supabase",
+    "Docker",
     "Moises Flores",
   ],
 } as const;

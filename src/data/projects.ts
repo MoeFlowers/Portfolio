@@ -29,6 +29,126 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "plasticburger-inventario-facturacion",
+    title: "PlasticBurger — Inventario y Facturación",
+    summary:
+      "Sistema de inventario y facturación en doble moneda (USD/VES con tasa BCV) para un distribuidor mayorista. Ingeniería con pruebas, análisis estático y documentación primero.",
+    problem:
+      "Un distribuidor mayorista de insumos para comida rápida en Venezuela necesita facturar en dólares y bolívares a la vez, siguiendo la tasa oficial del BCV, sobre hardware modesto (Core i3, 4 GB de RAM) y con empleados no técnicos. Los errores de redondeo en dinero y una tasa desactualizada no son aceptables.",
+    solution: [
+      "Facturación en USD, VES o mixta con cálculo monetario de precisión exacta usando bcmath (sin errores de coma flotante).",
+      "Sincronización diaria de la tasa oficial del BCV con historial, override manual y fallback offline.",
+      "Catálogo de productos con códigos secuenciales, libro auditable de movimientos de inventario y compras/ventas.",
+      "Pantalla de venta operable 100% por teclado y maestro de clientes con límites de crédito y saldos.",
+      "Permisos por rol (Administrador / Empleado), registro de auditoría y reportes.",
+      "Calidad de ingeniería: PHP 8.2 con PSR-4, PHPUnit, PHPStan y php-cs-fixer en CI, sobre documentación técnica y ADRs (spec-driven).",
+    ],
+    results: [
+      { value: "USD/VES", label: "facturación en doble moneda con tasa BCV" },
+      { value: "bcmath", label: "cálculo de dinero de precisión exacta" },
+      { value: "PHPStan + PHPUnit", label: "análisis estático y pruebas en CI" },
+    ],
+    learnings: [
+      "Diseñar dinero como decimal exacto de extremo a extremo para evitar errores de redondeo.",
+      "Documentar decisiones de arquitectura (ADRs) antes de escribir el código.",
+    ],
+    technologies: ["PHP", "MySQL", "JavaScript", "Tailwind CSS"],
+    role: "Desarrollador Full-Stack / Ingeniería (freelance)",
+    duration: "2026 – En desarrollo",
+    image: "/images/projects/PlasticBurgerProject.png",
+    category: "Full-Stack",
+    featured: true,
+  },
+  {
+    slug: "control-deudas-multimoneda",
+    title: "Control de Deudas — Tablero Multi-moneda",
+    summary:
+      "App de finanzas para llevar deudas por pagar y por cobrar en Bs (BCV), USD y USDT, con planificador de pagos por quincena y datos aislados por usuario.",
+    problem:
+      "Llevar deudas en un país con varias monedas en paralelo (bolívares a tasa BCV, dólares y USDT) es confuso en una hoja de cálculo: no se sabe cuánto se debe realmente ni qué toca pagar cada quincena, y los datos deben poder consultarse desde el teléfono.",
+    solution: [
+      "Tablero único que consolida deudas por pagar y por cobrar en Bs (BCV), USD y USDT.",
+      "Planificador de pagos por quincena y tasas de cambio actualizadas automáticamente.",
+      "Login por usuario con seguridad por fila (RLS) en Supabase: cada persona ve y gestiona solo sus propias deudas.",
+      "Frontend en Vue 3 sin build, 100% estático, desplegado en Vercel; Postgres y Auth gestionados por Supabase, sin servidor propio.",
+    ],
+    results: [
+      { value: "3 monedas", label: "Bs (BCV), USD y USDT en un tablero" },
+      { value: "RLS", label: "seguridad por fila: cada usuario ve solo lo suyo" },
+      { value: "0", label: "servidores que mantener (Supabase + Vercel)" },
+    ],
+    learnings: [
+      "Modelar seguridad por fila (RLS) en Postgres para aislar datos por usuario sin backend propio.",
+      "Enviar una app útil con Vue estático + Supabase, minimizando costo y mantenimiento.",
+    ],
+    technologies: ["Vue", "Supabase", "PostgreSQL", "Vercel"],
+    role: "Desarrollador Full-Stack",
+    duration: "2026",
+    image: "/images/projects/ControlDeudasProject.png",
+    category: "Full-Stack",
+    featured: true,
+  },
+  {
+    slug: "preventa-calculadora-inversion",
+    title: "Preventa — Calculadora de Inversión SaaS",
+    summary:
+      "Herramienta interactiva que estima en tiempo real el costo de desarrollar una plataforma SaaS y arma una propuesta clara, con tasa BCV automática.",
+    problem:
+      "Cotizar un proyecto de software frente a un cliente es lento y poco transparente: hay muchas variables (equipo, salarios, plazo, contingencia, tipo de cambio) y es difícil mostrar de forma auditable cómo se llega al precio final.",
+    solution: [
+      "Cálculo en tiempo real del precio: al mover cada variable (equipo, salarios, módulos, plazo, contingencia, utilidad) se actualiza toda la propuesta.",
+      "Tasa oficial del BCV automática vía función serverless (/api/bcv) con fallback por CORS y override manual.",
+      "Módulos y servicios seleccionables, escenarios con presets (Básico/Recomendado/Completo) y guardar/cargar configuraciones.",
+      "Gráfico de composición del precio, desglose auditable que siempre suma el total, persistencia en localStorage y exportación a PDF.",
+      "Lógica financiera en funciones puras separadas de la interfaz, con un enfoque spec-driven.",
+    ],
+    results: [
+      { value: "Tiempo real", label: "recalcula la inversión al mover cada variable" },
+      { value: "BCV", label: "tasa oficial automática vía función serverless" },
+      { value: "PDF", label: "propuesta auditable, exportable e imprimible" },
+    ],
+    learnings: [
+      "Separar la lógica financiera (funciones puras) de la interfaz para poder probarla y auditarla.",
+      "Usar funciones serverless para integrar una tasa externa con fallback robusto.",
+    ],
+    technologies: ["JavaScript", "HTML", "CSS", "Vercel"],
+    role: "Desarrollador Full-Stack",
+    duration: "2026",
+    liveLink: "https://preventa-calculadora.vercel.app/",
+    image: "/images/projects/PreventaCalculadora.png",
+    category: "Full-Stack",
+    featured: false,
+  },
+  {
+    slug: "bodega-freddy-ventas-inventario",
+    title: "Bodega Freddy — Ventas e Inventario",
+    summary:
+      "Sistema de ventas e inventario de un solo archivo para una bodega real, con precios en doble moneda y funcionamiento offline en el navegador.",
+    problem:
+      "Una bodega necesitaba registrar ventas e inventario en una PC modesta y sin conexión estable, con precios que dependen de la tasa de cambio. Además, el navegador empezó a bloquear las ventas al llenarse el almacenamiento local.",
+    solution: [
+      "Aplicación de un solo archivo HTML/JS que funciona offline en el navegador, sin instalación ni servidor.",
+      "Registro de ventas e inventario con precios en doble moneda según la tasa de cambio.",
+      "Resolví un bug que bloqueaba las ventas cuando la tasa de cambio no estaba disponible.",
+      "Superé el límite de localStorage comprimiendo los datos con LZ-String, evitando la pérdida de información y el bloqueo de la caja.",
+    ],
+    results: [
+      { value: "Offline", label: "funciona sin conexión ni instalación" },
+      { value: "LZ-String", label: "compresión que resolvió el tope de localStorage" },
+      { value: "Cliente real", label: "en uso diario en una bodega" },
+    ],
+    learnings: [
+      "Depurar y estabilizar software ya en producción en casa de un cliente.",
+      "Optimizar el almacenamiento del navegador con compresión cuando el espacio es el límite.",
+    ],
+    technologies: ["JavaScript", "HTML", "CSS"],
+    role: "Desarrollador Full-Stack (freelance)",
+    duration: "2026",
+    image: "/images/projects/BodegaFreddyProject.png",
+    category: "Automatización",
+    featured: false,
+  },
+  {
     slug: "clinica-odontologica",
     title: "Sistema Web para Clínica Odontológica",
     summary:

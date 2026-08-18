@@ -19,6 +19,9 @@ import {
   SiVercel,
   SiHtml5,
   SiCss3,
+  SiDocker,
+  SiPostgresql,
+  SiSupabase,
 } from "react-icons/si";
 
 type TechIconConfig = {
@@ -46,6 +49,9 @@ export const techIcons = {
   Vercel: { icon: SiVercel, color: "bg-black text-white" },
   HTML: { icon: SiHtml5, color: "bg-[#E34F26] text-white" },
   CSS: { icon: SiCss3, color: "bg-[#1572B6] text-white" },
+  Docker: { icon: SiDocker, color: "bg-[#2496ED] text-white" },
+  PostgreSQL: { icon: SiPostgresql, color: "bg-[#4169E1] text-white" },
+  Supabase: { icon: SiSupabase, color: "bg-[#3FCF8E] text-black" },
 } satisfies Record<string, TechIconConfig>;
 
 export type TechName = keyof typeof techIcons;
