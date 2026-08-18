@@ -10,7 +10,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="group relative h-full flex flex-col rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/10 bg-white/70 dark:bg-white/[0.03] backdrop-blur-sm transition-all duration-300 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-1">
       {/* Imagen */}
-      <div className="relative h-48 w-full overflow-hidden">
+      <div className="relative h-48 w-full overflow-hidden border-b border-white/15">
         <Image
           src={project.image}
           alt={`Captura del proyecto ${project.title}`}
