@@ -29,33 +29,32 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "plasticburger-inventario-facturacion",
-    title: "PlasticBurger — Inventario y Facturación",
+    slug: "punto-de-venta-inventario",
+    title: "Punto de Venta e Inventario para Comercios",
     summary:
-      "Sistema de inventario y facturación en doble moneda (USD/VES con tasa BCV) para un distribuidor mayorista. Ingeniería con pruebas, análisis estático y documentación primero.",
+      "Sistemas de ventas, inventario y facturación en doble moneda (USD/VES con tasa BCV) para comercios venezolanos: desde un sistema robusto con ingeniería completa hasta una app ligera 100% offline.",
     problem:
-      "Un distribuidor mayorista de insumos para comida rápida en Venezuela necesita facturar en dólares y bolívares a la vez, siguiendo la tasa oficial del BCV, sobre hardware modesto (Core i3, 4 GB de RAM) y con empleados no técnicos. Los errores de redondeo en dinero y una tasa desactualizada no son aceptables.",
+      "Los comercios en Venezuela necesitan vender, controlar inventario y facturar en dos monedas a la vez (USD y bolívares a tasa BCV), sobre hardware modesto y, muchas veces, sin conexión estable. Los errores de redondeo en dinero y una tasa desactualizada no son aceptables.",
     solution: [
-      "Facturación en USD, VES o mixta con cálculo monetario de precisión exacta usando bcmath (sin errores de coma flotante).",
-      "Sincronización diaria de la tasa oficial del BCV con historial, override manual y fallback offline.",
-      "Catálogo de productos con códigos secuenciales, libro auditable de movimientos de inventario y compras/ventas.",
-      "Pantalla de venta operable 100% por teclado y maestro de clientes con límites de crédito y saldos.",
-      "Permisos por rol (Administrador / Empleado), registro de auditoría y reportes.",
-      "Calidad de ingeniería: PHP 8.2 con PSR-4, PHPUnit, PHPStan y php-cs-fixer en CI, sobre documentación técnica y ADRs (spec-driven).",
+      "Ventas y facturación en USD, VES o mixto con cálculo monetario de precisión exacta (bcmath) y tasa BCV con sincronización diaria, historial, override manual y fallback offline.",
+      "Catálogo de productos, libro auditable de movimientos de inventario, clientes con límites de crédito, permisos por rol y reportes (sistema robusto en PHP 8.2).",
+      "Pantalla de venta operable 100% por teclado, pensada para cajeros no técnicos.",
+      "Variante ligera de un solo archivo que funciona offline en el navegador —sin instalación ni servidor— con compresión LZ-String para superar el límite de localStorage.",
+      "Calidad de ingeniería: PSR-4, PHPUnit, PHPStan y php-cs-fixer en CI, sobre documentación técnica y ADRs (spec-driven).",
     ],
     results: [
-      { value: "USD/VES", label: "facturación en doble moneda con tasa BCV" },
+      { value: "USD/VES", label: "ventas y facturación en doble moneda con tasa BCV" },
       { value: "bcmath", label: "cálculo de dinero de precisión exacta" },
-      { value: "PHPStan + PHPUnit", label: "análisis estático y pruebas en CI" },
+      { value: "Offline", label: "opera sin conexión ni instalación" },
     ],
     learnings: [
+      "Adaptar la misma solución a distintos tamaños de negocio: desde un sistema con ingeniería completa hasta una app ligera de un solo archivo.",
       "Diseñar dinero como decimal exacto de extremo a extremo para evitar errores de redondeo.",
-      "Documentar decisiones de arquitectura (ADRs) antes de escribir el código.",
     ],
     technologies: ["PHP", "MySQL", "JavaScript", "Tailwind CSS"],
-    role: "Desarrollador Full-Stack / Ingeniería (freelance)",
-    duration: "2026 – En desarrollo",
-    image: "/images/projects/PlasticBurgerProject.png",
+    role: "Desarrollador Full-Stack (freelance)",
+    duration: "2025 – 2026",
+    image: "/images/projects/PuntoDeVentaInventario.png",
     category: "Full-Stack",
     featured: true,
   },
@@ -87,66 +86,6 @@ export const projects: Project[] = [
     image: "/images/projects/ControlDeudasProject.png",
     category: "Full-Stack",
     featured: true,
-  },
-  {
-    slug: "preventa-calculadora-inversion",
-    title: "Preventa — Calculadora de Inversión SaaS",
-    summary:
-      "Herramienta interactiva que estima en tiempo real el costo de desarrollar una plataforma SaaS y arma una propuesta clara, con tasa BCV automática.",
-    problem:
-      "Cotizar un proyecto de software frente a un cliente es lento y poco transparente: hay muchas variables (equipo, salarios, plazo, contingencia, tipo de cambio) y es difícil mostrar de forma auditable cómo se llega al precio final.",
-    solution: [
-      "Cálculo en tiempo real del precio: al mover cada variable (equipo, salarios, módulos, plazo, contingencia, utilidad) se actualiza toda la propuesta.",
-      "Tasa oficial del BCV automática vía función serverless (/api/bcv) con fallback por CORS y override manual.",
-      "Módulos y servicios seleccionables, escenarios con presets (Básico/Recomendado/Completo) y guardar/cargar configuraciones.",
-      "Gráfico de composición del precio, desglose auditable que siempre suma el total, persistencia en localStorage y exportación a PDF.",
-      "Lógica financiera en funciones puras separadas de la interfaz, con un enfoque spec-driven.",
-    ],
-    results: [
-      { value: "Tiempo real", label: "recalcula la inversión al mover cada variable" },
-      { value: "BCV", label: "tasa oficial automática vía función serverless" },
-      { value: "PDF", label: "propuesta auditable, exportable e imprimible" },
-    ],
-    learnings: [
-      "Separar la lógica financiera (funciones puras) de la interfaz para poder probarla y auditarla.",
-      "Usar funciones serverless para integrar una tasa externa con fallback robusto.",
-    ],
-    technologies: ["JavaScript", "HTML", "CSS", "Vercel"],
-    role: "Desarrollador Full-Stack",
-    duration: "2026",
-    liveLink: "https://preventa-calculadora.vercel.app/",
-    image: "/images/projects/PreventaCalculadora.png",
-    category: "Full-Stack",
-    featured: false,
-  },
-  {
-    slug: "bodega-freddy-ventas-inventario",
-    title: "Bodega Freddy — Ventas e Inventario",
-    summary:
-      "Sistema de ventas e inventario de un solo archivo para una bodega real, con precios en doble moneda y funcionamiento offline en el navegador.",
-    problem:
-      "Una bodega necesitaba registrar ventas e inventario en una PC modesta y sin conexión estable, con precios que dependen de la tasa de cambio. Además, el navegador empezó a bloquear las ventas al llenarse el almacenamiento local.",
-    solution: [
-      "Aplicación de un solo archivo HTML/JS que funciona offline en el navegador, sin instalación ni servidor.",
-      "Registro de ventas e inventario con precios en doble moneda según la tasa de cambio.",
-      "Resolví un bug que bloqueaba las ventas cuando la tasa de cambio no estaba disponible.",
-      "Superé el límite de localStorage comprimiendo los datos con LZ-String, evitando la pérdida de información y el bloqueo de la caja.",
-    ],
-    results: [
-      { value: "Offline", label: "funciona sin conexión ni instalación" },
-      { value: "LZ-String", label: "compresión que resolvió el tope de localStorage" },
-      { value: "Cliente real", label: "en uso diario en una bodega" },
-    ],
-    learnings: [
-      "Depurar y estabilizar software ya en producción en casa de un cliente.",
-      "Optimizar el almacenamiento del navegador con compresión cuando el espacio es el límite.",
-    ],
-    technologies: ["JavaScript", "HTML", "CSS"],
-    role: "Desarrollador Full-Stack (freelance)",
-    duration: "2026",
-    image: "/images/projects/BodegaFreddyProject.png",
-    category: "Automatización",
-    featured: false,
   },
   {
     slug: "clinica-odontologica",
