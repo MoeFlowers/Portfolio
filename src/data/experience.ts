@@ -13,7 +13,7 @@ export const experience: ExperienceItem[] = [
     title: "Desarrollador Full-Stack Freelance",
     org: "Proyectos independientes",
     description:
-      "Desarrollo de aplicaciones web a medida y automatizaciones para clientes: sistema de gestión para clínica odontológica, bots de procesamiento de datos y motores de recomendación con ML.",
+      "Desarrollo de aplicaciones web a medida y automatizaciones para clientes: sistemas de inventario y facturación en doble moneda (USD/VES con tasa BCV), apps de finanzas con Supabase, bots de procesamiento de datos y motores de recomendación con ML. Trabajo con documentación técnica (ADRs, spec-driven), pruebas y CI.",
     highlight: "21 h/semana de trabajo manual automatizadas entre clientes",
     type: "trabajo",
   },
@@ -37,10 +37,10 @@ export const experience: ExperienceItem[] = [
   },
   {
     period: "2020 — 2025",
-    title: "Ingeniería en Sistemas",
-    org: "UNEFA",
+    title: "Ingeniero en Sistemas",
+    org: "UNEFA · Graduado (título oficial)",
     description:
-      "Formación en ingeniería de software, bases de datos y arquitectura de sistemas, complementada con cursos de arquitectura de software y DevOps.",
+      "Graduado como Ingeniero en Sistemas: formación en ingeniería de software, bases de datos y arquitectura de sistemas, complementada con cursos de arquitectura de software y DevOps.",
     type: "educacion",
   },
 ];
