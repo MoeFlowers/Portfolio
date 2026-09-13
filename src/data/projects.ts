@@ -29,6 +29,40 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "ordo",
+    title: "Ordo — Finanzas Personales Multi-moneda",
+    summary:
+      "PWA instalable para ordenar tus finanzas: deudas, suscripciones, metas de ahorro y gastos en Bs (BCV), USD, USDT y EUR, con tasas de cambio en vivo y datos aislados por usuario.",
+    problem:
+      "Llevar las finanzas personales en Venezuela significa manejar varias monedas en paralelo (bolívares a tasa BCV, dólares, USDT y euros) con tasas que cambian a diario. En una hoja de cálculo es imposible saber cuánto debes de verdad, qué toca pagar cada quincena o cuánto gastas por categoría, y encima quieres consultarlo desde el teléfono.",
+    solution: [
+      "Deudas en Bs (BCV), USD, USDT y EUR con conversión automática entre monedas.",
+      "Tasas de cambio en vivo (BCV y paralelo desde ve.dolarapi.com; euro derivado de la paridad EUR/USD del BCE) con respaldo manual.",
+      "Suscripciones y mensualidades con semáforo de estado, planificador de pagos por quincena (tablero arrastrar-y-soltar) y compras a crédito con calendario de cuotas.",
+      "Metas de ahorro con proyección de interés compuesto, heatmap de gastos estilo GitHub por categoría, estadísticas con puntuación y una calculadora/simulador de compras, deudas y crédito.",
+      "Seguridad por fila (RLS) en Supabase: cada usuario solo ve y edita sus propios datos; recordatorios por correo con Edge Functions (Deno) + Resend.",
+      "PWA instalable, tema claro/oscuro y arranque instantáneo: Vue 3 vendorizado sin paso de build, servido estático en Vercel.",
+    ],
+    results: [
+      { value: "4 monedas", label: "Bs (BCV), USD, USDT y EUR con conversión" },
+      { value: "RLS", label: "cada usuario solo ve y edita sus propios datos" },
+      { value: "PWA", label: "instalable, offline-ready, con recordatorios por correo" },
+    ],
+    learnings: [
+      "Modelar seguridad por fila (RLS) y Edge Functions en Postgres/Supabase para una app sin backend propio.",
+      "Construir una PWA completa e instalable sin bundler, con dependencias vendorizadas.",
+      "Integrar tasas de cambio en vivo de varias fuentes con conversión y fallback manual.",
+    ],
+    technologies: ["Vue", "Supabase", "PostgreSQL", "JavaScript"],
+    role: "Desarrollador Full-Stack",
+    duration: "2026",
+    githubLink: "https://github.com/MoeFlowers/ordo",
+    liveLink: "https://control-deudas-nine.vercel.app",
+    image: "/images/projects/Ordo.png",
+    category: "Full-Stack",
+    featured: true,
+  },
+  {
     slug: "punto-de-venta-inventario",
     title: "Punto de Venta e Inventario para Comercios",
     summary:
@@ -55,37 +89,6 @@ export const projects: Project[] = [
     role: "Desarrollador Full-Stack (freelance)",
     duration: "2025 – 2026",
     image: "/images/projects/PuntoDeVentaInventario.png",
-    category: "Full-Stack",
-    featured: true,
-  },
-  {
-    slug: "control-deudas-multimoneda",
-    title: "Ordo — Finanzas personales multi-moneda",
-    summary:
-      "App PWA para poner en orden tus finanzas: deudas, suscripciones, metas de ahorro, gastos y un planificador de pagos, en Bs (BCV), USD, USDT y EUR, con datos aislados por usuario.",
-    problem:
-      "Llevar las finanzas en un país con varias monedas en paralelo (bolívares a tasa BCV, dólares, USDT y euros) es confuso en una hoja de cálculo: no se sabe cuánto se debe realmente, qué toca pagar cada quincena ni en qué se va el dinero, y todo debe poder consultarse desde el teléfono.",
-    solution: [
-      "Tablero que consolida deudas por pagar y por cobrar en Bs (BCV), USD, USDT y EUR, con tasas de cambio en vivo (euro derivado de la paridad EUR/USD del BCE) y respaldo manual.",
-      "Planificador de pagos por quincena con tablero arrastrar-y-soltar y desglose por cuota, más suscripciones con semáforo de estado.",
-      "Metas de ahorro con proyección de interés compuesto, gastos con heatmap y registro por categoría, estadísticas con puntuación y una calculadora/simulador de compras, deudas y crédito.",
-      "Login por usuario con seguridad por fila (RLS) en Supabase y Edge Functions (Deno) para recordatorios por correo y borrado de cuenta; frontend Vue 3 sin build, PWA instalable, desplegado en Vercel.",
-    ],
-    results: [
-      { value: "4 monedas", label: "Bs (BCV), USD, USDT y EUR en un tablero" },
-      { value: "RLS", label: "seguridad por fila: cada usuario ve solo lo suyo" },
-      { value: "PWA", label: "instalable, sin servidor propio (Supabase + Vercel)" },
-    ],
-    learnings: [
-      "Modelar seguridad por fila (RLS) en Postgres para aislar datos por usuario sin backend propio.",
-      "Entregar una app rica con Vue estático + Supabase (Auth, RLS, Edge Functions), minimizando costo y mantenimiento.",
-    ],
-    technologies: ["Vue", "Supabase", "PostgreSQL", "Vercel"],
-    role: "Desarrollador Full-Stack",
-    duration: "2026",
-    githubLink: "https://github.com/MoeFlowers/ordo",
-    liveLink: "https://control-deudas-nine.vercel.app",
-    image: "/images/projects/ControlDeudasProject.png",
     category: "Full-Stack",
     featured: true,
   },
