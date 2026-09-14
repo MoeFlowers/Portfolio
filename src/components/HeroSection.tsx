@@ -92,7 +92,7 @@ export default function HeroSection() {
             />
             <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden ring-2 ring-zinc-200 dark:ring-white/15">
               <Image
-                src="/images/profilephoto.png"
+                src="/images/profilephoto.jpg"
                 alt="Foto de Moises Flores"
                 fill
                 priority
