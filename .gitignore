@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Salidas intermedias de Blender (se regeneran con blender/build_studio.py)
+blender/out/
