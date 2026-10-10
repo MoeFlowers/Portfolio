@@ -108,16 +108,17 @@ export default function HeroSection() {
           {...fadeUp(0.4)}
           className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/10 bg-zinc-200 dark:bg-white/10"
         >
-          {heroMetrics.map(({ value, label }) => (
-            <div
+          {heroMetrics.map(({ value, label, href }) => (
+            <a
               key={label}
-              className="flex flex-col bg-white/90 dark:bg-[#0d0d14]/90 backdrop-blur-sm px-6 py-5 text-center md:text-left"
+              href={href}
+              className="flex flex-col bg-white/90 dark:bg-[#0d0d14]/90 backdrop-blur-sm px-6 py-5 text-center md:text-left transition-colors hover:bg-white dark:hover:bg-[#13131c] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-indigo-500"
             >
               <dt className="order-2 text-xs text-zinc-500 dark:text-zinc-400 mt-1">{label}</dt>
               <dd className="order-1 font-mono text-2xl md:text-3xl font-semibold text-zinc-900 dark:text-white">
                 {value}
               </dd>
-            </div>
+            </a>
           ))}
         </motion.dl>
       </div>

@@ -596,20 +596,22 @@ def export(room):
 
 # ---------------------------------------------------------------------- main
 
-reset()
-build()
-lights()
-cams = add_cameras()
-if MODE == "preview":
-    setup_cycles(SAMPLES)
-    render_cameras(cams, "preview", SAMPLES, True)
-else:
-    room = bake(SAMPLES, RES)
-    export(room)
-    # Previews con la textura horneada: sin luces, solo emisión = lo que verá la web
-    for o in list(bpy.context.scene.objects):
-        if o.type == "LIGHT":
-            bpy.data.objects.remove(o, do_unlink=True)
-    bpy.context.scene.world.node_tree.nodes["Background"].inputs["Strength"].default_value = 0
-    render_cameras(cams, "baked", 1, False)
-print("[ok]", MODE, OUT)
+# build_studio_real.py (versión 2) importa este módulo para reutilizar la geometría.
+if __name__ == "__main__":
+    reset()
+    build()
+    lights()
+    cams = add_cameras()
+    if MODE == "preview":
+        setup_cycles(SAMPLES)
+        render_cameras(cams, "preview", SAMPLES, True)
+    else:
+        room = bake(SAMPLES, RES)
+        export(room)
+        # Previews con la textura horneada: sin luces, solo emisión = lo que verá la web
+        for o in list(bpy.context.scene.objects):
+            if o.type == "LIGHT":
+                bpy.data.objects.remove(o, do_unlink=True)
+        bpy.context.scene.world.node_tree.nodes["Background"].inputs["Strength"].default_value = 0
+        render_cameras(cams, "baked", 1, False)
+    print("[ok]", MODE, OUT)

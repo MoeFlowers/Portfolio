@@ -13,6 +13,10 @@ import { experience } from "@/data/experience";
 import { projects } from "@/data/projects";
 
 const StudioCanvas = dynamic(() => import("@/components/three/StudioCanvas"), { ssr: false });
+const FrameScrubber = dynamic(() => import("@/components/three/FrameScrubber"), { ssr: false });
+
+/** v1: escena en tiempo real (three.js) · v2: fotogramas fotorrealistas renderizados en Cycles. */
+export type StudioVariant = "v1" | "v2";
 
 const featured = projects.filter((p) => p.featured);
 
@@ -25,7 +29,7 @@ const NAV = [
 ];
 
 const card =
-  "rounded-2xl border border-white/10 bg-[#0a0c18]/90 md:bg-[#0a0c18]/75 p-6 shadow-2xl shadow-black/40 backdrop-blur-md md:p-8";
+  "rounded-2xl border border-white/10 bg-[#0a0c18]/90 md:bg-[#0a0c18]/85 p-6 shadow-2xl shadow-black/40 md:p-8";
 
 function Reveal({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
@@ -47,8 +51,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Loader({ done }: { done: boolean }) {
-  const { progress } = useProgress();
+function Loader({ done, progress }: { done: boolean; progress: number }) {
   return (
     <div
       className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#05060c] transition-opacity duration-700 ${
@@ -64,11 +67,15 @@ function Loader({ done }: { done: boolean }) {
   );
 }
 
-export default function StudioPage() {
+export default function StudioPage({ variant = "v1" }: { variant?: StudioVariant }) {
   const barRef = useRef<HTMLDivElement>(null);
   const [scrolled, setScrolled] = useState(false);
   const [ready, setReady] = useState(false);
   const onReady = useCallback(() => setReady(true), []);
+  const [frameProgress, setFrameProgress] = useState(0);
+  const sceneProgress = useProgress().progress;
+  const progress = variant === "v2" ? frameProgress : sceneProgress;
+  const Scene = variant === "v2" ? FrameScrubber : StudioCanvas;
 
   // Scroll suave
   useEffect(() => {
@@ -80,15 +87,30 @@ export default function StudioPage() {
   // Scroll → posición de cámara (rig.t) y proyecto en el monitor
   useEffect(() => {
     let raf = 0;
-    const loop = () => {
-      const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-cam]"));
-      const y = window.scrollY;
+    let layout = { vh: 1, max: 1, sections: [] as { top: number; height: number }[], proj: { top: 0, height: 1 } };
+    const measure = () => {
       const vh = window.innerHeight;
+      const box = (el: HTMLElement) => ({ top: el.offsetTop, height: el.offsetHeight });
+      const proj = document.getElementById("proyectos");
+      layout = {
+        vh,
+        max: document.documentElement.scrollHeight - vh,
+        sections: Array.from(document.querySelectorAll<HTMLElement>("[data-cam]")).map(box),
+        proj: proj ? box(proj) : { top: 0, height: 1 },
+      };
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(document.body);
+
+    const loop = () => {
+      const { vh, max, sections, proj } = layout;
+      const y = window.scrollY;
       let t = 0;
       for (let i = 0; i < sections.length; i++) {
-        const top = sections[i].offsetTop;
-        const holdEnd = top + Math.max(0, sections[i].offsetHeight - vh);
-        const next = sections[i + 1]?.offsetTop ?? Infinity;
+        const top = sections[i].top;
+        const holdEnd = top + Math.max(0, sections[i].height - vh);
+        const next = sections[i + 1]?.top ?? Infinity;
         if (y < top) break;
         if (y <= holdEnd) {
           t = i;
@@ -98,13 +120,9 @@ export default function StudioPage() {
       }
       rig.t = t;
 
-      const proj = document.getElementById("proyectos");
-      if (proj) {
-        const p = (y - proj.offsetTop) / Math.max(1, proj.offsetHeight - vh);
-        rig.project = Math.min(featured.length - 1, Math.max(0, Math.floor(p * featured.length)));
-      }
+      const p = (y - proj.top) / Math.max(1, proj.height - vh);
+      rig.project = Math.min(featured.length - 1, Math.max(0, Math.floor(p * featured.length)));
 
-      const max = document.documentElement.scrollHeight - vh;
       if (barRef.current) barRef.current.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
       raf = requestAnimationFrame(loop);
     };
@@ -113,15 +131,16 @@ export default function StudioPage() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       cancelAnimationFrame(raf);
+      ro.disconnect();
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
 
   return (
     <div className="relative bg-[radial-gradient(ellipse_at_60%_40%,#121733_0%,#05060c_70%)] text-zinc-100">
-      <Loader done={ready} />
+      <Loader done={ready} progress={progress} />
       <div className="pointer-events-none fixed inset-0 z-0">
-        <StudioCanvas projectImages={featured.map((p) => p.image)} onReady={onReady} />
+        <Scene projectImages={featured.map((p) => p.image)} onReady={onReady} onProgress={setFrameProgress} />
       </div>
 
       {/* Barra de progreso + navegación */}
@@ -131,7 +150,7 @@ export default function StudioPage() {
       />
       <header
         className={`fixed inset-x-0 top-0 z-30 transition-colors duration-500 ${
-          scrolled ? "bg-[#05060c]/60 backdrop-blur-md" : ""
+          scrolled ? "bg-[#05060c]/85" : ""
         }`}
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
@@ -147,12 +166,28 @@ export default function StudioPage() {
               </li>
             ))}
           </ul>
-          <Link
-            href="/"
-            className="rounded-full border border-white/15 px-4 py-1.5 text-xs text-zinc-300 transition hover:border-indigo-400 hover:text-white"
-          >
-            Versión clásica
-          </Link>
+          <div className="flex items-center gap-2">
+            <div className="flex rounded-full border border-white/15 p-0.5 text-xs">
+              {(["v1", "v2"] as const).map((v) => (
+                <Link
+                  key={v}
+                  href={v === "v1" ? "/3d" : "/3d/v2"}
+                  title={v === "v1" ? "Tiempo real" : "Fotorrealista"}
+                  className={`rounded-full px-3 py-1 transition ${
+                    variant === v ? "bg-white/15 text-white" : "text-zinc-400 hover:text-white"
+                  }`}
+                >
+                  {v.toUpperCase()}
+                </Link>
+              ))}
+            </div>
+            <Link
+              href="/"
+              className="hidden rounded-full border border-white/15 px-4 py-1.5 text-xs text-zinc-300 transition hover:border-indigo-400 hover:text-white sm:block"
+            >
+              Versión clásica
+            </Link>
+          </div>
         </nav>
       </header>
 
@@ -207,12 +242,12 @@ export default function StudioPage() {
               <h2 className="font-display text-[#F3EBDD] text-3xl font-semibold md:text-4xl">Resultados medibles, no solo código.</h2>
               <div className="mt-8 grid grid-cols-2 gap-6">
                 {heroMetrics.map((m) => (
-                  <div key={m.label}>
+                  <a key={m.label} href={m.href} className="block rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-300">
                     <p className="bg-gradient-to-r from-indigo-200 to-cyan-300 bg-clip-text font-mono text-3xl font-semibold text-transparent md:text-4xl">
                       {m.value}
                     </p>
                     <p className="mt-1 text-sm text-zinc-400">{m.label}</p>
-                  </div>
+                  </a>
                 ))}
               </div>
             </Reveal>

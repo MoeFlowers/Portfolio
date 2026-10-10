@@ -24,9 +24,10 @@ export const site = {
   ],
 } as const;
 
+// Cada cifra enlaza al proyecto o la experiencia que la respalda
 export const heroMetrics = [
-  { value: "+3", label: "años de experiencia" },
-  { value: "2.000+", label: "usuarios servidos" },
-  { value: "21 h/sem", label: "de trabajo automatizado" },
-  { value: "85%", label: "precisión en ML" },
+  { value: "+3", label: "años de experiencia", href: "/#experience" },
+  { value: "2.000+", label: "usuarios en la plataforma comunitaria", href: "/projects/servicio-comunitario" },
+  { value: "21 h/sem", label: "de trabajo automatizado para clientes", href: "/#experience" },
+  { value: "85%", label: "precisión del recomendador ML", href: "/projects/recomendador-libros-ia" },
 ] as const;

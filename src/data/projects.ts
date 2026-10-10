@@ -30,7 +30,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "ordo",
-    title: "Ordo — Finanzas Personales Multi-moneda",
+    title: "Ordo: Finanzas Personales Multi-moneda",
     summary:
       "PWA instalable para ordenar tus finanzas: deudas, suscripciones, metas de ahorro y gastos en Bs (BCV), USD, USDT y EUR, con tasas de cambio en vivo y datos aislados por usuario.",
     problem:
@@ -73,7 +73,7 @@ export const projects: Project[] = [
       "Ventas y facturación en USD, VES o mixto con cálculo monetario de precisión exacta (bcmath) y tasa BCV con sincronización diaria, historial, override manual y fallback offline.",
       "Catálogo de productos, libro auditable de movimientos de inventario, clientes con límites de crédito, permisos por rol y reportes (sistema robusto en PHP 8.2).",
       "Pantalla de venta operable 100% por teclado, pensada para cajeros no técnicos.",
-      "Variante ligera de un solo archivo que funciona offline en el navegador —sin instalación ni servidor— con compresión LZ-String para superar el límite de localStorage.",
+      "Variante ligera de un solo archivo que funciona offline en el navegador (sin instalación ni servidor) con compresión LZ-String para superar el límite de localStorage.",
       "Calidad de ingeniería: PSR-4, PHPUnit, PHPStan y php-cs-fixer en CI, sobre documentación técnica y ADRs (spec-driven).",
     ],
     results: [

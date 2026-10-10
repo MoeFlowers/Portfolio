@@ -42,3 +42,5 @@ next-env.d.ts
 
 # Salidas intermedias de Blender (se regeneran con blender/build_studio.py)
 blender/out/
+blender/out_real/
+blender/assets/

@@ -168,6 +168,8 @@ export default function StudioCanvas({
 }: {
   projectImages: string[];
   onReady?: () => void;
+  /** Solo lo usa la versión de fotogramas; aquí el progreso viene de useProgress(). */
+  onProgress?: (percent: number) => void;
 }) {
   useEffect(() => {
     const onMove = (e: PointerEvent) => {

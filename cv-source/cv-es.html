@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Moises Flores · CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Rubik:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  @page{size:letter;margin:0.45in 0.6in 0.4in;}
+  :root{--ink:#16181d;--body:#2f333b;--muted:#5d6370;--line:#d9dce2;--accent:#1f3fbf;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{font-family:'IBM Plex Sans',Arial,sans-serif;color:var(--body);font-size:9.6px;line-height:1.5;}
+
+  .name{font-family:'Rubik',Arial,sans-serif;font-weight:800;font-size:27px;letter-spacing:.6px;color:var(--ink);text-transform:uppercase;line-height:1.1;}
+  .role{font-size:11.5px;color:var(--body);margin-top:4px;}
+  .contact{margin-top:11px;display:grid;grid-template-columns:auto auto;justify-content:start;column-gap:20px;row-gap:2px;font-size:9.4px;color:var(--body);}
+  .contact b{font-weight:700;color:var(--ink);}
+
+  .sec{margin-top:13px;}
+  .sec-h{display:flex;align-items:center;gap:13px;font-size:11.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink);margin-bottom:7px;break-after:avoid;}
+  .sq{width:16px;height:16px;background:var(--accent);flex:0 0 auto;}
+  .summary{font-size:9.4px;line-height:1.52;}
+
+  .row{display:grid;grid-template-columns:30% 70%;break-inside:avoid;}
+  .row + .row .r{padding-top:8px;}
+  .row + .row .l{padding-top:8px;}
+  .l{padding-right:18px;}
+  .r{border-bottom:1px solid var(--line);padding-bottom:8px;}
+  .org{font-weight:700;color:var(--ink);font-size:9.6px;line-height:1.4;}
+  .dates{font-style:italic;color:var(--muted);font-size:9.2px;margin-top:2px;}
+  .job{font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink);margin-bottom:5px;}
+  ul{list-style:none;}
+  li{position:relative;padding-left:10px;font-size:9.2px;line-height:1.47;margin-bottom:1px;}
+  li::before{content:"";position:absolute;left:1px;top:6.2px;width:3px;height:3px;border-radius:50%;background:var(--muted);}
+  .txt{font-size:9.4px;}
+
+  .kv{display:grid;grid-template-columns:30% 70%;font-size:9.2px;line-height:1.47;}
+  .kv .k{font-weight:700;color:var(--ink);padding-right:18px;}
+</style>
+</head>
+<body>
+  <header>
+    <h1 class="name">Moises Flores</h1>
+    <div class="role">Desarrollador Full-Stack · Automatización & IA</div>
+    <div class="contact">
+      <span>moeflowers2@gmail.com</span><span>+58 422-559-45-56</span>
+      <span>Yaracuy, Venezuela</span><span>portfolio-eosin-theta-40.vercel.app</span>
+      <span><b>GitHub:</b> github.com/MoeFlowers</span><span><b>LinkedIn:</b> in/moeflowers-dev</span>
+    </div>
+  </header>
+
+  <section class="sec">
+  <h2 class="sec-h"><span class="sq"></span>Perfil</h2>
+  <p class="summary">Desarrollador full-stack orientado a resultados con 3+ años creando aplicaciones web y móviles, bots y automatizaciones que ahorran horas de trabajo y escalan a miles de usuarios. Experiencia en el sector salud (remoto, internacional) y en sistemas de gestión, facturación e inventario para empresas. Domino el ciclo completo backend → frontend, apps móviles con Flutter y buenas prácticas de ingeniería (pruebas y CI). Comunicación clara en español e inglés.</p>
+</section>
+  <section class="sec">
+  <h2 class="sec-h"><span class="sq"></span>Experiencia laboral</h2>
+  <div class="row"><div class="l"><div class="org">Sector Salud</div><div class="dates">ene. 2026 – actualidad</div></div><div class="r"><h3 class="job">Desarrollador de Software</h3><ul><li>Diseño y mantenimiento de aplicaciones web y móviles para una empresa internacional del sector salud, incluyendo apps móviles con Flutter.</li><li>Digitalización de flujos clave de trabajo, reduciendo en ~80% el tiempo dedicado a procesos antes manuales y repetitivos.</li><li>Colaboración en un equipo internacional distribuido (100% remoto) con Git, revisión de código e integración continua para despliegues frecuentes y estables.</li></ul></div></div><div class="row"><div class="l"><div class="org">Freelance</div><div class="dates">2024 – actualidad</div></div><div class="r"><h3 class="job">Desarrollador Full-Stack</h3><ul><li>Desarrollo sistemas de gestión, inventario, facturación y apps de finanzas con Supabase y Flutter, adaptados a procesos de negocio reales.</li><li>Automatizo el procesamiento de grandes volúmenes de datos y flujos operativos repetitivos con Python y APIs, eliminando ~21 h/semana de trabajo manual entre clientes.</li><li>Redacto documentación técnica e implemento pruebas automatizadas e integración continua (CI) para despliegues confiables y mantenibles.</li></ul></div></div><div class="row"><div class="l"><div class="org">Corpoelec, Yaracuy, VE</div><div class="dates">ago. 2025 – ene. 2026</div></div><div class="r"><h3 class="job">Pasante de TI</h3><ul><li>Área ATIT (Automatización, Tecnología e IT).</li><li>Soporte técnico integral de hardware y software: instalación, mantenimiento preventivo y correctivo de equipos y estaciones de trabajo.</li><li>Diagnóstico y solución de errores de software a usuarios finales, asegurando la continuidad operativa del área.</li><li>Administración y soporte de redes y servidores, incluida la configuración de proxy y conectividad.</li><li>Apoyo en tareas de automatización y procesos internos de TI.</li></ul></div></div><div class="row"><div class="l"><div class="org">Proyecto de Servicio Comunitario · Comunidad local · UNEFA, Yaracuy, VE</div><div class="dates">ene. 2024 – jun. 2024</div></div><div class="r"><h3 class="job">Líder técnico</h3><ul><li>Lideré el desarrollo end-to-end de una app web usada por 2.000+ habitantes, recortando el tiempo de consulta de datos un 80%.</li><li>CRUD seguro en PHP/MySQL e interfaz responsive → 97% de satisfacción; CI/CD con GitHub Actions y despliegues semanales sin downtime.</li></ul></div></div>
+</section>
+  <section class="sec">
+  <h2 class="sec-h"><span class="sq"></span>Formación</h2>
+  <div class="row"><div class="l"><div class="org">UNEFA, Yaracuy, VE</div><div class="dates">2020 – 2026</div></div><div class="r"><h3 class="job">Ingeniero en Sistemas</h3><p class="txt">Graduado (título oficial).</p></div></div>
+</section>
+  <section class="sec">
+  <h2 class="sec-h"><span class="sq"></span>Habilidades</h2>
+  <div class="kv"><span class="k">Lenguajes</span><span class="v">Python, PHP, JavaScript, TypeScript, HTML5, CSS3</span></div><div class="kv"><span class="k">Frontend</span><span class="v">React, Next.js, Vue, Tailwind CSS</span></div><div class="kv"><span class="k">Móvil</span><span class="v">Flutter (Dart)</span></div><div class="kv"><span class="k">Backend y APIs</span><span class="v">FastAPI, Flask, Node.js, REST y GraphQL</span></div><div class="kv"><span class="k">Bases de datos</span><span class="v">MySQL, PostgreSQL, Supabase, MongoDB, Firebase</span></div><div class="kv"><span class="k">DevOps y herramientas</span><span class="v">Git/GitHub, CI/CD (GitHub Actions), Docker, Vercel</span></div><div class="kv"><span class="k">Automatización e IA</span><span class="v">Bots en Python, automatización de WhatsApp, ML (Scikit-learn, Pandas)</span></div>
+</section>
+  <section class="sec">
+  <h2 class="sec-h"><span class="sq"></span>Idiomas</h2>
+  <div class="kv"><span class="k">Español</span><span class="v">Nativo</span></div><div class="kv"><span class="k">Inglés</span><span class="v">B2 / C1</span></div>
+</section>
+</body>
+</html>

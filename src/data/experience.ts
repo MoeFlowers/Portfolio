@@ -9,7 +9,7 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
-    period: "2024 — Hoy",
+    period: "2024 a hoy",
     title: "Desarrollador Full-Stack Freelance",
     org: "Proyectos independientes",
     description:
@@ -18,8 +18,8 @@ export const experience: ExperienceItem[] = [
     type: "trabajo",
   },
   {
-    period: "Ene — Jun 2024",
-    title: "Líder técnico — Proyecto de Servicio Comunitario",
+    period: "Ene a jun 2024",
+    title: "Líder técnico: Proyecto de Servicio Comunitario",
     org: "Comunidad local · UNEFA",
     description:
       "Lideré el desarrollo end-to-end de una plataforma web usada por más de 2.000 personas, desde el modelado de datos hasta el despliegue y la capacitación del equipo administrador.",
@@ -27,7 +27,7 @@ export const experience: ExperienceItem[] = [
     type: "trabajo",
   },
   {
-    period: "2023 — 2024",
+    period: "2023 a 2024",
     title: "Sistema Web para Clínica Odontológica",
     org: "Cliente privado (freelance)",
     description:
@@ -36,7 +36,7 @@ export const experience: ExperienceItem[] = [
     type: "trabajo",
   },
   {
-    period: "2020 — 2025",
+    period: "2020 a 2025",
     title: "Ingeniero en Sistemas",
     org: "UNEFA · Graduado (título oficial)",
     description:
