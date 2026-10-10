@@ -21,51 +21,51 @@ const data = {
     location: "Yaracuy, Venezuela",
     labels: { profile: "Perfil", experience: "Experiencia laboral", education: "Formación", skills: "Habilidades", langs: "Idiomas" },
     summary:
-      "Desarrollador full-stack orientado a resultados con 3+ años creando aplicaciones web y móviles, bots y automatizaciones que ahorran horas de trabajo y escalan a miles de usuarios. Experiencia en el sector salud (remoto, internacional) y en sistemas de gestión, facturación e inventario para empresas. Domino el ciclo completo backend → frontend, apps móviles con Flutter y buenas prácticas de ingeniería (pruebas y CI). Comunicación clara en español e inglés.",
+      "Desarrollador full-stack orientado a resultados con 3+ años creando aplicaciones web y móviles, bots y automatizaciones que ahorran horas de trabajo y escalan a miles de usuarios. Experiencia en el sector salud (remoto, internacional) y en sistemas de gestión, facturación e inventario para empresas. Domino el ciclo completo de backend y frontend, apps móviles con Flutter y buenas prácticas de ingeniería (pruebas y CI). Comunicación clara en español e inglés.",
     experience: [
       {
-        org: "Sector Salud",
-        dates: "ene. 2026 – actualidad",
+        org: "Sector Salud · Remoto",
+        dates: "Ene 2026 - Actualidad",
         title: "Desarrollador de Software",
         bullets: [
-          "Diseño y mantenimiento de aplicaciones web y móviles para una empresa internacional del sector salud, incluyendo apps móviles con Flutter.",
-          "Digitalización de flujos clave de trabajo, reduciendo en ~80% el tiempo dedicado a procesos antes manuales y repetitivos.",
-          "Colaboración en un equipo internacional distribuido (100% remoto) con Git, revisión de código e integración continua para despliegues frecuentes y estables.",
+          "Diseñé y mantengo aplicaciones web y móviles para una empresa internacional del sector salud, incluidas apps móviles con Flutter.",
+          "Digitalicé flujos clave de trabajo, reduciendo en ~80% el tiempo dedicado a procesos antes manuales y repetitivos.",
+          "Colaboro en un equipo internacional distribuido (100% remoto) usando Git, revisión de código e integración continua para lograr despliegues frecuentes y estables.",
         ],
       },
       {
-        org: "Freelance",
-        dates: "2024 – actualidad",
+        org: "Freelance · Remoto",
+        dates: "2024 - Actualidad",
         title: "Desarrollador Full-Stack",
         bullets: [
-          "Desarrollo sistemas de gestión, inventario, facturación y apps de finanzas con Supabase y Flutter, adaptados a procesos de negocio reales.",
-          "Automatizo el procesamiento de grandes volúmenes de datos y flujos operativos repetitivos con Python y APIs, eliminando ~21 h/semana de trabajo manual entre clientes.",
-          "Redacto documentación técnica e implemento pruebas automatizadas e integración continua (CI) para despliegues confiables y mantenibles.",
+          "Desarrollo sistemas de gestión, inventario y facturación, y apps de finanzas con Supabase y Flutter, adaptados a los procesos reales de cada negocio.",
+          "Automaticé el procesamiento de grandes volúmenes de datos y flujos repetitivos con Python y APIs REST, eliminando unas 21 h/semana de trabajo manual entre clientes.",
+          "Implemento pruebas automatizadas, integración continua (CI) y documentación técnica para entregas confiables y fáciles de mantener.",
         ],
       },
       {
-        org: "Corpoelec, Yaracuy, VE",
-        dates: "ago. 2025 – ene. 2026",
+        org: "Corpoelec · Área ATIT · Yaracuy, VE",
+        dates: "Ago 2025 - Ene 2026",
         title: "Pasante de TI",
         bullets: [
-          "Área ATIT (Automatización, Tecnología e IT).",
-          "Soporte técnico integral de hardware y software: instalación, mantenimiento preventivo y correctivo de equipos y estaciones de trabajo.",
-          "Diagnóstico y solución de errores de software a usuarios finales, asegurando la continuidad operativa del área.",
-          "Administración y soporte de redes y servidores, incluida la configuración de proxy y conectividad.",
-          "Apoyo en tareas de automatización y procesos internos de TI.",
+          "Brindé soporte técnico de hardware y software: instalación y mantenimiento preventivo y correctivo de equipos y estaciones de trabajo.",
+          "Diagnostiqué y resolví errores de software de usuarios finales, asegurando la continuidad operativa del área.",
+          "Administré redes y servidores, incluida la configuración de proxy y la conectividad.",
+          "Apoyé la automatización de procesos internos de TI.",
         ],
       },
       {
-        org: "Proyecto de Servicio Comunitario · Comunidad local · UNEFA, Yaracuy, VE",
-        dates: "ene. 2024 – jun. 2024",
-        title: "Líder técnico",
+        org: "Proyecto de Servicio Comunitario · UNEFA · Yaracuy, VE",
+        dates: "Ene 2024 - Jun 2024",
+        title: "Líder Técnico",
         bullets: [
-          "Lideré el desarrollo end-to-end de una app web usada por 2.000+ habitantes, recortando el tiempo de consulta de datos un 80%.",
-          "CRUD seguro en PHP/MySQL e interfaz responsive → 97% de satisfacción; CI/CD con GitHub Actions y despliegues semanales sin downtime.",
+          "Lideré el desarrollo end-to-end de una app web usada por más de 2.000 habitantes, reduciendo un 80% el tiempo de consulta de datos.",
+          "Desarrollé un CRUD seguro en PHP/MySQL con interfaz responsive, que obtuvo un 97% de satisfacción de los usuarios.",
+          "Configuré CI/CD con GitHub Actions y despliegues semanales sin interrupciones del servicio.",
         ],
       },
     ],
-    education: [{ org: "UNEFA, Yaracuy, VE", dates: "2020 – 2026", title: "Ingeniero en Sistemas", text: "Graduado (título oficial)." }],
+    education: [{ org: "UNEFA · Yaracuy, VE", dates: "2020 - 2026", title: "Ingeniero en Sistemas", text: "Graduado (título oficial)." }],
     skills: [
       ["Lenguajes", "Python, PHP, JavaScript, TypeScript, HTML5, CSS3"],
       ["Frontend", "React, Next.js, Vue, Tailwind CSS"],
@@ -89,51 +89,51 @@ const data = {
     location: "Yaracuy, Venezuela",
     labels: { profile: "Profile", experience: "Work experience", education: "Education", skills: "Skills", langs: "Languages" },
     summary:
-      "Results-driven full-stack developer with 3+ years building web and mobile applications, bots and automations that save hours of work and scale to thousands of users. Experience in the healthcare sector (remote, international) and in management, billing and inventory systems for businesses. I own the full backend → frontend cycle, build mobile apps with Flutter, and follow solid engineering practices (tests and CI). Clear communication in Spanish and English.",
+      "Results-driven full-stack developer with 3+ years building web and mobile applications, bots and automations that save hours of work and scale to thousands of users. Experience in the healthcare sector (remote, international) and in management, billing and inventory systems for businesses. I own the full backend and frontend cycle, build mobile apps with Flutter, and follow solid engineering practices (tests and CI). Clear communication in Spanish and English.",
     experience: [
       {
-        org: "Healthcare Sector",
-        dates: "Jan 2026 – Present",
+        org: "Healthcare Sector · Remote",
+        dates: "Jan 2026 - Present",
         title: "Software Developer",
         bullets: [
-          "Design and maintain web and mobile applications for an international healthcare company, including mobile apps with Flutter.",
+          "Designed and maintain web and mobile applications for an international healthcare company, including mobile apps with Flutter.",
           "Digitized key workflows, cutting the time spent on formerly manual, repetitive processes by ~80%.",
-          "Collaborate in a distributed international team (fully remote) with Git, code review and continuous integration for frequent, stable deployments.",
+          "Collaborate in a distributed international team (100% remote) using Git, code review and continuous integration to achieve frequent, stable deployments.",
         ],
       },
       {
-        org: "Freelance",
-        dates: "2024 – Present",
+        org: "Freelance · Remote",
+        dates: "2024 - Present",
         title: "Full-Stack Developer",
         bullets: [
-          "Build management, inventory and billing systems and finance apps with Supabase and Flutter, tailored to real business processes.",
-          "Automate the processing of large data volumes and repetitive operational workflows with Python and APIs, removing ~21 h/week of manual work across clients.",
-          "Write technical documentation and implement automated tests and continuous integration (CI) for reliable, maintainable deployments.",
+          "Build management, inventory and billing systems, and finance apps with Supabase and Flutter, tailored to each client's real processes.",
+          "Automated the processing of large data volumes and repetitive workflows with Python and REST APIs, removing about 21 h/week of manual work across clients.",
+          "Implement automated tests, continuous integration (CI) and technical documentation for reliable, maintainable releases.",
         ],
       },
       {
-        org: "Corpoelec, Yaracuy, VE",
-        dates: "Aug 2025 – Jan 2026",
+        org: "Corpoelec · ATIT Area · Yaracuy, VE",
+        dates: "Aug 2025 - Jan 2026",
         title: "IT Intern",
         bullets: [
-          "ATIT Area (Automation, Technology & IT).",
-          "End-to-end hardware and software support: installation, preventive and corrective maintenance of equipment and workstations.",
+          "Provided hardware and software support: installation and preventive and corrective maintenance of equipment and workstations.",
           "Diagnosed and resolved end-user software issues, keeping the area's operations running.",
-          "Network and server administration and support, including proxy configuration and connectivity.",
-          "Supported automation and internal IT processes.",
+          "Administered networks and servers, including proxy configuration and connectivity.",
+          "Supported the automation of internal IT processes.",
         ],
       },
       {
-        org: "Community Service Project · Local community · UNEFA, Yaracuy, VE",
-        dates: "Jan 2024 – Jun 2024",
+        org: "Community Service Project · UNEFA · Yaracuy, VE",
+        dates: "Jan 2024 - Jun 2024",
         title: "Technical Lead",
         bullets: [
-          "Led end-to-end development of a web app used by 2,000+ residents, cutting data-lookup time by 80%.",
-          "Secure CRUD in PHP/MySQL and a responsive UI → 97% satisfaction; CI/CD with GitHub Actions and weekly deploys with no downtime.",
+          "Led end-to-end development of a web app used by more than 2,000 residents, cutting data-lookup time by 80%.",
+          "Built a secure CRUD in PHP/MySQL with a responsive UI that reached 97% user satisfaction.",
+          "Set up CI/CD with GitHub Actions and weekly deployments with no service downtime.",
         ],
       },
     ],
-    education: [{ org: "UNEFA, Yaracuy, VE", dates: "2020 – 2026", title: "Systems Engineer", text: "Graduated (official degree)." }],
+    education: [{ org: "UNEFA · Yaracuy, VE", dates: "2020 - 2026", title: "Systems Engineer", text: "Graduated (official degree)." }],
     skills: [
       ["Languages", "Python, PHP, JavaScript, TypeScript, HTML5, CSS3"],
       ["Frontend", "React, Next.js, Vue, Tailwind CSS"],
@@ -157,14 +157,13 @@ const section = (label, body) => `<section class="sec">
   ${body}
 </section>`;
 
-const row = (left, right) => `<div class="row"><div class="l">${left}</div><div class="r">${right}</div></div>`;
-
-const entry = (e) =>
-  row(
-    `<div class="org">${e.org}</div><div class="dates">${e.dates}</div>`,
-    `<h3 class="job">${e.title}</h3>` +
-      (e.bullets ? `<ul>${e.bullets.map((b) => `<li>${b}</li>`).join("")}</ul>` : `<p class="txt">${e.text}</p>`)
-  );
+// Orden del HTML = orden en que lo lee un ATS: puesto, empresa, fechas y viñetas.
+// La rejilla lo coloca igual que la plantilla (empresa y fechas a la izquierda).
+const entry = (e) => `<div class="row">
+  <h3 class="job">${e.title}&nbsp;</h3>
+  <div class="l"><div class="org">${e.org}</div><div class="dates">${e.dates}</div></div>
+  <div class="body">${e.bullets ? e.bullets.map((b) => `<p class="b">• ${b}</p>`).join("") : `<p class="txt">${e.text}</p>`}</div>
+</div>`;
 
 function render(d) {
   const skills = d.skills.map(([k, v]) => `<div class="kv"><span class="k">${k}</span><span class="v">${v}</span></div>`).join("");
@@ -195,17 +194,14 @@ function render(d) {
   .sq{width:16px;height:16px;background:var(--accent);flex:0 0 auto;}
   .summary{font-size:9.4px;line-height:1.52;}
 
-  .row{display:grid;grid-template-columns:30% 70%;break-inside:avoid;}
-  .row + .row .r{padding-top:8px;}
-  .row + .row .l{padding-top:8px;}
-  .l{padding-right:18px;}
-  .r{border-bottom:1px solid var(--line);padding-bottom:8px;}
+  .row{display:grid;grid-template-columns:30% 70%;grid-template-areas:"l job" "l body";break-inside:avoid;}
+  .row + .row .job, .row + .row .l{padding-top:8px;}
+  .job{grid-area:job;font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink);margin-bottom:5px;}
+  .l{grid-area:l;padding-right:18px;}
+  .body{grid-area:body;border-bottom:1px solid var(--line);padding-bottom:8px;}
   .org{font-weight:700;color:var(--ink);font-size:9.6px;line-height:1.4;}
   .dates{font-style:italic;color:var(--muted);font-size:9.2px;margin-top:2px;}
-  .job{font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink);margin-bottom:5px;}
-  ul{list-style:none;}
-  li{position:relative;padding-left:10px;font-size:9.2px;line-height:1.47;margin-bottom:1px;}
-  li::before{content:"";position:absolute;left:1px;top:6.2px;width:3px;height:3px;border-radius:50%;background:var(--muted);}
+  .b{padding-left:10px;text-indent:-8px;font-size:9.2px;line-height:1.47;margin-bottom:1px;}
   .txt{font-size:9.4px;}
 
   .kv{display:grid;grid-template-columns:30% 70%;font-size:9.2px;line-height:1.47;}
