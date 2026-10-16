@@ -1,35 +1,17 @@
-import Reveal from "./Reveal";
-
 interface SectionHeadingProps {
-  eyebrow: string;
-  title: React.ReactNode;
-  description?: string;
-  align?: "center" | "left";
+  id: string;
+  title: string;
+  note?: React.ReactNode;
 }
 
-export default function SectionHeading({
-  eyebrow,
-  title,
-  description,
-  align = "center",
-}: SectionHeadingProps) {
-  const alignment = align === "center" ? "text-center mx-auto" : "text-left";
-
+/** Título de sección en Mona Sans ancha, con una nota opcional alineada a la derecha. */
+export default function SectionHeading({ id, title, note }: SectionHeadingProps) {
   return (
-    <Reveal className={`max-w-2xl mb-14 ${align === "center" ? "mx-auto" : ""}`}>
-      <div className={alignment}>
-        <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent mb-3">
-          {eyebrow}
-        </p>
-        <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-white text-balance">
-          {title}
-        </h2>
-        {description && (
-          <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
-            {description}
-          </p>
-        )}
-      </div>
-    </Reveal>
+    <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-3 border-b border-line pb-5">
+      <h2 id={id} className="wide text-[clamp(1.9rem,4vw,2.9rem)] font-bold leading-none text-ink">
+        {title}
+      </h2>
+      {note && <div className="text-[0.95rem] text-ink-3">{note}</div>}
+    </div>
   );
 }

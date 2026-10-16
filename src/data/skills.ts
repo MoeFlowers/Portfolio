@@ -1,10 +1,9 @@
-import { TechName } from "@/data/techIcons";
-
+// Lo usa la versión 3D (/3d). La home usa data/tools.ts.
 export interface SkillCategory {
   id: string;
   title: string;
   description: string;
-  skills: TechName[];
+  skills: string[];
 }
 
 export const skillCategories: SkillCategory[] = [

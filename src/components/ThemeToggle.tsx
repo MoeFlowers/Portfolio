@@ -7,11 +7,11 @@ export default function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Evita mismatch de hidratación: el tema solo se conoce en el cliente
+  // El tema solo se conoce en el cliente; antes de montar se reserva el espacio
   useEffect(() => setMounted(true), []);
 
   if (!mounted) {
-    return <span className="inline-block w-9 h-9" aria-hidden="true" />;
+    return <span className="inline-block h-11 w-11" aria-hidden="true" />;
   }
 
   const isDark = resolvedTheme === "dark";
@@ -21,9 +21,9 @@ export default function ThemeToggle() {
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={isDark ? "Cambiar a tema claro" : "Cambiar a tema oscuro"}
-      className="p-2 rounded-full text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200/70 dark:hover:bg-white/10 transition-colors duration-200"
+      className="inline-flex h-11 w-11 items-center justify-center rounded-[6px] text-ink-2 transition-colors hover:bg-sunk hover:text-ink"
     >
-      {isDark ? <FiSun className="w-5 h-5" /> : <FiMoon className="w-5 h-5" />}
+      {isDark ? <FiSun className="h-[18px] w-[18px]" aria-hidden="true" /> : <FiMoon className="h-[18px] w-[18px]" aria-hidden="true" />}
     </button>
   );
 }

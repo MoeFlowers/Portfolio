@@ -1,126 +1,77 @@
-"use client";
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
-import { site, heroMetrics } from "@/data/site";
+import Link from "next/link";
+import { site } from "@/data/site";
+
+const now = [
+  { text: "Desarrollador de software en el sector salud, para una empresa internacional, en remoto." },
+  { text: "Mostrador: caja e inventario por gramo para una carnicería con frutería.", href: "/projects/mostrador" },
+  { text: "Vitrina: catálogos en línea con pedidos por WhatsApp.", href: "/projects/vitrina" },
+];
 
 export default function HeroSection() {
-  const reduceMotion = useReducedMotion();
-
-  const fadeUp = (delay: number) =>
-    reduceMotion
-      ? {}
-      : {
-          initial: { opacity: 0, y: 24 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.55, delay, ease: "easeOut" as const },
-        };
-
   return (
-    <section className="relative overflow-hidden">
-      {/* Fondo: gradiente radial discreto */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(99,102,241,0.10),transparent)] dark:bg-[radial-gradient(60%_50%_at_50%_0%,rgba(99,102,241,0.15),transparent)]"
-      />
+    <section aria-labelledby="hero-title" className="mx-auto max-w-6xl px-5 pb-20 pt-14 sm:px-8 md:pb-28 md:pt-20">
+      <div className="grid items-end gap-12 md:grid-cols-12">
+        <div className="md:col-span-8">
+          <h1
+            id="hero-title"
+            className="rise wide text-[clamp(3.4rem,10.5vw,8.25rem)] font-extrabold leading-[0.88] tracking-[-0.035em] text-ink"
+          >
+            Moises
+            <br />
+            Flores
+          </h1>
+          <p style={{ animationDelay: "90ms" }} className="rise mt-9 max-w-[34ch] text-[clamp(1.2rem,2.1vw,1.5rem)] leading-snug text-ink">
+            Ingeniero en sistemas y desarrollador full-stack. Construyo sistemas de caja, inventario y catálogos para
+            comercios, aplicaciones web y móviles, y escenas 3D que corren en el navegador.
+          </p>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-28 md:pb-24">
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
-          {/* Texto */}
-          <div className="max-w-2xl text-center md:text-left">
-            <motion.p
-              {...fadeUp(0)}
-              className="inline-flex items-center gap-2 font-mono text-xs text-zinc-600 dark:text-zinc-400 border border-zinc-300 dark:border-white/15 rounded-full px-3 py-1.5 mb-6"
-            >
-              <span aria-hidden="true" className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              Disponible para nuevos proyectos
-            </motion.p>
-
-            <motion.h1
-              {...fadeUp(0.1)}
-              className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 dark:text-white text-balance"
-            >
-              Construyo productos web que{" "}
-              <span className="bg-gradient-to-r from-accent to-cyan-accent bg-clip-text text-transparent">
-                ahorran horas
-              </span>{" "}
-              y sirven a miles de usuarios.
-            </motion.h1>
-
-            <motion.p
-              {...fadeUp(0.2)}
-              className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed"
-            >
-              Soy <strong className="text-zinc-900 dark:text-white font-semibold">{site.name}</strong>,{" "}
-              {site.role.toLowerCase()} especializado en{" "}
-              <strong className="text-zinc-900 dark:text-white font-semibold">React, Next.js y Python</strong>.
-              Del backend a la interfaz, con foco en resultados medibles.
-            </motion.p>
-
-            <motion.div
-              {...fadeUp(0.3)}
-              className="mt-8 flex flex-col sm:flex-row gap-3 justify-center md:justify-start"
-            >
-              <a
-                href="#projects"
-                className="px-7 py-3 text-sm font-semibold rounded-full bg-accent text-white hover:bg-accent-hover transition-colors duration-200 shadow-lg shadow-accent/25"
-              >
-                Ver proyectos
-              </a>
-              <a
-                href="#contact"
-                className="px-7 py-3 text-sm font-semibold rounded-full border border-zinc-300 dark:border-white/15 text-zinc-700 dark:text-zinc-300 hover:border-accent hover:text-accent dark:hover:text-accent-soft transition-colors duration-200"
-              >
-                Contactarme
-              </a>
-            </motion.div>
+          <div style={{ animationDelay: "180ms" }} className="rise mt-10 max-w-xl border-t border-line pt-5">
+            <p className="text-[0.95rem] text-ink-3">Ahora</p>
+            <ul className="mt-2 space-y-2 text-ink-2">
+              {now.map((item) => (
+                <li key={item.text}>
+                  {item.href ? (
+                    <Link href={item.href} className="link-underline">
+                      {item.text}
+                    </Link>
+                  ) : (
+                    item.text
+                  )}
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Foto */}
-          <motion.div
-            {...(reduceMotion
-              ? {}
-              : {
-                  initial: { opacity: 0, scale: 0.92 },
-                  animate: { opacity: 1, scale: 1 },
-                  transition: { duration: 0.6, ease: "easeOut" as const },
-                })}
-            className="relative shrink-0"
-          >
-            <div
-              aria-hidden="true"
-              className="absolute -inset-2 rounded-full bg-gradient-to-tr from-accent/60 to-cyan-accent/60 blur-xl opacity-40"
-            />
-            <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden ring-2 ring-zinc-200 dark:ring-white/15">
-              <Image
-                src="/images/profilephoto.jpg"
-                alt="Foto de Moises Flores"
-                fill
-                priority
-                sizes="(max-width: 768px) 176px, 224px"
-                className="object-cover"
-              />
-            </div>
-          </motion.div>
+          <div style={{ animationDelay: "260ms" }} className="rise mt-10 flex flex-wrap gap-3">
+            <a
+              href="#work"
+              className="inline-flex min-h-12 items-center rounded-[6px] bg-ink px-6 text-[0.98rem] font-medium text-paper transition-opacity hover:opacity-85"
+            >
+              Ver proyectos
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex min-h-12 items-center rounded-[6px] border border-control px-6 text-[0.98rem] font-medium text-ink transition-colors hover:border-ink"
+            >
+              Escribirme
+            </a>
+          </div>
         </div>
 
-        {/* Métricas de impacto */}
-        <motion.dl
-          {...fadeUp(0.4)}
-          className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/10 bg-zinc-200 dark:bg-white/10"
-        >
-          {heroMetrics.map(({ value, label, href }) => (
-            <a
-              key={label}
-              href={href}
-              className="flex flex-col bg-white/90 dark:bg-[#0d0d14]/90 backdrop-blur-sm px-6 py-5 text-center md:text-left transition-colors hover:bg-white dark:hover:bg-[#13131c] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-indigo-500"
-            >
-              <dt className="order-2 text-xs text-zinc-500 dark:text-zinc-400 mt-1">{label}</dt>
-              <dd className="order-1 font-mono text-2xl md:text-3xl font-semibold text-zinc-900 dark:text-white">
-                {value}
-              </dd>
-            </a>
-          ))}
-        </motion.dl>
+        <figure style={{ animationDelay: "140ms" }} className="rise md:col-span-4">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-[22rem] overflow-hidden rounded-[6px] bg-sunk md:max-w-none">
+            <Image
+              src="/images/retrato.webp"
+              alt="Retrato de Moises Flores"
+              fill
+              priority
+              sizes="(max-width: 768px) 22rem, 33vw"
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="mt-3 text-center text-[0.95rem] text-ink-3 md:text-left">{site.location}</figcaption>
+        </figure>
       </div>
     </section>
   );

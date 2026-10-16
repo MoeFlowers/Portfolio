@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
-import { FiArrowLeft, FiGithub, FiExternalLink, FiClock, FiUser, FiCheck } from "react-icons/fi";
-import { projects, getProject } from "@/data/projects";
+import { FiArrowUpRight } from "react-icons/fi";
+import { projects, getProject, kindLabels } from "@/data/projects";
 import { site } from "@/data/site";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import TechChip from "@/components/ui/TechChip";
+import ShotFrame from "@/components/ui/ShotFrame";
+import { ResultsList } from "@/components/work/parts";
 
 interface CaseStudyProps {
   params: Promise<{ slug: string }>;
 }
+
+// Mismo orden que el índice de la home: más reciente primero
+const ordered = [...projects].sort((a, b) => Number(b.year) - Number(a.year));
 
 export function generateStaticParams() {
   return projects.map(({ slug }) => ({ slug }));
@@ -21,6 +24,7 @@ export async function generateMetadata({ params }: CaseStudyProps): Promise<Meta
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
+  const image = project.shots.find((s) => s.device !== "mobile");
 
   return {
     title: project.title,
@@ -30,7 +34,7 @@ export async function generateMetadata({ params }: CaseStudyProps): Promise<Meta
       title: project.title,
       description: project.summary,
       url: `${site.url}/projects/${project.slug}`,
-      images: [{ url: project.image }],
+      ...(image && { images: [{ url: image.src }] }),
     },
   };
 }
@@ -40,167 +44,155 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
   const project = getProject(slug);
   if (!project) notFound();
 
+  const desktop = project.shots.filter((s) => s.device !== "mobile");
+  const mobile = project.shots.filter((s) => s.device === "mobile");
+  const [hero, ...rest] = desktop;
+  const isConcept = project.status === "Concepto";
+  const index = ordered.findIndex((p) => p.slug === project.slug);
+  const next = ordered[(index + 1) % ordered.length];
+
   return (
     <>
       <a href="#main-content" className="skip-link">
         Saltar al contenido
       </a>
       <Navbar />
-      <main id="main-content" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <Link
-          href="/#projects"
-          className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-accent dark:hover:text-accent-soft transition-colors mb-10"
-        >
-          <FiArrowLeft aria-hidden="true" />
-          Volver a proyectos
+      <main id="main-content" className="mx-auto max-w-6xl px-5 pb-24 pt-10 sm:px-8 md:pt-14">
+        <Link href="/#projects" className="link-underline text-[0.95rem] text-ink-2">
+          Volver a todos los proyectos
         </Link>
 
-        {/* Encabezado */}
-        <header>
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent mb-3">
-            {project.category}
-          </p>
-          <h1 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white text-balance">
-            {project.title}
-          </h1>
-          <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">{project.summary}</p>
+        <header className="mt-10 grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-8">
+            <p className="tabular text-[0.95rem] text-ink-3">
+              {project.year} · {kindLabels[project.kind]} · <span className="text-ink-2">{project.status}</span>
+            </p>
+            <h1 className="wide mt-4 text-[clamp(2.6rem,7vw,5.4rem)] font-extrabold leading-[0.9] tracking-[-0.03em] text-ink">
+              {project.title}
+            </h1>
+            <p className="mt-7 max-w-[46ch] text-[clamp(1.1rem,1.8vw,1.35rem)] leading-snug text-ink">{project.summary}</p>
+          </div>
 
-          <dl className="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm">
-            <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400">
-              <FiUser aria-hidden="true" className="text-accent" />
-              <dt className="sr-only">Rol</dt>
-              <dd>{project.role}</dd>
+          <dl className="self-end text-[0.95rem] lg:col-span-4">
+            <div className="border-t border-line py-3">
+              <dt className="text-ink-3">Rol</dt>
+              <dd className="text-ink">{project.role}</dd>
             </div>
-            <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400">
-              <FiClock aria-hidden="true" className="text-accent" />
-              <dt className="sr-only">Duración</dt>
-              <dd>{project.duration}</dd>
+            <div className="border-t border-line py-3">
+              <dt className="text-ink-3">Duración</dt>
+              <dd className="text-ink">{project.duration}</dd>
+            </div>
+            <div className="border-t border-line py-3">
+              <dt className="text-ink-3">Tecnologías</dt>
+              <dd className="text-ink">{project.technologies.join(" · ")}</dd>
+            </div>
+            <div className="border-y border-line py-3">
+              <dt className="sr-only">Enlaces</dt>
+              <dd className="flex flex-wrap gap-x-5 gap-y-2">
+                {project.liveLink && (
+                  <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="link-underline inline-flex items-center gap-1 text-ink">
+                    {project.liveLabel ?? "Ver en vivo"}
+                    <FiArrowUpRight aria-hidden="true" className="h-4 w-4" />
+                    <span className="sr-only">(se abre en otra pestaña)</span>
+                  </a>
+                )}
+                {project.githubLink && (
+                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="link-underline inline-flex items-center gap-1 text-ink">
+                    Código
+                    <FiArrowUpRight aria-hidden="true" className="h-4 w-4" />
+                    <span className="sr-only">(se abre en otra pestaña)</span>
+                  </a>
+                )}
+                {project.privateRepo && <span className="text-ink-3">Código privado: es de un cliente.</span>}
+              </dd>
             </div>
           </dl>
-
-          <ul className="mt-5 flex flex-wrap gap-2" aria-label="Tecnologías utilizadas">
-            {project.technologies.map((tech) => (
-              <li key={tech}>
-                <TechChip tech={tech} />
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            {project.liveLink && (
-              <a
-                href={project.liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-full bg-accent text-white hover:bg-accent-hover transition-colors"
-              >
-                <FiExternalLink aria-hidden="true" />
-                Ver demo en vivo
-              </a>
-            )}
-            {project.githubLink && (
-              <a
-                href={project.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-full border border-zinc-300 dark:border-white/15 text-zinc-700 dark:text-zinc-300 hover:border-accent hover:text-accent dark:hover:text-accent-soft transition-colors"
-              >
-                <FiGithub aria-hidden="true" />
-                Ver código
-              </a>
-            )}
-          </div>
         </header>
 
-        {/* Imagen principal */}
-        <div className="relative mt-12 aspect-video rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/10">
-          <Image
-            src={project.image}
-            alt={`Captura del proyecto ${project.title}`}
-            fill
-            priority
-            sizes="(max-width: 896px) 100vw, 896px"
-            className="object-cover"
-          />
-        </div>
+        {hero && <ShotFrame shot={hero} priority sizes="(max-width: 1200px) 100vw, 1150px" className="mt-14" />}
 
-        {/* Resultados */}
-        <section aria-labelledby="results-heading" className="mt-14">
-          <h2 id="results-heading" className="font-display text-2xl font-bold text-zinc-900 dark:text-white mb-6">
+        <section aria-labelledby="results-title" className="mt-16">
+          <h2 id="results-title" className="sr-only">
             Resultados
           </h2>
-          <dl className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {project.results.map(({ value, label }) => (
-              <div
-                key={label}
-                className="flex flex-col p-6 rounded-2xl border border-zinc-200 dark:border-white/10 bg-white/70 dark:bg-white/[0.03]"
-              >
-                <dd className="font-mono text-3xl font-semibold text-accent dark:text-accent-soft">
-                  {value}
-                </dd>
-                <dt className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{label}</dt>
-              </div>
-            ))}
-          </dl>
+          <ResultsList project={project} />
         </section>
 
-        {/* Problema */}
-        <section aria-labelledby="problem-heading" className="mt-14">
-          <h2 id="problem-heading" className="font-display text-2xl font-bold text-zinc-900 dark:text-white mb-4">
-            El problema
-          </h2>
-          <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">{project.problem}</p>
-        </section>
+        <div className="mt-20 space-y-16">
+          <Block title={isConcept ? "La idea" : "El problema"}>
+            <p className="max-w-[62ch] text-[1.05rem] text-ink-2">{project.problem}</p>
+          </Block>
 
-        {/* Solución */}
-        <section aria-labelledby="solution-heading" className="mt-14">
-          <h2 id="solution-heading" className="font-display text-2xl font-bold text-zinc-900 dark:text-white mb-4">
-            La solución
-          </h2>
-          <ul className="space-y-3">
-            {project.solution.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-zinc-600 dark:text-zinc-400">
-                <FiCheck aria-hidden="true" className="mt-1 shrink-0 text-accent" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        {/* Aprendizajes */}
-        {project.learnings && project.learnings.length > 0 && (
-          <section aria-labelledby="learnings-heading" className="mt-14">
-            <h2 id="learnings-heading" className="font-display text-2xl font-bold text-zinc-900 dark:text-white mb-4">
-              Qué aprendí
-            </h2>
-            <ul className="space-y-3">
-              {project.learnings.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-zinc-600 dark:text-zinc-400">
-                  <FiCheck aria-hidden="true" className="mt-1 shrink-0 text-accent" />
-                  {item}
-                </li>
+          <Block title="Qué construí">
+            <ul className="max-w-[62ch] list-disc space-y-3 pl-5 text-[1.05rem] text-ink-2 marker:text-ink-3">
+              {project.solution.map((item) => (
+                <li key={item}>{item}</li>
               ))}
             </ul>
+          </Block>
+
+          {project.learnings && project.learnings.length > 0 && (
+            <Block title="Qué aprendí">
+              <ul className="max-w-[62ch] list-disc space-y-3 pl-5 text-[1.05rem] text-ink-2 marker:text-ink-3">
+                {project.learnings.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </Block>
+          )}
+        </div>
+
+        {(rest.length > 0 || mobile.length > 0) && (
+          <section aria-labelledby="gallery-title" className="mt-24">
+            <h2 id="gallery-title" className="wide border-b border-line pb-4 text-[1.6rem] font-bold text-ink">
+              Más pantallas
+            </h2>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {rest.map((shot) => (
+                <figure key={shot.src}>
+                  <ShotFrame shot={shot} sizes="(max-width: 640px) 100vw, 560px" />
+                  <figcaption className="mt-2 text-[0.92rem] text-ink-3">{shot.alt}</figcaption>
+                </figure>
+              ))}
+            </div>
+            {mobile.length > 0 && (
+              <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                {mobile.map((shot) => (
+                  <figure key={shot.src}>
+                    <ShotFrame shot={shot} sizes="(max-width: 640px) 50vw, 270px" />
+                    <figcaption className="mt-2 text-[0.92rem] text-ink-3">{shot.alt}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            )}
           </section>
         )}
 
-        {/* CTA */}
-        <div className="mt-16 p-8 rounded-2xl border border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-white/[0.03] text-center">
-          <h2 className="font-display text-xl font-bold text-zinc-900 dark:text-white">
-            ¿Necesitas algo parecido?
-          </h2>
-          <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-            Cuéntame tu caso y te propongo una solución.
-          </p>
-          <Link
-            href="/#contact"
-            className="mt-5 inline-block px-7 py-3 text-sm font-semibold rounded-full bg-accent text-white hover:bg-accent-hover transition-colors"
-          >
-            Escribirme
-          </Link>
-        </div>
+        <nav aria-label="Más proyectos" className="mt-24 grid gap-8 border-t border-line pt-10 md:grid-cols-2">
+          <div>
+            <p className="text-[0.95rem] text-ink-3">Siguiente proyecto</p>
+            <Link href={`/projects/${next.slug}`} className="wide mt-2 inline-block text-[clamp(1.6rem,3.4vw,2.4rem)] font-bold leading-tight text-ink transition-colors hover:text-accent">
+              {next.title}
+            </Link>
+          </div>
+          <div className="md:text-right">
+            <p className="text-[0.95rem] text-ink-3">¿Necesitas algo parecido?</p>
+            <Link href="/#contact" className="link-underline mt-2 inline-block text-[1.1rem] text-ink">
+              Escríbeme y lo conversamos
+            </Link>
+          </div>
+        </nav>
       </main>
       <Footer />
     </>
+  );
+}
+
+function Block({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <section className="grid gap-x-10 gap-y-4 border-t border-line pt-6 md:grid-cols-12">
+      <h2 className="text-[1.15rem] font-semibold text-ink md:col-span-3">{title}</h2>
+      <div className="md:col-span-9">{children}</div>
+    </section>
   );
 }

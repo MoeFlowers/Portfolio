@@ -10,7 +10,7 @@ import { rig } from "@/components/three/cameraPath";
 import { heroMetrics, site } from "@/data/site";
 import { skillCategories } from "@/data/skills";
 import { experience } from "@/data/experience";
-import { projects } from "@/data/projects";
+import { getProject, studioProjectSlugs, type Project } from "@/data/projects";
 
 const StudioCanvas = dynamic(() => import("@/components/three/StudioCanvas"), { ssr: false });
 const FrameScrubber = dynamic(() => import("@/components/three/FrameScrubber"), { ssr: false });
@@ -18,7 +18,9 @@ const FrameScrubber = dynamic(() => import("@/components/three/FrameScrubber"), 
 /** v1: escena en tiempo real (three.js) · v2: fotogramas fotorrealistas renderizados en Cycles. */
 export type StudioVariant = "v1" | "v2";
 
-const featured = projects.filter((p) => p.featured);
+const featured = studioProjectSlugs
+  .map((slug) => getProject(slug))
+  .filter((p): p is Project => Boolean(p));
 
 const NAV = [
   { href: "#impacto", label: "Impacto" },
@@ -140,7 +142,7 @@ export default function StudioPage({ variant = "v1" }: { variant?: StudioVariant
     <div className="relative bg-[radial-gradient(ellipse_at_60%_40%,#121733_0%,#05060c_70%)] text-zinc-100">
       <Loader done={ready} progress={progress} />
       <div className="pointer-events-none fixed inset-0 z-0">
-        <Scene projectImages={featured.map((p) => p.image)} onReady={onReady} onProgress={setFrameProgress} />
+        <Scene projectImages={featured.map((p) => p.cover ?? p.shots[0]?.src ?? "")} onReady={onReady} onProgress={setFrameProgress} />
       </div>
 
       {/* Barra de progreso + navegación */}
@@ -339,7 +341,6 @@ export default function StudioPage({ variant = "v1" }: { variant?: StudioVariant
                     <p className="font-mono text-xs text-zinc-500">{e.period}</p>
                     <p className="mt-1 font-medium text-zinc-100">{e.title}</p>
                     <p className="text-sm text-zinc-400">{e.org}</p>
-                    {e.highlight && <p className="mt-1 font-mono text-xs text-indigo-300">{e.highlight}</p>}
                   </li>
                 ))}
               </ol>

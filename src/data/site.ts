@@ -4,27 +4,36 @@ export const site = {
   // Cambiar por el dominio propio cuando esté conectado en Vercel
   url: "https://portfolio-eosin-theta-40.vercel.app",
   email: "moeflowers2@gmail.com",
+  whatsapp: "https://wa.me/584225594556",
+  whatsappLabel: "+58 422-559-45-56",
   github: "https://github.com/MoeFlowers",
   linkedin: "https://www.linkedin.com/in/moeflowers-dev/",
-  location: "Venezuela · Remoto",
+  location: "Yaracuy, Venezuela · Remoto",
   description:
-    "Desarrollador Full-Stack especializado en React, Next.js y Python. Construyo aplicaciones web, bots y automatizaciones que ahorran horas de trabajo y sirven a miles de usuarios.",
+    "Desarrollador full-stack e ingeniero en sistemas. Construyo sistemas de caja, inventario y catálogos para comercios, aplicaciones web y móviles, y escenas 3D que corren en el navegador.",
   keywords: [
     "Desarrollador Full-Stack",
+    "Ingeniero en Sistemas",
     "React",
     "Next.js",
     "TypeScript",
     "Python",
-    "Automatización",
-    "Bots",
-    "Machine Learning",
+    "Flutter",
+    "PostgreSQL",
     "Supabase",
-    "Docker",
+    "Three.js",
+    "Blender",
+    "Automatización",
     "Moises Flores",
   ],
 } as const;
 
-// Cada cifra enlaza al proyecto o la experiencia que la respalda
+export const cvFiles = [
+  { href: "/cv-moises-flores-es.pdf", label: "Español" },
+  { href: "/cv-moises-flores-en.pdf", label: "English" },
+] as const;
+
+// Las usa la versión 3D (/3d). Cada cifra enlaza a lo que la respalda.
 export const heroMetrics = [
   { value: "+3", label: "años de experiencia", href: "/#experience" },
   { value: "2.000+", label: "usuarios en la plataforma comunitaria", href: "/projects/servicio-comunitario" },

@@ -1,10 +1,11 @@
 import { ImageResponse } from "next/og";
-import { site, heroMetrics } from "@/data/site";
+import { site } from "@/data/site";
 
 export const alt = `${site.name} · ${site.role}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+// Colores de DESIGN.md (tema claro)
 export default function OpengraphImage() {
   return new ImageResponse(
     (
@@ -14,38 +15,21 @@ export default function OpengraphImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
-          padding: "80px",
-          background: "linear-gradient(135deg, #0a0a0f 0%, #12121f 100%)",
-          color: "white",
+          justifyContent: "space-between",
+          padding: "84px",
+          background: "#f7f6f2",
+          color: "#1b1a17",
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 28, color: "#818cf8" }}>
-          moisesflores.dev
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ display: "flex", fontSize: 128, fontWeight: 800, lineHeight: 0.9, letterSpacing: -4 }}>Moises</div>
+          <div style={{ display: "flex", fontSize: 128, fontWeight: 800, lineHeight: 0.9, letterSpacing: -4 }}>Flores</div>
+          <div style={{ display: "flex", width: 120, height: 6, background: "#b3202b", marginTop: 36 }} />
         </div>
-        <div style={{ display: "flex", fontSize: 72, fontWeight: 700, marginTop: 24, lineHeight: 1.1 }}>
-          {site.name}
-        </div>
-        <div
-          style={{
-            display: "flex",
-            fontSize: 40,
-            marginTop: 12,
-            background: "linear-gradient(90deg, #6366f1, #22d3ee)",
-            backgroundClip: "text",
-            color: "transparent",
-          }}
-        >
-          {site.role}
-        </div>
-        <div style={{ display: "flex", gap: 48, marginTop: 64 }}>
-          {heroMetrics.map(({ value, label }) => (
-            <div key={label} style={{ display: "flex", flexDirection: "column" }}>
-              <span style={{ fontSize: 44, fontWeight: 700 }}>{value}</span>
-              <span style={{ fontSize: 20, color: "#a1a1aa", marginTop: 4 }}>{label}</span>
-            </div>
-          ))}
+        <div style={{ display: "flex", flexDirection: "column", fontSize: 34, color: "#57534b", lineHeight: 1.35 }}>
+          <div style={{ display: "flex" }}>Desarrollador full-stack e ingeniero en sistemas.</div>
+          <div style={{ display: "flex" }}>Sistemas para comercios, apps web y móviles, y 3D en el navegador.</div>
         </div>
       </div>
     ),

@@ -1,264 +1,190 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
-import { FiGithub, FiLinkedin, FiMail, FiDownload, FiMenu, FiX, FiChevronDown } from "react-icons/fi";
-import { site } from "@/data/site";
+import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { FiDownload, FiMenu, FiX } from "react-icons/fi";
+import { cvFiles, site } from "@/data/site";
 import ThemeToggle from "./ThemeToggle";
 
 const sections = [
-  { id: "skills", label: "Habilidades" },
+  { id: "work", label: "Trabajo" },
   { id: "experience", label: "Experiencia" },
-  { id: "projects", label: "Proyectos" },
   { id: "contact", label: "Contacto" },
 ] as const;
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const onHome = pathname === "/";
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [active, setActive] = useState<string | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Scroll spy: resalta la sección visible
+  // Marca la sección que está en pantalla (solo en la home)
   useEffect(() => {
+    if (!onHome) return;
     const observer = new IntersectionObserver(
       (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) setActiveSection(entry.target.id);
-        }
+        for (const entry of entries) if (entry.isIntersecting) setActive(entry.target.id);
       },
-      { rootMargin: "-40% 0px -55% 0px" }
+      { rootMargin: "-45% 0px -50% 0px" }
     );
     for (const { id } of sections) {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     }
     return () => observer.disconnect();
-  }, []);
+  }, [onHome]);
+
+  // El menú móvil se cierra con Escape
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/80 dark:bg-[#0a0a0f]/80 backdrop-blur-md border-b border-zinc-200/80 dark:border-white/10"
-          : "bg-transparent"
+      className={`sticky top-0 z-50 bg-paper transition-[border-color] duration-200 border-b ${
+        scrolled || open ? "border-line" : "border-transparent"
       }`}
     >
-      <nav aria-label="Principal" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="font-display text-lg font-bold tracking-tight text-zinc-900 dark:text-white hover:text-accent dark:hover:text-accent-soft transition-colors"
-            aria-label="Inicio"
-          >
-            moisesflores<span className="text-accent">.dev</span>
-          </Link>
+      <nav aria-label="Principal" className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
+        <Link href="/" className="wide inline-flex min-h-11 items-center text-[1.05rem] font-bold text-ink" aria-label="Moises Flores, inicio">
+          Moises Flores
+        </Link>
 
-          {/* Menú desktop */}
-          <div className="hidden md:flex items-center gap-1">
-            {sections.map(({ id, label }) => (
+        <div className="hidden items-center gap-1 md:flex">
+          {sections.map(({ id, label }) => {
+            const isActive = onHome && active === id;
+            return (
               <a
                 key={id}
                 href={`/#${id}`}
-                aria-current={activeSection === id ? "true" : undefined}
-                className={`relative px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
-                  activeSection === id
-                    ? "text-accent dark:text-accent-soft"
-                    : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+                aria-current={isActive ? "true" : undefined}
+                className={`relative px-3 py-2.5 text-[0.95rem] transition-colors ${
+                  isActive ? "text-ink" : "text-ink-2 hover:text-ink"
                 }`}
               >
                 {label}
-                {activeSection === id && (
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-x-3 -bottom-px h-px bg-gradient-to-r from-accent to-cyan-accent"
-                  />
-                )}
+                <span
+                  aria-hidden="true"
+                  className={`absolute inset-x-3 bottom-1.5 h-[2px] bg-accent transition-opacity ${isActive ? "opacity-100" : "opacity-0"}`}
+                />
               </a>
-            ))}
-
-            <span aria-hidden="true" className="mx-2 h-5 w-px bg-zinc-300 dark:bg-white/10" />
-
-            <IconLink href={site.github} label="GitHub">
-              <FiGithub className="w-5 h-5" />
-            </IconLink>
-            <IconLink href={site.linkedin} label="LinkedIn">
-              <FiLinkedin className="w-5 h-5" />
-            </IconLink>
-            <IconLink href={`mailto:${site.email}`} label="Enviar email">
-              <FiMail className="w-5 h-5" />
-            </IconLink>
-            <ThemeToggle />
-            <CvMenu />
-          </div>
-
-          {/* Controles móvil */}
-          <div className="md:hidden flex items-center gap-1">
-            <ThemeToggle />
-            <button
-              type="button"
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200/70 dark:hover:bg-white/10 transition-colors"
-              aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
-              aria-expanded={isOpen}
-              aria-controls="mobile-menu"
-            >
-              {isOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
-            </button>
-          </div>
+            );
+          })}
+          <span aria-hidden="true" className="mx-2 h-5 w-px bg-line" />
+          <CvMenu />
+          <ThemeToggle />
         </div>
 
-        {/* Menú móvil */}
-        <div
-          id="mobile-menu"
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isOpen ? "max-h-[500px] pb-6" : "max-h-0"
-          }`}
-        >
-          <div className="flex flex-col gap-1 pt-2">
-            {sections.map(({ id, label }) => (
-              <a
-                key={id}
-                href={`/#${id}`}
-                onClick={() => setIsOpen(false)}
-                className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                  activeSection === id
-                    ? "bg-accent/10 text-accent dark:text-accent-soft"
-                    : "text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200/70 dark:hover:bg-white/10"
-                }`}
-              >
-                {label}
-              </a>
-            ))}
-
-            <div className="mt-3 pt-4 border-t border-zinc-200 dark:border-white/10 flex items-center gap-2 px-2">
-              <IconLink href={site.github} label="GitHub">
-                <FiGithub className="w-5 h-5" />
-              </IconLink>
-              <IconLink href={site.linkedin} label="LinkedIn">
-                <FiLinkedin className="w-5 h-5" />
-              </IconLink>
-              <IconLink href={`mailto:${site.email}`} label="Enviar email">
-                <FiMail className="w-5 h-5" />
-              </IconLink>
-            </div>
-
-            <div className="mt-3 grid grid-cols-2 gap-2 px-2">
-              <a
-                href="/cv-moises-flores-es.pdf"
-                download
-                className="flex items-center justify-center gap-2 border border-accent text-accent px-4 py-2.5 rounded-full text-sm font-medium hover:bg-accent hover:text-white transition-colors"
-              >
-                <FiDownload aria-hidden="true" /> CV Español
-              </a>
-              <a
-                href="/cv-moises-flores-en.pdf"
-                download
-                className="flex items-center justify-center gap-2 border border-accent text-accent px-4 py-2.5 rounded-full text-sm font-medium hover:bg-accent hover:text-white transition-colors"
-              >
-                <FiDownload aria-hidden="true" /> CV English
-              </a>
-            </div>
-          </div>
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={open}
+            aria-controls="menu-movil"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-[6px] text-ink hover:bg-sunk"
+          >
+            {open ? <FiX className="h-5 w-5" aria-hidden="true" /> : <FiMenu className="h-5 w-5" aria-hidden="true" />}
+          </button>
         </div>
       </nav>
+
+      {open && (
+        <div id="menu-movil" className="border-t border-line px-5 pb-6 pt-2 md:hidden">
+          <ul className="flex flex-col">
+            {sections.map(({ id, label }) => (
+              <li key={id}>
+                <a
+                  href={`/#${id}`}
+                  onClick={() => setOpen(false)}
+                  className="block border-b border-line py-3.5 text-lg text-ink"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-5 text-sm text-ink-3">Currículum</p>
+          <div className="mt-2 grid grid-cols-2 gap-2">
+            {cvFiles.map((cv) => (
+              <a
+                key={cv.href}
+                href={cv.href}
+                download
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-[6px] border border-control px-4 text-[0.95rem] text-ink"
+              >
+                <FiDownload aria-hidden="true" className="h-4 w-4" /> {cv.label}
+              </a>
+            ))}
+          </div>
+          <a href={`mailto:${site.email}`} className="link-underline mt-5 inline-block text-ink-2">
+            {site.email}
+          </a>
+        </div>
+      )}
     </header>
   );
 }
 
-/** Menú de descarga de CV accesible: se abre con click/Enter, se cierra con Escape o click fuera. */
+/** Descarga del CV: se abre con clic o Enter y se cierra con Escape o clic fuera. */
 function CvMenu() {
   const [open, setOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!open) return;
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    const onClick = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
     };
-    const onClickOutside = (e: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    };
-    document.addEventListener("keydown", onKeyDown);
-    document.addEventListener("mousedown", onClickOutside);
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("mousedown", onClick);
     return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.removeEventListener("mousedown", onClickOutside);
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("mousedown", onClick);
     };
   }, [open]);
 
   return (
-    <div ref={menuRef} className="relative ml-2">
+    <div ref={ref} className="relative">
       <button
         type="button"
-        onClick={() => setOpen(!open)}
+        onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-haspopup="menu"
-        className="flex items-center gap-2 border border-accent text-accent px-4 py-2 rounded-full text-sm font-medium hover:bg-accent hover:text-white transition-colors duration-200"
+        className="inline-flex h-11 items-center gap-2 rounded-[6px] px-3 text-[0.95rem] text-ink-2 transition-colors hover:bg-sunk hover:text-ink"
       >
-        <FiDownload aria-hidden="true" className="w-4 h-4" />
-        Descargar CV
-        <FiChevronDown
-          aria-hidden="true"
-          className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-180" : ""}`}
-        />
+        <FiDownload aria-hidden="true" className="h-4 w-4" />
+        Currículum
       </button>
-
       {open && (
-        <div
-          role="menu"
-          className="absolute right-0 mt-2 w-40 rounded-xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-zinc-900 shadow-lg overflow-hidden"
-        >
-          <a
-            role="menuitem"
-            href="/cv-moises-flores-es.pdf"
-            download
-            onClick={() => setOpen(false)}
-            className="block px-4 py-2.5 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/10 transition-colors"
-          >
-            Español (ES)
-          </a>
-          <a
-            role="menuitem"
-            href="/cv-moises-flores-en.pdf"
-            download
-            onClick={() => setOpen(false)}
-            className="block px-4 py-2.5 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-white/10 transition-colors"
-          >
-            English (EN)
-          </a>
+        <div role="menu" className="absolute right-0 mt-1 w-44 overflow-hidden rounded-[6px] border border-line bg-paper py-1">
+          {cvFiles.map((cv) => (
+            <a
+              key={cv.href}
+              role="menuitem"
+              href={cv.href}
+              download
+              onClick={() => setOpen(false)}
+              className="block px-4 py-2.5 text-[0.95rem] text-ink hover:bg-sunk"
+            >
+              {cv.label} (PDF)
+            </a>
+          ))}
         </div>
       )}
     </div>
-  );
-}
-
-function IconLink({
-  href,
-  label,
-  children,
-}: {
-  href: string;
-  label: string;
-  children: React.ReactNode;
-}) {
-  const external = href.startsWith("http");
-  return (
-    <a
-      href={href}
-      {...(external && { target: "_blank", rel: "noopener noreferrer" })}
-      aria-label={label}
-      className="p-2 rounded-full text-zinc-600 dark:text-zinc-400 hover:text-accent dark:hover:text-accent-soft hover:bg-zinc-200/70 dark:hover:bg-white/10 transition-colors duration-200"
-    >
-      {children}
-    </a>
   );
 }
