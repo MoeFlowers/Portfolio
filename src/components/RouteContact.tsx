@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent, type SyntheticEvent } from "react";
 import { trackPortfolioEvent } from "@/lib/analytics";
 import { site } from "@/data/site";
 import type { Locale } from "@/data/capabilities";
@@ -42,6 +42,13 @@ const copy = {
   },
 };
 
+const contactFields = ["intent", "name", "email", "context", "message"] as const;
+type ContactField = (typeof contactFields)[number];
+
+function isContactField(name: string): name is ContactField {
+  return contactFields.some((field) => field === name);
+}
+
 export default function RouteContact({ locale = "es", initialIntent = "general" }: {
   locale?: Locale;
   initialIntent?: ContactIntent;
@@ -50,6 +57,36 @@ export default function RouteContact({ locale = "es", initialIntent = "general" 
   const [intent, setIntent] = useState(initialIntent);
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
   const [issue, setIssue] = useState<ContactError | null>(null);
+  const [nativeErrors, setNativeErrors] = useState<Partial<Record<ContactField, boolean>>>({});
+  const [announcement, setAnnouncement] = useState<ContactField | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (!issue || !isContactField(issue)) return;
+    const field = formRef.current?.elements.namedItem(issue);
+    if (field instanceof HTMLElement) field.focus();
+  }, [issue]);
+
+  function syncField(event: SyntheticEvent<HTMLFormElement>) {
+    const control = event.target;
+    if (!(control instanceof HTMLInputElement || control instanceof HTMLTextAreaElement || control instanceof HTMLSelectElement)) return;
+    const name = control.name;
+    if (!isContactField(name)) return;
+
+    const valid = control.validity.valid;
+    const invalidEvent = event.type === "invalid";
+    const userInvalid = CSS.supports("selector(:user-invalid)") && control.matches(":user-invalid");
+    setNativeErrors((errors) => {
+      const invalid = !valid && (invalidEvent || userInvalid || errors[name] === true);
+      return Boolean(errors[name]) === invalid ? errors : { ...errors, [name]: invalid };
+    });
+    if (event.type === "blur" && userInvalid) setAnnouncement(name);
+    if (valid) setAnnouncement((previous) => previous === name ? null : previous);
+    if (event.type === "input") {
+      setIssue((previous) => previous === name ? null : previous);
+      if (status === "sent") setStatus("idle");
+    }
+  }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -57,6 +94,7 @@ export default function RouteContact({ locale = "es", initialIntent = "general" 
     const fields = Object.fromEntries(new FormData(form));
     setStatus("sending");
     setIssue(null);
+    setAnnouncement(null);
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -69,12 +107,11 @@ export default function RouteContact({ locale = "es", initialIntent = "general" 
         const errorCode = code && Object.hasOwn(t.errors, code) ? code as ContactError : "delivery";
         setIssue(errorCode);
         setStatus("idle");
-        const field = form.elements.namedItem(errorCode);
-        if (field instanceof HTMLElement) field.focus();
         return;
       }
       form.reset();
       setIntent(initialIntent);
+      setNativeErrors({});
       setStatus("sent");
       trackPortfolioEvent("portfolio_contact_sent", intent);
     } catch {
@@ -83,9 +120,30 @@ export default function RouteContact({ locale = "es", initialIntent = "general" 
     }
   }
 
-  function invalid(field: ContactError) {
-    return issue === field ? { "aria-invalid": true, "aria-describedby": "contact-error" } : {};
+  function hasError(field: ContactField) {
+    return issue === field || nativeErrors[field] === true;
   }
+
+  function invalid(field: ContactField) {
+    const active = hasError(field);
+    return { "aria-invalid": active, "aria-describedby": active ? `contact-${field}-error` : undefined };
+  }
+
+  function feedback(field: ContactField) {
+    return hasError(field) && <p className="field-error" id={`contact-${field}-error`}>{t.errors[field]}</p>;
+  }
+
+  function selectIntent(value: ContactIntent) {
+    setIntent(value);
+    setIssue((previous) => previous === "context" ? null : previous);
+    setAnnouncement((previous) => previous === "context" ? null : previous);
+    setNativeErrors((previous) => previous.context ? { ...previous, context: false } : previous);
+  }
+
+  const announcementText = announcement && [
+    announcement === "context" ? (intent === "career" ? t.role : t.scope) : t[announcement],
+    t.errors[announcement],
+  ].join(". ");
 
   return (
     <section id="contact" aria-labelledby="contact-title" className="site-section contact-section">
@@ -94,28 +152,44 @@ export default function RouteContact({ locale = "es", initialIntent = "general" 
         <TrackedLink href={`mailto:${site.email}?subject=${encodeURIComponent(t.subjects[intent])}`} event="portfolio_contact" targetName={intent} className="text-action">{t.emailLink}</TrackedLink>
         <noscript><p>{t.noScript}</p></noscript>
       </div>
-      <form method="post" action="/api/contact" className="site-form" onSubmit={submit} aria-busy={status === "sending"}>
-        <label>{t.intent}
-          <select name="intent" value={intent} onChange={(e) => setIntent(e.target.value as ContactIntent)} {...invalid("intent")}>
-            <option value="general">{t.general}</option>
-            <option value="career">{t.career}</option>
-            <option value="project">{t.project}</option>
-          </select>
-        </label>
+      <form ref={formRef} method="post" action="/api/contact" className="site-form" onSubmit={submit}
+        onBlur={syncField} onInput={syncField} onInvalid={syncField} aria-busy={status === "sending"}>
+        <div>
+          <label>{t.intent}
+            <select name="intent" value={intent} onChange={(e) => selectIntent(e.target.value as ContactIntent)} {...invalid("intent")}>
+              <option value="general">{t.general}</option>
+              <option value="career">{t.career}</option>
+              <option value="project">{t.project}</option>
+            </select>
+          </label>
+          {feedback("intent")}
+        </div>
         <div className="form-columns">
-          <label>{t.name}<input autoComplete="name" name="name" required minLength={2} maxLength={100} {...invalid("name")} /></label>
-          <label>{t.email}<input autoComplete="email" type="email" name="email" required maxLength={254} {...invalid("email")} /></label>
+          <div>
+            <label>{t.name}<input autoComplete="name" name="name" required minLength={2} maxLength={100} {...invalid("name")} /></label>
+            {feedback("name")}
+          </div>
+          <div>
+            <label>{t.email}<input autoComplete="email" type="email" name="email" required maxLength={254} {...invalid("email")} /></label>
+            {feedback("email")}
+          </div>
         </div>
         {intent !== "general" && (
-          <label>{intent === "career" ? t.role : t.scope} <span>({t.optional})</span>
-            <input key={intent} name="context" maxLength={200} {...invalid("context")} />
-          </label>
+          <div>
+            <label>{intent === "career" ? t.role : t.scope} <span>({t.optional})</span>
+              <input key={intent} name="context" maxLength={200} {...invalid("context")} />
+            </label>
+            {feedback("context")}
+          </div>
         )}
-        <label>{t.message}<textarea name="message" rows={5} required minLength={10} maxLength={5000} {...invalid("message")} /></label>
+        <div>
+          <label>{t.message}<textarea name="message" rows={5} required minLength={10} maxLength={5000} {...invalid("message")} /></label>
+          {feedback("message")}
+        </div>
         <input name="company" type="text" hidden tabIndex={-1} autoComplete="off" />
         <button type="submit" className="site-button" disabled={status === "sending"}>{status === "sending" ? t.sending : t.send}</button>
-        {issue && <p id="contact-error" role="alert">{t.errors[issue]}</p>}
-        <p role="status">{status === "sent" ? t.sent : ""}</p>
+        {issue && !isContactField(issue) && <p role="alert">{t.errors[issue]}</p>}
+        <p role="status">{status === "sent" ? t.sent : announcementText && <span className="sr-only">{announcementText}</span>}</p>
       </form>
     </section>
   );

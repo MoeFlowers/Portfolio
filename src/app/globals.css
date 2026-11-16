@@ -150,6 +150,12 @@ section[id] {
   color: var(--action);
 }
 
+.site-nav a[aria-current="page"] {
+  color: var(--foreground);
+  text-decoration: underline solid var(--action) .13em;
+  text-underline-offset: .32em;
+}
+
 .theme-button {
   justify-content: center;
   width: 44px;
@@ -302,10 +308,9 @@ button.theme-button:hover { background: var(--surface); }
 
 .site-form label span { color: var(--muted); font-weight: 400; }
 
-.site-form :is(input:not([hidden]), select, textarea) {
+.site-form :where(input:not([hidden]), select, textarea) {
   display: block;
   width: 100%;
-  min-height: 46px;
   padding: .55rem .7rem;
   margin-top: .28rem;
   border: 1px solid var(--control);
@@ -315,7 +320,26 @@ button.theme-button:hover { background: var(--surface); }
   font-weight: 400;
 }
 
-.site-form textarea { resize: vertical; }
+.site-form :is(input:not([hidden]), select) {
+  min-height: 46px;
+}
+
+.site-form textarea {
+  resize: vertical;
+  field-sizing: content;
+  min-block-size: calc(5lh + 1.1rem + 2px);
+  max-block-size: 14lh;
+}
+
+.site-form :is([aria-invalid="true"], :user-invalid) {
+  border-color: var(--action);
+}
+
+.field-error {
+  margin-block-start: .35rem;
+  color: var(--action);
+  font-size: .9rem;
+}
 .site-form button { width: fit-content; }
 .site-form [role="alert"] { color: var(--action); font-weight: 600; }
 .site-form [role="status"]:empty { margin-top: -1rem; }

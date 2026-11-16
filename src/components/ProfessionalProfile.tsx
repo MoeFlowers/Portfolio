@@ -25,7 +25,7 @@ export default function ProfessionalProfile({ locale }: { locale: Locale }) {
   const t = professional[locale];
   return (
     <div lang={locale}>
-      <SiteHeader locale={locale} contactHref="#contact" />
+      <SiteHeader locale={locale} current="professional" contactHref="#contact" />
       <main id="main-content" className="site-wrap">
         <section className="site-hero route-hero">
           <div>
