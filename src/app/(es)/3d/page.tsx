@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import StudioPage from "@/components/studio/StudioPage";
+import StudioExperience from "@/components/studio/StudioExperience";
 
 export const metadata: Metadata = {
   title: "Estudio 3D",
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <StudioPage />;
+  return <StudioExperience />;
 }

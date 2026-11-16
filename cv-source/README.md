@@ -30,4 +30,5 @@ cp cv-es.pdf ../public/cv-moises-flores-es.pdf
 cp cv-en.pdf ../public/cv-moises-flores-en.pdf
 ```
 
-La fuente (Inter) se carga desde Google Fonts al renderizar, así que necesitas conexión.
+El CV usa Arial y se puede renderizar sin conexión. Comprueba que cada versión tiene
+una página y que la lectura sigue el orden del HTML.
