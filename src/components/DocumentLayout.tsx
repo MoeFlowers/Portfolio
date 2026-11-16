@@ -1,19 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Mona_Sans, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { Analytics } from "@vercel/analytics/react";
 import { site } from "@/data/site";
-import "./globals.css";
+import "@/app/globals.css";
 
-const inter = Inter({
+const mona = Mona_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-mona",
   display: "swap",
 });
 
@@ -23,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-export const metadata: Metadata = {
+export const baseMetadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default: `${site.name} · ${site.role}`,
@@ -38,16 +32,18 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "es_ES",
+    locale: "es_VE",
     url: site.url,
     siteName: site.name,
     title: `${site.name} · ${site.role}`,
     description: site.description,
+    images: ["/social-card"],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} · ${site.role}`,
     description: site.description,
+    images: ["/social-card"],
   },
   robots: {
     index: true,
@@ -55,10 +51,10 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = {
+export const baseViewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0f" },
+    { media: "(prefers-color-scheme: light)", color: "#f7f6f2" },
+    { media: "(prefers-color-scheme: dark)", color: "#121110" },
   ],
 };
 
@@ -73,16 +69,18 @@ const personJsonLd = {
   knowsAbout: [...site.keywords],
 };
 
-export default function RootLayout({
+export default function DocumentLayout({
   children,
+  locale,
 }: {
   children: React.ReactNode;
+  locale: "es" | "en";
 }) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+        className={`${mona.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
         <script
           type="application/ld+json"

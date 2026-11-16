@@ -5,8 +5,8 @@ import { notFound } from "next/navigation";
 import { FiArrowLeft, FiGithub, FiExternalLink, FiClock, FiUser, FiCheck } from "react-icons/fi";
 import { projects, getProject } from "@/data/projects";
 import { site } from "@/data/site";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 import TechChip from "@/components/ui/TechChip";
 
 interface CaseStudyProps {
@@ -42,10 +42,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
 
   return (
     <>
-      <a href="#main-content" className="skip-link">
-        Saltar al contenido
-      </a>
-      <Navbar />
+      <SiteHeader />
       <main id="main-content" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <Link
           href="/#projects"
@@ -57,7 +54,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
 
         {/* Encabezado */}
         <header>
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent mb-3">
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent dark:text-accent-soft mb-3">
             {project.category}
           </p>
           <h1 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white text-balance">
@@ -193,14 +190,14 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
             Cuéntame tu caso y te propongo una solución.
           </p>
           <Link
-            href="/#contact"
+            href="/servicios#contact"
             className="mt-5 inline-block px-7 py-3 text-sm font-semibold rounded-full bg-accent text-white hover:bg-accent-hover transition-colors"
           >
             Escribirme
           </Link>
         </div>
       </main>
-      <Footer />
+      <SiteFooter />
     </>
   );
 }

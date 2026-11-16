@@ -1,46 +1,27 @@
-export interface ExperienceItem {
+import { professional } from "./professional";
+
+type ExperienceItem = {
   period: string;
   title: string;
   org: string;
   description: string;
   highlight?: string;
   type: "trabajo" | "educacion";
-}
+};
 
 export const experience: ExperienceItem[] = [
+  ...professional.es.experience.map(({ date, title, context, summary }) => ({
+    period: date,
+    title,
+    org: context,
+    description: summary,
+    type: "trabajo" as const,
+  })),
   {
-    period: "2024 a hoy",
-    title: "Desarrollador Full-Stack Freelance",
-    org: "Proyectos independientes",
-    description:
-      "Desarrollo de aplicaciones web a medida y automatizaciones para clientes: sistemas de inventario y facturación en doble moneda (USD/VES con tasa BCV), apps de finanzas con Supabase, bots de procesamiento de datos y motores de recomendación con ML. Trabajo con documentación técnica (ADRs, spec-driven), pruebas y CI.",
-    highlight: "21 h/semana de trabajo manual automatizadas entre clientes",
-    type: "trabajo",
-  },
-  {
-    period: "Ene a jun 2024",
-    title: "Líder técnico: Proyecto de Servicio Comunitario",
-    org: "Comunidad local · UNEFA",
-    description:
-      "Lideré el desarrollo end-to-end de una plataforma web usada por más de 2.000 personas, desde el modelado de datos hasta el despliegue y la capacitación del equipo administrador.",
-    highlight: "2.000+ usuarios · -80% tiempo de consulta",
-    type: "trabajo",
-  },
-  {
-    period: "2023 a 2024",
-    title: "Sistema Web para Clínica Odontológica",
-    org: "Cliente privado (freelance)",
-    description:
-      "Digitalización completa de historiales, odontograma interactivo, citas con recordatorios automáticos y facturación con reportes.",
-    highlight: "6 h/semana ahorradas · 100% historiales digitales",
-    type: "trabajo",
-  },
-  {
-    period: "2020 a 2025",
+    period: "Ago 2026",
     title: "Ingeniero en Sistemas",
-    org: "UNEFA · Graduado (título oficial)",
-    description:
-      "Graduado como Ingeniero en Sistemas: formación en ingeniería de software, bases de datos y arquitectura de sistemas, complementada con cursos de arquitectura de software y DevOps.",
+    org: "UNEFA",
+    description: professional.es.education,
     type: "educacion",
   },
 ];

@@ -10,6 +10,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    {
+      url: `${site.url}/perfil`,
+      alternates: { languages: { es: `${site.url}/perfil`, en: `${site.url}/career` } },
+    },
+    {
+      url: `${site.url}/career`,
+      alternates: { languages: { es: `${site.url}/perfil`, en: `${site.url}/career` } },
+    },
+    { url: `${site.url}/servicios` },
     ...projects.map((project) => ({
       url: `${site.url}/projects/${project.slug}`,
       lastModified: new Date(),

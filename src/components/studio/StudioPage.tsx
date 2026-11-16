@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import Lenis from "lenis";
 import { useProgress } from "@react-three/drei";
 import { rig } from "@/components/three/cameraPath";
-import { heroMetrics, site } from "@/data/site";
+import { site, studioCapabilities } from "@/data/site";
 import { skillCategories } from "@/data/skills";
 import { experience } from "@/data/experience";
 import { projects } from "@/data/projects";
@@ -241,7 +241,7 @@ export default function StudioPage({ variant = "v1" }: { variant?: StudioVariant
               <Eyebrow>01 · Impacto</Eyebrow>
               <h2 className="font-display text-[#F3EBDD] text-3xl font-semibold md:text-4xl">Resultados medibles, no solo código.</h2>
               <div className="mt-8 grid grid-cols-2 gap-6">
-                {heroMetrics.map((m) => (
+                {studioCapabilities.map((m) => (
                   <a key={m.label} href={m.href} className="block rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-300">
                     <p className="bg-gradient-to-r from-indigo-200 to-cyan-300 bg-clip-text font-mono text-3xl font-semibold text-transparent md:text-4xl">
                       {m.value}
