@@ -23,7 +23,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
-      <SiteHeader contactHref="#contact" />
+      <SiteHeader current="services" contactHref="#contact" />
       <main id="main-content" className="site-wrap">
         <section className="site-hero route-hero">
           <div>

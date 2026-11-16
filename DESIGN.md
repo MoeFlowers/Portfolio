@@ -7,3 +7,5 @@ La composición editorial abre con la propuesta y los accesos a empleo y cliente
 Las capacidades usan filas con una descripción y su stack. Los proyectos usan las capturas existentes. La ruta 3D es opcional y la portada funciona sin WebGL.
 
 Los tokens claros y oscuros viven en globals.css. El formulario muestra validación asociada a cada campo, envío en curso, confirmación o error con correo alternativo. Los controles tienen foco visible y respetan movimiento reducido.
+
+En la navegación, la página actual lleva un subrayado rojo y se identifica con `aria-current`. Los errores del formulario aparecen junto al campo tras la interacción. El área de mensaje crece verticalmente hasta un límite y conserva cinco filas iniciales como alternativa.

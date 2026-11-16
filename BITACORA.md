@@ -1,5 +1,11 @@
 # Bitácora
 
+## 2026-11-16
+
+Apliqué [Modern Web Guidance](https://github.com/GoogleChrome/modern-web-guidance) a la navegación y al formulario del portafolio. La página actual se identifica con un subrayado y un atributo semántico. Los errores aparecen junto a su campo y el área de mensaje crece dentro de un límite. Se conservan la paleta, la tipografía, los temas y la estructura visual.
+
+Pasaron las cuatro pruebas y el build. Revisé Servicios a 1440 y 390 px en ambos temas, sin desborde horizontal. Con teclado confirmé la aparición y corrección de errores, y comprobé que el área de mensaje crece sin cambiar de ancho.
+
 ## 2026-11-15
 
 Evolución del portafolio desde la versión de producción. Separé la ruta profesional de la comercial, incorporé capacidades respaldadas por el inventario técnico y sincronicé los CV en ambos idiomas. Los seis casos y sus capturas coinciden con la rama base. El panel del Centro de trabajo no respondió durante la tarea.

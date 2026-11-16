@@ -12,7 +12,7 @@ export const metadata: Metadata = { alternates: { canonical: "/" } };
 export default function Home() {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader current="home" />
       <main id="main-content" className="site-wrap">
         <section className="site-hero">
           <div>
